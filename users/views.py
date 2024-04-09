@@ -87,7 +87,7 @@ def get_user_profile(request):
 
             recent_news_logs = (NewsLog.objects.filter(user=current_user)
                                 .order_by('-timestamp')[:10])
-                                .values('news_id', 'timestamp')
+                                # .values('news_id', 'timestamp')
 
             user_info = {
                 'username': current_user.username,

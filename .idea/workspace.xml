@@ -6,7 +6,6 @@
   <component name="ChangeListManager">
     <list default="true" id="35dd998c-1290-4c26-9012-1ed06d87c8c0" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/users/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/users/models.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/users/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/users/views.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -50,29 +49,27 @@
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "RunOnceActivity.pycharm.django.structure.promotion.once.per.project": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "git-widget-placeholder": "feature/user-modeling",
+    "git-widget-placeholder": "main",
     "ignore.virus.scanning.warn.message": "true",
-    "last_opened_file_path": "E:/AdaptiveArtemisNewsRecommendation",
+    "last_opened_file_path": "C:/Users/Alienware/PycharmProjects/AdaptiveArtemisNewsRecommendation",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
     "node.js.selected.package.tslint": "(autodetect)",
     "nodejs_package_manager_path": "npm",
-    "settings.editor.selected.configurable": "com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable",
+    "settings.editor.selected.configurable": "preferences.lookFeel",
     "vue.rearranger.settings.migration": "true"
   },
   "keyToStringList": {
     "DatabaseDriversLRU": [
-      "mysql",
-      "sqlite"
+      "mysql"
     ],
     "com.intellij.ide.scratch.ScratchImplUtil$2/New Scratch File": [
       "PLAIN_TEXT"
     ]
   }
 }]]></component>
-  <component name="RunManager" selected="Python.settings">
+  <component name="RunManager" selected="Django Server.AdaptiveArtemisNewsRecommendation">
     <configuration name="settings" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="AdaptiveArtemisNewsRecommendation" />
       <option name="ENV_FILES" value="" />
@@ -146,11 +143,7 @@
       <workItem from="1712188489576" duration="4649000" />
       <workItem from="1712195667552" duration="1503000" />
       <workItem from="1712197187299" duration="7031000" />
-      <workItem from="1712325782537" duration="509000" />
-      <workItem from="1712326485790" duration="194000" />
-      <workItem from="1712326748550" duration="165000" />
-      <workItem from="1712326926306" duration="23544000" />
-      <workItem from="1712612862747" duration="1112000" />
+      <workItem from="1712670796750" duration="4351000" />
     </task>
     <servers />
   </component>
