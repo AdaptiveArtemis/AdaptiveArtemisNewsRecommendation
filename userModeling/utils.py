@@ -19,17 +19,16 @@ def update_user_prefer_lists():
 
     user_logs = {}
     for log in yesterday_logs:
-        user_logs.setdefault(log.user_id, []).append(log)
+        user_logs.setdefault(log.user, []).append(log)
 
-    for user_id, logs in user_logs.items():
-        user = User.objects.get(id=user_id)
+    for user, logs in user_logs.items():
         prefer_list = user.preferList if user.preferList else {}
 
         # apply decay to user's prefer list
         prefer_list = apply_decay_to_user(prefer_list)
 
         # Prepare the document for TF-IDF calculations
-        documents = [log.content for log in logs]
+        documents = [log.body for log in logs]
         vectorizer = TfidfVectorizer()
         tfidf_matrix = vectorizer.fit_transform(documents)
         feature_names = vectorizer.get_feature_names_out()

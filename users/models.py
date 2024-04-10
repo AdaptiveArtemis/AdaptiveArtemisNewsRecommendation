@@ -22,7 +22,7 @@ class User(models.Model):
 class NewsLog(models.Model):
     user = models.ForeignKey(User, on_delete=models.CASCADE)
     news_id = models.CharField(max_length=255)
-    content = models.TextField()  # 新闻内容
+    body = models.TextField()  # 新闻内容
     keywords = models.TextField()  # 新闻关键词列表的JSON字符串
     timestamp = models.DateTimeField()
     title = models.CharField(max_length=255)

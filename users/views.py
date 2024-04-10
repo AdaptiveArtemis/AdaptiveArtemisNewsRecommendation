@@ -4,6 +4,8 @@ from django.contrib.auth.decorators import login_required
 from django.contrib.auth.hashers import make_password
 from django.http import JsonResponse
 from django.views.decorators.http import require_http_methods
+from django.utils import timezone
+from news.models import Article
 from .models import User, NewsLog
 
 # Create your views here.
@@ -124,3 +126,23 @@ def update_prefer_list(request):
         return JsonResponse({'message': 'Invalid request body'}, status=400)
     except Exception as e:
         return JsonResponse({'message': str(e)}, status=500)
+
+@login_required
+def log_news(request):
+    user: User = request.user
+    news_id = request.POST.get('news_id')
+
+    try:
+        article = Article.objects.get(id=news_id)
+        NewsLog.objects.create(
+            user=user,
+            news_id=news_id,
+            body=article.body,
+            keywords=article.keywords,
+            timestamp=timezone.now(),
+            title=article.title
+        )
+
+        return JsonResponse({'message': 'News logged successfully'}, status=200)
+    except Article.DoesNotExist:
+        return JsonResponse({'message': 'News not found'}, status=404)
