@@ -47,5 +47,5 @@ def update_user_prefer_lists():
         prefer_list = dict(sorted(prefer_list.items(), key=lambda x: x[1], reverse=True)[:5])
 
         # Save the updated prefer list
-        user.preferList = json.dumps(prefer_list)
+        user.preferList = prefer_list
         user.save()

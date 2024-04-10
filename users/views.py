@@ -1,7 +1,7 @@
 import json
 from django.contrib.auth import authenticate, login
 from django.contrib.auth.decorators import login_required
-from django.contrib.auth.hashers import make_password
+from django.core.exceptions import ValidationError
 from django.http import JsonResponse
 from django.views.decorators.http import require_http_methods
 from django.utils import timezone
@@ -18,6 +18,9 @@ def register(request):
             username = data['username']
             email = data['email']
             password = data['password']
+
+            if not username or not email or not password:
+                return JsonResponse({'message': 'Invalid request body'}, status=400)
             # Check if the user already exists
             if User.objects.filter(username=username).exists():
                 return JsonResponse({'message': 'User already exists'}, status=400)
@@ -27,13 +30,15 @@ def register(request):
             user = User(
                 username=username,
                 email=email,
-                password=make_password(password),
-                preferList=[]
+                password=password,
+                preferList={}
             )
             user.save()
 
             # Returns the successful registration information
             return JsonResponse({'message': 'User registered successfully'}, status=200)
+        except ValidationError as e:
+            return JsonResponse({'message': str(e)}, status=400)
         except Exception as e:
             return JsonResponse({'message': str(e)}, status=500)
     else:
@@ -115,13 +120,15 @@ def update_prefer_list(request):
     current_user: User = request.user
     try:
         data = json.loads(request.body)
-        prefer_list = data.get('prefer_list')
+        categories = data.get('prefer_list')
 
-        if isinstance(prefer_list, list) and len(prefer_list) > 0:
+        if isinstance(categories, list) and len(categories) == 5:
+            prefer_list = {category: 1 for category in categories}
             current_user.set_prefer_list(prefer_list)
-            return JsonResponse({'message': 'Prefer list updated successfully'}, status=200)
+            current_user.save()
+            return JsonResponse({'message': 'Preference list updated successfully'}, status=200)
         else:
-            return JsonResponse({'message': 'Invalid prefer list'}, status=400)
+            return JsonResponse({'message': 'Invalid request body'}, status=400)
     except json.JSONDecodeError:
         return JsonResponse({'message': 'Invalid request body'}, status=400)
     except Exception as e:
@@ -135,7 +142,7 @@ def log_news(request):
     try:
         article = Article.objects.get(id=news_id)
         NewsLog.objects.create(
-            user=user,
+            user_id=user,
             news_id=news_id,
             body=article.body,
             keywords=article.keywords,
@@ -146,3 +153,5 @@ def log_news(request):
         return JsonResponse({'message': 'News logged successfully'}, status=200)
     except Article.DoesNotExist:
         return JsonResponse({'message': 'News not found'}, status=404)
+
+
