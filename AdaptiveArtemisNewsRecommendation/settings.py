@@ -31,8 +31,9 @@ ALLOWED_HOSTS = []
 AUTH_USER_MODEL = 'users.User'
 
 # Application definition
-
+# order is important.
 INSTALLED_APPS = [
+    'users',                              # users module
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -40,7 +41,6 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'recommend',                         # recommend module
-    'users',                             # users module
     'news',
     'rest_framework',
     'corsheaders'

@@ -3064,3 +3064,1136 @@ DEBUG 2024-04-10 11:53:17,646 utils (0.000)
             WHERE table_schema = DATABASE()
             ; args=None; alias=default
 DEBUG 2024-04-10 11:53:17,647 utils (0.000) SELECT `django_migrations`.`id`, `django_migrations`.`app`, `django_migrations`.`name`, `django_migrations`.`applied` FROM `django_migrations`; args=(); alias=default
+DEBUG 2024-04-10 13:32:39,340 utils (0.000) 
+                SELECT VERSION(),
+                       @@sql_mode,
+                       @@default_storage_engine,
+                       @@sql_auto_is_null,
+                       @@lower_case_table_names,
+                       CONVERT_TZ('2001-01-01 01:00:00', 'UTC', 'UTC') IS NOT NULL
+            ; args=None; alias=default
+DEBUG 2024-04-10 13:32:39,341 utils (0.000) SET SESSION TRANSACTION ISOLATION LEVEL READ COMMITTED; args=None; alias=default
+DEBUG 2024-04-10 13:32:39,341 utils (0.000) 
+                SELECT VERSION(),
+                       @@sql_mode,
+                       @@default_storage_engine,
+                       @@sql_auto_is_null,
+                       @@lower_case_table_names,
+                       CONVERT_TZ('2001-01-01 01:00:00', 'UTC', 'UTC') IS NOT NULL
+            ; args=None; alias=default
+DEBUG 2024-04-10 13:32:39,720 utils (0.000) SET SESSION TRANSACTION ISOLATION LEVEL READ COMMITTED; args=None; alias=default
+DEBUG 2024-04-10 13:32:39,723 utils (0.015) 
+            SELECT
+                table_name,
+                table_type,
+                table_comment
+            FROM information_schema.tables
+            WHERE table_schema = DATABASE()
+            ; args=None; alias=default
+DEBUG 2024-04-10 13:32:39,725 utils (0.000) 
+            SELECT
+                table_name,
+                table_type,
+                table_comment
+            FROM information_schema.tables
+            WHERE table_schema = DATABASE()
+            ; args=None; alias=default
+DEBUG 2024-04-10 13:32:39,727 utils (0.000) 
+            SELECT
+                table_name,
+                table_type,
+                table_comment
+            FROM information_schema.tables
+            WHERE table_schema = DATABASE()
+            ; args=None; alias=default
+DEBUG 2024-04-10 13:32:39,727 schema CREATE TABLE `django_migrations` (`id` bigint AUTO_INCREMENT NOT NULL PRIMARY KEY, `app` varchar(255) NOT NULL, `name` varchar(255) NOT NULL, `applied` datetime(6) NOT NULL); (params None)
+DEBUG 2024-04-10 13:32:40,100 utils (0.375) CREATE TABLE `django_migrations` (`id` bigint AUTO_INCREMENT NOT NULL PRIMARY KEY, `app` varchar(255) NOT NULL, `name` varchar(255) NOT NULL, `applied` datetime(6) NOT NULL); args=None; alias=default
+DEBUG 2024-04-10 13:32:40,107 schema CREATE TABLE `django_content_type` (`id` integer AUTO_INCREMENT NOT NULL PRIMARY KEY, `name` varchar(100) NOT NULL, `app_label` varchar(100) NOT NULL, `model` varchar(100) NOT NULL); (params None)
+DEBUG 2024-04-10 13:32:40,133 utils (0.031) None; args=None; alias=default
+DEBUG 2024-04-10 13:35:03,912 utils (0.000) 
+                SELECT VERSION(),
+                       @@sql_mode,
+                       @@default_storage_engine,
+                       @@sql_auto_is_null,
+                       @@lower_case_table_names,
+                       CONVERT_TZ('2001-01-01 01:00:00', 'UTC', 'UTC') IS NOT NULL
+            ; args=None; alias=default
+DEBUG 2024-04-10 13:35:03,912 utils (0.000) SET SESSION TRANSACTION ISOLATION LEVEL READ COMMITTED; args=None; alias=default
+DEBUG 2024-04-10 13:35:03,913 utils (0.000) 
+                SELECT VERSION(),
+                       @@sql_mode,
+                       @@default_storage_engine,
+                       @@sql_auto_is_null,
+                       @@lower_case_table_names,
+                       CONVERT_TZ('2001-01-01 01:00:00', 'UTC', 'UTC') IS NOT NULL
+            ; args=None; alias=default
+DEBUG 2024-04-10 13:35:04,120 utils (0.000) SET SESSION TRANSACTION ISOLATION LEVEL READ COMMITTED; args=None; alias=default
+DEBUG 2024-04-10 13:35:04,128 utils (0.015) 
+            SELECT
+                table_name,
+                table_type,
+                table_comment
+            FROM information_schema.tables
+            WHERE table_schema = DATABASE()
+            ; args=None; alias=default
+DEBUG 2024-04-10 13:35:04,136 utils (0.000) SELECT `django_migrations`.`id`, `django_migrations`.`app`, `django_migrations`.`name`, `django_migrations`.`applied` FROM `django_migrations`; args=(); alias=default
+DEBUG 2024-04-10 13:35:04,138 utils (0.000) 
+            SELECT
+                table_name,
+                table_type,
+                table_comment
+            FROM information_schema.tables
+            WHERE table_schema = DATABASE()
+            ; args=None; alias=default
+DEBUG 2024-04-10 13:35:04,140 utils (0.000) SELECT `django_migrations`.`id`, `django_migrations`.`app`, `django_migrations`.`name`, `django_migrations`.`applied` FROM `django_migrations`; args=(); alias=default
+DEBUG 2024-04-10 13:35:04,144 utils (0.016) 
+            SELECT
+                table_name,
+                table_type,
+                table_comment
+            FROM information_schema.tables
+            WHERE table_schema = DATABASE()
+            ; args=None; alias=default
+DEBUG 2024-04-10 13:35:04,282 utils (0.125) INSERT INTO `django_migrations` (`app`, `name`, `applied`) VALUES ('contenttypes', '0001_initial', '2024-04-10 12:35:04.145865'); args=['contenttypes', '0001_initial', '2024-04-10 12:35:04.145865']; alias=default
+DEBUG 2024-04-10 13:35:04,284 utils (0.000) SELECT `django_migrations`.`id`, `django_migrations`.`app`, `django_migrations`.`name`, `django_migrations`.`applied` FROM `django_migrations`; args=(); alias=default
+DEBUG 2024-04-10 13:35:59,023 utils (0.000) 
+                SELECT VERSION(),
+                       @@sql_mode,
+                       @@default_storage_engine,
+                       @@sql_auto_is_null,
+                       @@lower_case_table_names,
+                       CONVERT_TZ('2001-01-01 01:00:00', 'UTC', 'UTC') IS NOT NULL
+            ; args=None; alias=default
+DEBUG 2024-04-10 13:35:59,024 utils (0.000) SET SESSION TRANSACTION ISOLATION LEVEL READ COMMITTED; args=None; alias=default
+DEBUG 2024-04-10 13:35:59,024 utils (0.000) 
+                SELECT VERSION(),
+                       @@sql_mode,
+                       @@default_storage_engine,
+                       @@sql_auto_is_null,
+                       @@lower_case_table_names,
+                       CONVERT_TZ('2001-01-01 01:00:00', 'UTC', 'UTC') IS NOT NULL
+            ; args=None; alias=default
+DEBUG 2024-04-10 13:35:59,226 utils (0.000) SET SESSION TRANSACTION ISOLATION LEVEL READ COMMITTED; args=None; alias=default
+DEBUG 2024-04-10 13:35:59,228 utils (0.000) 
+            SELECT
+                table_name,
+                table_type,
+                table_comment
+            FROM information_schema.tables
+            WHERE table_schema = DATABASE()
+            ; args=None; alias=default
+DEBUG 2024-04-10 13:35:59,231 utils (0.000) SELECT `django_migrations`.`id`, `django_migrations`.`app`, `django_migrations`.`name`, `django_migrations`.`applied` FROM `django_migrations`; args=(); alias=default
+DEBUG 2024-04-10 13:35:59,233 utils (0.000) 
+            SELECT
+                table_name,
+                table_type,
+                table_comment
+            FROM information_schema.tables
+            WHERE table_schema = DATABASE()
+            ; args=None; alias=default
+DEBUG 2024-04-10 13:35:59,233 utils (0.000) SELECT `django_migrations`.`id`, `django_migrations`.`app`, `django_migrations`.`name`, `django_migrations`.`applied` FROM `django_migrations`; args=(); alias=default
+DEBUG 2024-04-10 13:35:59,236 utils (0.000) 
+            SELECT
+                table_name,
+                table_type,
+                table_comment
+            FROM information_schema.tables
+            WHERE table_schema = DATABASE()
+            ; args=None; alias=default
+DEBUG 2024-04-10 13:35:59,237 schema ALTER TABLE `django_content_type` MODIFY `name` varchar(100) NULL; (params [])
+DEBUG 2024-04-10 13:35:59,544 utils (0.313) None; args=[]; alias=default
+DEBUG 2024-04-10 13:38:50,359 utils (0.000) 
+                SELECT VERSION(),
+                       @@sql_mode,
+                       @@default_storage_engine,
+                       @@sql_auto_is_null,
+                       @@lower_case_table_names,
+                       CONVERT_TZ('2001-01-01 01:00:00', 'UTC', 'UTC') IS NOT NULL
+            ; args=None; alias=default
+DEBUG 2024-04-10 13:38:50,359 utils (0.000) SET SESSION TRANSACTION ISOLATION LEVEL READ COMMITTED; args=None; alias=default
+DEBUG 2024-04-10 13:38:50,360 utils (0.000) 
+                SELECT VERSION(),
+                       @@sql_mode,
+                       @@default_storage_engine,
+                       @@sql_auto_is_null,
+                       @@lower_case_table_names,
+                       CONVERT_TZ('2001-01-01 01:00:00', 'UTC', 'UTC') IS NOT NULL
+            ; args=None; alias=default
+DEBUG 2024-04-10 13:38:50,570 utils (0.000) SET SESSION TRANSACTION ISOLATION LEVEL READ COMMITTED; args=None; alias=default
+DEBUG 2024-04-10 13:38:50,571 utils (0.000) 
+            SELECT
+                table_name,
+                table_type,
+                table_comment
+            FROM information_schema.tables
+            WHERE table_schema = DATABASE()
+            ; args=None; alias=default
+DEBUG 2024-04-10 13:38:50,575 utils (0.000) SELECT `django_migrations`.`id`, `django_migrations`.`app`, `django_migrations`.`name`, `django_migrations`.`applied` FROM `django_migrations`; args=(); alias=default
+DEBUG 2024-04-10 13:38:50,576 utils (0.000) 
+            SELECT
+                table_name,
+                table_type,
+                table_comment
+            FROM information_schema.tables
+            WHERE table_schema = DATABASE()
+            ; args=None; alias=default
+DEBUG 2024-04-10 13:38:50,577 utils (0.000) SELECT `django_migrations`.`id`, `django_migrations`.`app`, `django_migrations`.`name`, `django_migrations`.`applied` FROM `django_migrations`; args=(); alias=default
+DEBUG 2024-04-10 13:38:50,579 utils (0.000) 
+            SELECT
+                table_name,
+                table_type,
+                table_comment
+            FROM information_schema.tables
+            WHERE table_schema = DATABASE()
+            ; args=None; alias=default
+DEBUG 2024-04-10 13:38:50,666 utils (0.078) 
+            SELECT kc.`constraint_name`, kc.`column_name`,
+                kc.`referenced_table_name`, kc.`referenced_column_name`,
+                c.`constraint_type`
+            FROM
+                information_schema.key_column_usage AS kc,
+                information_schema.table_constraints AS c
+            WHERE
+                kc.table_schema = DATABASE() AND
+                (
+                    kc.referenced_table_schema = DATABASE() OR
+                    kc.referenced_table_schema IS NULL
+                ) AND
+                c.table_schema = kc.table_schema AND
+                c.constraint_name = kc.constraint_name AND
+                c.constraint_type != 'CHECK' AND
+                kc.table_name = 'django_content_type'
+            ORDER BY kc.`ordinal_position`
+        ; args=['django_content_type']; alias=default
+DEBUG 2024-04-10 13:38:50,668 utils (0.000) 
+            SELECT  table_collation
+            FROM    information_schema.tables
+            WHERE   table_schema = DATABASE()
+            AND     table_name = 'django_content_type'
+            ; args=['django_content_type']; alias=default
+DEBUG 2024-04-10 13:38:50,670 utils (0.000) 
+            SELECT
+                column_name, data_type, character_maximum_length,
+                numeric_precision, numeric_scale, extra, column_default,
+                CASE
+                    WHEN collation_name = 'utf8mb3_general_ci' THEN NULL
+                    ELSE collation_name
+                END AS collation_name,
+                CASE
+                    WHEN column_type LIKE '% unsigned' THEN 1
+                    ELSE 0
+                END AS is_unsigned,
+                column_comment
+            FROM information_schema.columns
+            WHERE table_name = 'django_content_type' AND table_schema = DATABASE()
+            ; args=['utf8mb3_general_ci', 'django_content_type']; alias=default
+DEBUG 2024-04-10 13:38:50,672 utils (0.000) SELECT * FROM `django_content_type` LIMIT 1; args=None; alias=default
+DEBUG 2024-04-10 13:38:50,674 utils (0.000) 
+                    SELECT cc.constraint_name, cc.check_clause
+                    FROM
+                        information_schema.check_constraints AS cc,
+                        information_schema.table_constraints AS tc
+                    WHERE
+                        cc.constraint_schema = DATABASE() AND
+                        tc.table_schema = cc.constraint_schema AND
+                        cc.constraint_name = tc.constraint_name AND
+                        tc.constraint_type = 'CHECK' AND
+                        tc.table_name = 'django_content_type'
+                ; args=['django_content_type']; alias=default
+DEBUG 2024-04-10 13:38:50,677 utils (0.015) SHOW INDEX FROM `django_content_type`; args=None; alias=default
+DEBUG 2024-04-10 13:38:50,677 schema ALTER TABLE `django_content_type` DROP INDEX `django_content_type_app_label_model_76bd3d3b_uniq`; (params ())
+DEBUG 2024-04-10 13:38:51,133 utils (0.453) ALTER TABLE `django_content_type` DROP INDEX `django_content_type_app_label_model_76bd3d3b_uniq`; args=(); alias=default
+DEBUG 2024-04-10 13:38:51,133 schema DROP TABLE `django_content_type` CASCADE; (params ())
+DEBUG 2024-04-10 13:38:51,134 utils (0.000) None; args=(); alias=default
+DEBUG 2024-04-10 13:44:18,265 utils (0.000) 
+                SELECT VERSION(),
+                       @@sql_mode,
+                       @@default_storage_engine,
+                       @@sql_auto_is_null,
+                       @@lower_case_table_names,
+                       CONVERT_TZ('2001-01-01 01:00:00', 'UTC', 'UTC') IS NOT NULL
+            ; args=None; alias=default
+DEBUG 2024-04-10 13:44:18,266 utils (0.000) SET SESSION TRANSACTION ISOLATION LEVEL READ COMMITTED; args=None; alias=default
+DEBUG 2024-04-10 13:44:18,268 utils (0.000) 
+            SELECT
+                table_name,
+                table_type,
+                table_comment
+            FROM information_schema.tables
+            WHERE table_schema = DATABASE()
+            ; args=None; alias=default
+DEBUG 2024-04-10 13:46:43,281 utils (0.000) 
+                SELECT VERSION(),
+                       @@sql_mode,
+                       @@default_storage_engine,
+                       @@sql_auto_is_null,
+                       @@lower_case_table_names,
+                       CONVERT_TZ('2001-01-01 01:00:00', 'UTC', 'UTC') IS NOT NULL
+            ; args=None; alias=default
+DEBUG 2024-04-10 13:46:43,282 utils (0.000) SET SESSION TRANSACTION ISOLATION LEVEL READ COMMITTED; args=None; alias=default
+DEBUG 2024-04-10 13:46:43,283 utils (0.000) 
+            SELECT
+                table_name,
+                table_type,
+                table_comment
+            FROM information_schema.tables
+            WHERE table_schema = DATABASE()
+            ; args=None; alias=default
+DEBUG 2024-04-10 13:46:45,073 utils (0.000) BEGIN; args=None; alias=default
+DEBUG 2024-04-10 13:46:45,073 utils (0.000) SET FOREIGN_KEY_CHECKS = 0;; args=None; alias=default
+DEBUG 2024-04-10 13:46:46,136 utils (1.062) TRUNCATE `auth_group`;; args=None; alias=default
+DEBUG 2024-04-10 13:46:46,893 utils (0.750) TRUNCATE `auth_permission`;; args=None; alias=default
+DEBUG 2024-04-10 13:46:47,610 utils (0.719) TRUNCATE `django_admin_log`;; args=None; alias=default
+DEBUG 2024-04-10 13:46:48,302 utils (0.703) TRUNCATE `django_session`;; args=None; alias=default
+DEBUG 2024-04-10 13:46:49,085 utils (0.782) TRUNCATE `news_article`;; args=None; alias=default
+DEBUG 2024-04-10 13:46:49,869 utils (0.781) TRUNCATE `auth_group_permissions`;; args=None; alias=default
+DEBUG 2024-04-10 13:46:50,660 utils (0.797) TRUNCATE `django_content_type`;; args=None; alias=default
+DEBUG 2024-04-10 13:46:50,661 utils (0.000) SET FOREIGN_KEY_CHECKS = 1;; args=None; alias=default
+DEBUG 2024-04-10 13:46:50,662 utils (0.000) COMMIT; args=None; alias=default
+DEBUG 2024-04-10 13:46:50,672 utils (0.000) SELECT `django_content_type`.`id`, `django_content_type`.`app_label`, `django_content_type`.`model` FROM `django_content_type` WHERE `django_content_type`.`app_label` = 'users'; args=('users',); alias=default
+DEBUG 2024-04-10 13:46:50,674 utils (0.000) BEGIN; args=None; alias=default
+DEBUG 2024-04-10 13:46:50,675 utils (0.000) INSERT INTO `django_content_type` (`app_label`, `model`) VALUES ('users', 'user'), ('users', 'newslog'); args=('users', 'user', 'users', 'newslog'); alias=default
+DEBUG 2024-04-10 13:46:50,797 utils (0.125) COMMIT; args=None; alias=default
+DEBUG 2024-04-10 13:46:50,799 utils (0.000) SELECT `django_content_type`.`id`, `django_content_type`.`app_label`, `django_content_type`.`model` FROM `django_content_type` WHERE (`django_content_type`.`app_label` = 'users' AND `django_content_type`.`model` = 'user') LIMIT 21; args=('users', 'user'); alias=default
+DEBUG 2024-04-10 13:46:50,800 utils (0.000) SELECT `django_content_type`.`id`, `django_content_type`.`app_label`, `django_content_type`.`model` FROM `django_content_type` WHERE (`django_content_type`.`app_label` = 'users' AND `django_content_type`.`model` = 'newslog') LIMIT 21; args=('users', 'newslog'); alias=default
+DEBUG 2024-04-10 13:46:50,880 utils (0.078) SELECT `auth_permission`.`content_type_id`, `auth_permission`.`codename` FROM `auth_permission` INNER JOIN `django_content_type` ON (`auth_permission`.`content_type_id` = `django_content_type`.`id`) WHERE `auth_permission`.`content_type_id` IN (1, 2) ORDER BY `django_content_type`.`app_label` ASC, `django_content_type`.`model` ASC, `auth_permission`.`codename` ASC; args=(1, 2); alias=default
+DEBUG 2024-04-10 13:46:50,881 utils (0.000) BEGIN; args=None; alias=default
+DEBUG 2024-04-10 13:46:50,899 utils (0.016) INSERT INTO `auth_permission` (`name`, `content_type_id`, `codename`) VALUES ('Can add user', 1, 'add_user'), ('Can change user', 1, 'change_user'), ('Can delete user', 1, 'delete_user'), ('Can view user', 1, 'view_user'), ('Can add news log', 2, 'add_newslog'), ('Can change news log', 2, 'change_newslog'), ('Can delete news log', 2, 'delete_newslog'), ('Can view news log', 2, 'view_newslog'); args=('Can add user', 1, 'add_user', 'Can change user', 1, 'change_user', 'Can delete user', 1, 'delete_user', 'Can view user', 1, 'view_user', 'Can add news log', 2, 'add_newslog', 'Can change news log', 2, 'change_newslog', 'Can delete news log', 2, 'delete_newslog', 'Can view news log', 2, 'view_newslog'); alias=default
+DEBUG 2024-04-10 13:46:51,001 utils (0.094) COMMIT; args=None; alias=default
+DEBUG 2024-04-10 13:46:51,003 utils (0.000) SELECT `django_content_type`.`id`, `django_content_type`.`app_label`, `django_content_type`.`model` FROM `django_content_type` WHERE `django_content_type`.`app_label` = 'users'; args=('users',); alias=default
+DEBUG 2024-04-10 13:46:51,004 utils (0.015) SELECT `django_content_type`.`id`, `django_content_type`.`app_label`, `django_content_type`.`model` FROM `django_content_type` WHERE `django_content_type`.`app_label` = 'admin'; args=('admin',); alias=default
+DEBUG 2024-04-10 13:46:51,004 utils (0.000) BEGIN; args=None; alias=default
+DEBUG 2024-04-10 13:46:51,005 utils (0.000) INSERT INTO `django_content_type` (`app_label`, `model`) VALUES ('admin', 'logentry'); args=('admin', 'logentry'); alias=default
+DEBUG 2024-04-10 13:46:51,084 utils (0.079) COMMIT; args=None; alias=default
+DEBUG 2024-04-10 13:46:51,088 utils (0.000) SELECT `django_content_type`.`id`, `django_content_type`.`app_label`, `django_content_type`.`model` FROM `django_content_type` WHERE (`django_content_type`.`app_label` = 'admin' AND `django_content_type`.`model` = 'logentry') LIMIT 21; args=('admin', 'logentry'); alias=default
+DEBUG 2024-04-10 13:46:51,093 utils (0.000) SELECT `auth_permission`.`content_type_id`, `auth_permission`.`codename` FROM `auth_permission` INNER JOIN `django_content_type` ON (`auth_permission`.`content_type_id` = `django_content_type`.`id`) WHERE `auth_permission`.`content_type_id` IN (3) ORDER BY `django_content_type`.`app_label` ASC, `django_content_type`.`model` ASC, `auth_permission`.`codename` ASC; args=(3,); alias=default
+DEBUG 2024-04-10 13:46:51,095 utils (0.000) BEGIN; args=None; alias=default
+DEBUG 2024-04-10 13:46:51,098 utils (0.015) INSERT INTO `auth_permission` (`name`, `content_type_id`, `codename`) VALUES ('Can add log entry', 3, 'add_logentry'), ('Can change log entry', 3, 'change_logentry'), ('Can delete log entry', 3, 'delete_logentry'), ('Can view log entry', 3, 'view_logentry'); args=('Can add log entry', 3, 'add_logentry', 'Can change log entry', 3, 'change_logentry', 'Can delete log entry', 3, 'delete_logentry', 'Can view log entry', 3, 'view_logentry'); alias=default
+DEBUG 2024-04-10 13:46:51,185 utils (0.078) COMMIT; args=None; alias=default
+DEBUG 2024-04-10 13:46:51,188 utils (0.000) SELECT `django_content_type`.`id`, `django_content_type`.`app_label`, `django_content_type`.`model` FROM `django_content_type` WHERE `django_content_type`.`app_label` = 'admin'; args=('admin',); alias=default
+DEBUG 2024-04-10 13:46:51,192 utils (0.016) SELECT `django_content_type`.`id`, `django_content_type`.`app_label`, `django_content_type`.`model` FROM `django_content_type` WHERE `django_content_type`.`app_label` = 'auth'; args=('auth',); alias=default
+DEBUG 2024-04-10 13:46:51,193 utils (0.000) BEGIN; args=None; alias=default
+DEBUG 2024-04-10 13:46:51,195 utils (0.000) INSERT INTO `django_content_type` (`app_label`, `model`) VALUES ('auth', 'permission'), ('auth', 'group'); args=('auth', 'permission', 'auth', 'group'); alias=default
+DEBUG 2024-04-10 13:46:51,268 utils (0.062) COMMIT; args=None; alias=default
+DEBUG 2024-04-10 13:46:51,270 utils (0.000) SELECT `django_content_type`.`id`, `django_content_type`.`app_label`, `django_content_type`.`model` FROM `django_content_type` WHERE (`django_content_type`.`app_label` = 'auth' AND `django_content_type`.`model` = 'permission') LIMIT 21; args=('auth', 'permission'); alias=default
+DEBUG 2024-04-10 13:46:51,272 utils (0.000) SELECT `django_content_type`.`id`, `django_content_type`.`app_label`, `django_content_type`.`model` FROM `django_content_type` WHERE (`django_content_type`.`app_label` = 'auth' AND `django_content_type`.`model` = 'group') LIMIT 21; args=('auth', 'group'); alias=default
+DEBUG 2024-04-10 13:46:51,293 utils (0.016) SELECT `auth_permission`.`content_type_id`, `auth_permission`.`codename` FROM `auth_permission` INNER JOIN `django_content_type` ON (`auth_permission`.`content_type_id` = `django_content_type`.`id`) WHERE `auth_permission`.`content_type_id` IN (4, 5) ORDER BY `django_content_type`.`app_label` ASC, `django_content_type`.`model` ASC, `auth_permission`.`codename` ASC; args=(4, 5); alias=default
+DEBUG 2024-04-10 13:46:51,295 utils (0.000) BEGIN; args=None; alias=default
+DEBUG 2024-04-10 13:46:51,295 utils (0.000) INSERT INTO `auth_permission` (`name`, `content_type_id`, `codename`) VALUES ('Can add permission', 4, 'add_permission'), ('Can change permission', 4, 'change_permission'), ('Can delete permission', 4, 'delete_permission'), ('Can view permission', 4, 'view_permission'), ('Can add group', 5, 'add_group'), ('Can change group', 5, 'change_group'), ('Can delete group', 5, 'delete_group'), ('Can view group', 5, 'view_group'); args=('Can add permission', 4, 'add_permission', 'Can change permission', 4, 'change_permission', 'Can delete permission', 4, 'delete_permission', 'Can view permission', 4, 'view_permission', 'Can add group', 5, 'add_group', 'Can change group', 5, 'change_group', 'Can delete group', 5, 'delete_group', 'Can view group', 5, 'view_group'); alias=default
+DEBUG 2024-04-10 13:46:51,377 utils (0.078) COMMIT; args=None; alias=default
+DEBUG 2024-04-10 13:46:51,380 utils (0.000) SELECT `django_content_type`.`id`, `django_content_type`.`app_label`, `django_content_type`.`model` FROM `django_content_type` WHERE `django_content_type`.`app_label` = 'auth'; args=('auth',); alias=default
+DEBUG 2024-04-10 13:46:51,383 utils (0.000) SELECT `django_content_type`.`id`, `django_content_type`.`app_label`, `django_content_type`.`model` FROM `django_content_type` WHERE `django_content_type`.`app_label` = 'contenttypes'; args=('contenttypes',); alias=default
+DEBUG 2024-04-10 13:46:51,384 utils (0.000) BEGIN; args=None; alias=default
+DEBUG 2024-04-10 13:46:51,386 utils (0.000) INSERT INTO `django_content_type` (`app_label`, `model`) VALUES ('contenttypes', 'contenttype'); args=('contenttypes', 'contenttype'); alias=default
+DEBUG 2024-04-10 13:46:51,459 utils (0.079) COMMIT; args=None; alias=default
+DEBUG 2024-04-10 13:46:51,461 utils (0.000) SELECT `django_content_type`.`id`, `django_content_type`.`app_label`, `django_content_type`.`model` FROM `django_content_type` WHERE (`django_content_type`.`app_label` = 'contenttypes' AND `django_content_type`.`model` = 'contenttype') LIMIT 21; args=('contenttypes', 'contenttype'); alias=default
+DEBUG 2024-04-10 13:46:51,464 utils (0.000) SELECT `auth_permission`.`content_type_id`, `auth_permission`.`codename` FROM `auth_permission` INNER JOIN `django_content_type` ON (`auth_permission`.`content_type_id` = `django_content_type`.`id`) WHERE `auth_permission`.`content_type_id` IN (6) ORDER BY `django_content_type`.`app_label` ASC, `django_content_type`.`model` ASC, `auth_permission`.`codename` ASC; args=(6,); alias=default
+DEBUG 2024-04-10 13:46:51,466 utils (0.000) BEGIN; args=None; alias=default
+DEBUG 2024-04-10 13:46:51,467 utils (0.000) INSERT INTO `auth_permission` (`name`, `content_type_id`, `codename`) VALUES ('Can add content type', 6, 'add_contenttype'), ('Can change content type', 6, 'change_contenttype'), ('Can delete content type', 6, 'delete_contenttype'), ('Can view content type', 6, 'view_contenttype'); args=('Can add content type', 6, 'add_contenttype', 'Can change content type', 6, 'change_contenttype', 'Can delete content type', 6, 'delete_contenttype', 'Can view content type', 6, 'view_contenttype'); alias=default
+DEBUG 2024-04-10 13:46:51,526 utils (0.062) COMMIT; args=None; alias=default
+DEBUG 2024-04-10 13:46:51,528 utils (0.000) SELECT `django_content_type`.`id`, `django_content_type`.`app_label`, `django_content_type`.`model` FROM `django_content_type` WHERE `django_content_type`.`app_label` = 'contenttypes'; args=('contenttypes',); alias=default
+DEBUG 2024-04-10 13:46:51,530 utils (0.000) SELECT `django_content_type`.`id`, `django_content_type`.`app_label`, `django_content_type`.`model` FROM `django_content_type` WHERE `django_content_type`.`app_label` = 'sessions'; args=('sessions',); alias=default
+DEBUG 2024-04-10 13:46:51,531 utils (0.000) BEGIN; args=None; alias=default
+DEBUG 2024-04-10 13:46:51,533 utils (0.000) INSERT INTO `django_content_type` (`app_label`, `model`) VALUES ('sessions', 'session'); args=('sessions', 'session'); alias=default
+DEBUG 2024-04-10 13:46:51,593 utils (0.063) COMMIT; args=None; alias=default
+DEBUG 2024-04-10 13:46:51,595 utils (0.000) SELECT `django_content_type`.`id`, `django_content_type`.`app_label`, `django_content_type`.`model` FROM `django_content_type` WHERE (`django_content_type`.`app_label` = 'sessions' AND `django_content_type`.`model` = 'session') LIMIT 21; args=('sessions', 'session'); alias=default
+DEBUG 2024-04-10 13:46:51,598 utils (0.000) SELECT `auth_permission`.`content_type_id`, `auth_permission`.`codename` FROM `auth_permission` INNER JOIN `django_content_type` ON (`auth_permission`.`content_type_id` = `django_content_type`.`id`) WHERE `auth_permission`.`content_type_id` IN (7) ORDER BY `django_content_type`.`app_label` ASC, `django_content_type`.`model` ASC, `auth_permission`.`codename` ASC; args=(7,); alias=default
+DEBUG 2024-04-10 13:46:51,600 utils (0.000) BEGIN; args=None; alias=default
+DEBUG 2024-04-10 13:46:51,602 utils (0.000) INSERT INTO `auth_permission` (`name`, `content_type_id`, `codename`) VALUES ('Can add session', 7, 'add_session'), ('Can change session', 7, 'change_session'), ('Can delete session', 7, 'delete_session'), ('Can view session', 7, 'view_session'); args=('Can add session', 7, 'add_session', 'Can change session', 7, 'change_session', 'Can delete session', 7, 'delete_session', 'Can view session', 7, 'view_session'); alias=default
+DEBUG 2024-04-10 13:46:51,701 utils (0.094) COMMIT; args=None; alias=default
+DEBUG 2024-04-10 13:46:51,705 utils (0.000) SELECT `django_content_type`.`id`, `django_content_type`.`app_label`, `django_content_type`.`model` FROM `django_content_type` WHERE `django_content_type`.`app_label` = 'sessions'; args=('sessions',); alias=default
+DEBUG 2024-04-10 13:46:51,708 utils (0.000) SELECT `django_content_type`.`id`, `django_content_type`.`app_label`, `django_content_type`.`model` FROM `django_content_type` WHERE `django_content_type`.`app_label` = 'recommend'; args=('recommend',); alias=default
+DEBUG 2024-04-10 13:46:51,714 utils (0.000) SELECT `django_content_type`.`id`, `django_content_type`.`app_label`, `django_content_type`.`model` FROM `django_content_type` WHERE `django_content_type`.`app_label` = 'recommend'; args=('recommend',); alias=default
+DEBUG 2024-04-10 13:46:51,717 utils (0.000) SELECT `django_content_type`.`id`, `django_content_type`.`app_label`, `django_content_type`.`model` FROM `django_content_type` WHERE `django_content_type`.`app_label` = 'news'; args=('news',); alias=default
+DEBUG 2024-04-10 13:46:51,718 utils (0.000) BEGIN; args=None; alias=default
+DEBUG 2024-04-10 13:46:51,720 utils (0.000) INSERT INTO `django_content_type` (`app_label`, `model`) VALUES ('news', 'article'); args=('news', 'article'); alias=default
+DEBUG 2024-04-10 13:46:51,785 utils (0.078) COMMIT; args=None; alias=default
+DEBUG 2024-04-10 13:46:51,789 utils (0.000) SELECT `django_content_type`.`id`, `django_content_type`.`app_label`, `django_content_type`.`model` FROM `django_content_type` WHERE (`django_content_type`.`app_label` = 'news' AND `django_content_type`.`model` = 'article') LIMIT 21; args=('news', 'article'); alias=default
+DEBUG 2024-04-10 13:46:51,794 utils (0.000) SELECT `auth_permission`.`content_type_id`, `auth_permission`.`codename` FROM `auth_permission` INNER JOIN `django_content_type` ON (`auth_permission`.`content_type_id` = `django_content_type`.`id`) WHERE `auth_permission`.`content_type_id` IN (8) ORDER BY `django_content_type`.`app_label` ASC, `django_content_type`.`model` ASC, `auth_permission`.`codename` ASC; args=(8,); alias=default
+DEBUG 2024-04-10 13:46:51,796 utils (0.000) BEGIN; args=None; alias=default
+DEBUG 2024-04-10 13:46:51,798 utils (0.000) INSERT INTO `auth_permission` (`name`, `content_type_id`, `codename`) VALUES ('Can add article', 8, 'add_article'), ('Can change article', 8, 'change_article'), ('Can delete article', 8, 'delete_article'), ('Can view article', 8, 'view_article'); args=('Can add article', 8, 'add_article', 'Can change article', 8, 'change_article', 'Can delete article', 8, 'delete_article', 'Can view article', 8, 'view_article'); alias=default
+DEBUG 2024-04-10 13:46:51,867 utils (0.078) COMMIT; args=None; alias=default
+DEBUG 2024-04-10 13:46:51,870 utils (0.000) SELECT `django_content_type`.`id`, `django_content_type`.`app_label`, `django_content_type`.`model` FROM `django_content_type` WHERE `django_content_type`.`app_label` = 'news'; args=('news',); alias=default
+DEBUG 2024-04-10 13:47:18,923 utils (0.000) 
+                SELECT VERSION(),
+                       @@sql_mode,
+                       @@default_storage_engine,
+                       @@sql_auto_is_null,
+                       @@lower_case_table_names,
+                       CONVERT_TZ('2001-01-01 01:00:00', 'UTC', 'UTC') IS NOT NULL
+            ; args=None; alias=default
+DEBUG 2024-04-10 13:47:18,923 utils (0.000) SET SESSION TRANSACTION ISOLATION LEVEL READ COMMITTED; args=None; alias=default
+DEBUG 2024-04-10 13:47:18,924 utils (0.000) 
+                SELECT VERSION(),
+                       @@sql_mode,
+                       @@default_storage_engine,
+                       @@sql_auto_is_null,
+                       @@lower_case_table_names,
+                       CONVERT_TZ('2001-01-01 01:00:00', 'UTC', 'UTC') IS NOT NULL
+            ; args=None; alias=default
+DEBUG 2024-04-10 13:47:19,153 utils (0.000) SET SESSION TRANSACTION ISOLATION LEVEL READ COMMITTED; args=None; alias=default
+DEBUG 2024-04-10 13:47:19,155 utils (0.000) 
+            SELECT
+                table_name,
+                table_type,
+                table_comment
+            FROM information_schema.tables
+            WHERE table_schema = DATABASE()
+            ; args=None; alias=default
+DEBUG 2024-04-10 13:47:19,160 utils (0.016) SELECT `django_migrations`.`id`, `django_migrations`.`app`, `django_migrations`.`name`, `django_migrations`.`applied` FROM `django_migrations`; args=(); alias=default
+DEBUG 2024-04-10 13:47:19,163 utils (0.000) 
+            SELECT
+                table_name,
+                table_type,
+                table_comment
+            FROM information_schema.tables
+            WHERE table_schema = DATABASE()
+            ; args=None; alias=default
+DEBUG 2024-04-10 13:47:19,164 utils (0.000) SELECT `django_migrations`.`id`, `django_migrations`.`app`, `django_migrations`.`name`, `django_migrations`.`applied` FROM `django_migrations`; args=(); alias=default
+DEBUG 2024-04-10 13:47:19,166 utils (0.000) 
+            SELECT
+                table_name,
+                table_type,
+                table_comment
+            FROM information_schema.tables
+            WHERE table_schema = DATABASE()
+            ; args=None; alias=default
+DEBUG 2024-04-10 13:47:19,168 schema ALTER TABLE `django_content_type` MODIFY `name` varchar(100) NULL; (params [])
+DEBUG 2024-04-10 13:47:19,170 utils (0.000) None; args=[]; alias=default
+DEBUG 2024-04-10 13:53:16,957 utils (0.000) 
+                SELECT VERSION(),
+                       @@sql_mode,
+                       @@default_storage_engine,
+                       @@sql_auto_is_null,
+                       @@lower_case_table_names,
+                       CONVERT_TZ('2001-01-01 01:00:00', 'UTC', 'UTC') IS NOT NULL
+            ; args=None; alias=default
+DEBUG 2024-04-10 13:53:16,958 utils (0.000) SET SESSION TRANSACTION ISOLATION LEVEL READ COMMITTED; args=None; alias=default
+DEBUG 2024-04-10 13:53:16,961 utils (0.000) 
+            SELECT
+                table_name,
+                table_type,
+                table_comment
+            FROM information_schema.tables
+            WHERE table_schema = DATABASE()
+            ; args=None; alias=default
+DEBUG 2024-04-10 13:53:36,280 utils (0.000) 
+                SELECT VERSION(),
+                       @@sql_mode,
+                       @@default_storage_engine,
+                       @@sql_auto_is_null,
+                       @@lower_case_table_names,
+                       CONVERT_TZ('2001-01-01 01:00:00', 'UTC', 'UTC') IS NOT NULL
+            ; args=None; alias=default
+DEBUG 2024-04-10 13:53:36,281 utils (0.000) SET SESSION TRANSACTION ISOLATION LEVEL READ COMMITTED; args=None; alias=default
+DEBUG 2024-04-10 13:53:36,281 utils (0.000) 
+                SELECT VERSION(),
+                       @@sql_mode,
+                       @@default_storage_engine,
+                       @@sql_auto_is_null,
+                       @@lower_case_table_names,
+                       CONVERT_TZ('2001-01-01 01:00:00', 'UTC', 'UTC') IS NOT NULL
+            ; args=None; alias=default
+DEBUG 2024-04-10 13:53:36,504 utils (0.000) SET SESSION TRANSACTION ISOLATION LEVEL READ COMMITTED; args=None; alias=default
+DEBUG 2024-04-10 13:53:36,506 utils (0.000) 
+            SELECT
+                table_name,
+                table_type,
+                table_comment
+            FROM information_schema.tables
+            WHERE table_schema = DATABASE()
+            ; args=None; alias=default
+DEBUG 2024-04-10 13:53:36,507 utils (0.000) 
+            SELECT
+                table_name,
+                table_type,
+                table_comment
+            FROM information_schema.tables
+            WHERE table_schema = DATABASE()
+            ; args=None; alias=default
+DEBUG 2024-04-10 13:53:36,509 utils (0.000) 
+            SELECT
+                table_name,
+                table_type,
+                table_comment
+            FROM information_schema.tables
+            WHERE table_schema = DATABASE()
+            ; args=None; alias=default
+DEBUG 2024-04-10 13:53:36,510 schema CREATE TABLE `django_migrations` (`id` bigint AUTO_INCREMENT NOT NULL PRIMARY KEY, `app` varchar(255) NOT NULL, `name` varchar(255) NOT NULL, `applied` datetime(6) NOT NULL); (params None)
+DEBUG 2024-04-10 13:53:37,410 utils (0.907) CREATE TABLE `django_migrations` (`id` bigint AUTO_INCREMENT NOT NULL PRIMARY KEY, `app` varchar(255) NOT NULL, `name` varchar(255) NOT NULL, `applied` datetime(6) NOT NULL); args=None; alias=default
+DEBUG 2024-04-10 13:53:37,417 schema CREATE TABLE `django_content_type` (`id` integer AUTO_INCREMENT NOT NULL PRIMARY KEY, `name` varchar(100) NOT NULL, `app_label` varchar(100) NOT NULL, `model` varchar(100) NOT NULL); (params None)
+DEBUG 2024-04-10 13:53:37,420 utils (0.000) None; args=None; alias=default
+DEBUG 2024-04-10 14:19:33,695 utils (0.000) 
+                SELECT VERSION(),
+                       @@sql_mode,
+                       @@default_storage_engine,
+                       @@sql_auto_is_null,
+                       @@lower_case_table_names,
+                       CONVERT_TZ('2001-01-01 01:00:00', 'UTC', 'UTC') IS NOT NULL
+            ; args=None; alias=default
+DEBUG 2024-04-10 14:19:33,696 utils (0.000) SET SESSION TRANSACTION ISOLATION LEVEL READ COMMITTED; args=None; alias=default
+DEBUG 2024-04-10 14:19:33,698 utils (0.000) 
+            SELECT
+                table_name,
+                table_type,
+                table_comment
+            FROM information_schema.tables
+            WHERE table_schema = DATABASE()
+            ; args=None; alias=default
+DEBUG 2024-04-10 14:19:33,704 utils (0.000) SELECT `django_migrations`.`id`, `django_migrations`.`app`, `django_migrations`.`name`, `django_migrations`.`applied` FROM `django_migrations`; args=(); alias=default
+DEBUG 2024-04-10 14:19:43,514 utils (0.000) 
+                SELECT VERSION(),
+                       @@sql_mode,
+                       @@default_storage_engine,
+                       @@sql_auto_is_null,
+                       @@lower_case_table_names,
+                       CONVERT_TZ('2001-01-01 01:00:00', 'UTC', 'UTC') IS NOT NULL
+            ; args=None; alias=default
+DEBUG 2024-04-10 14:19:43,514 utils (0.000) SET SESSION TRANSACTION ISOLATION LEVEL READ COMMITTED; args=None; alias=default
+DEBUG 2024-04-10 14:19:43,515 utils (0.000) 
+                SELECT VERSION(),
+                       @@sql_mode,
+                       @@default_storage_engine,
+                       @@sql_auto_is_null,
+                       @@lower_case_table_names,
+                       CONVERT_TZ('2001-01-01 01:00:00', 'UTC', 'UTC') IS NOT NULL
+            ; args=None; alias=default
+DEBUG 2024-04-10 14:19:43,721 utils (0.000) SET SESSION TRANSACTION ISOLATION LEVEL READ COMMITTED; args=None; alias=default
+DEBUG 2024-04-10 14:19:43,722 utils (0.015) 
+            SELECT
+                table_name,
+                table_type,
+                table_comment
+            FROM information_schema.tables
+            WHERE table_schema = DATABASE()
+            ; args=None; alias=default
+DEBUG 2024-04-10 14:19:43,726 utils (0.000) SELECT `django_migrations`.`id`, `django_migrations`.`app`, `django_migrations`.`name`, `django_migrations`.`applied` FROM `django_migrations`; args=(); alias=default
+DEBUG 2024-04-10 14:19:43,727 utils (0.000) 
+            SELECT
+                table_name,
+                table_type,
+                table_comment
+            FROM information_schema.tables
+            WHERE table_schema = DATABASE()
+            ; args=None; alias=default
+DEBUG 2024-04-10 14:19:43,728 utils (0.000) SELECT `django_migrations`.`id`, `django_migrations`.`app`, `django_migrations`.`name`, `django_migrations`.`applied` FROM `django_migrations`; args=(); alias=default
+DEBUG 2024-04-10 14:19:43,730 utils (0.000) 
+            SELECT
+                table_name,
+                table_type,
+                table_comment
+            FROM information_schema.tables
+            WHERE table_schema = DATABASE()
+            ; args=None; alias=default
+DEBUG 2024-04-10 14:19:43,731 schema CREATE TABLE `django_content_type` (`id` integer AUTO_INCREMENT NOT NULL PRIMARY KEY, `name` varchar(100) NOT NULL, `app_label` varchar(100) NOT NULL, `model` varchar(100) NOT NULL); (params None)
+DEBUG 2024-04-10 14:19:44,104 utils (0.375) CREATE TABLE `django_content_type` (`id` integer AUTO_INCREMENT NOT NULL PRIMARY KEY, `name` varchar(100) NOT NULL, `app_label` varchar(100) NOT NULL, `model` varchar(100) NOT NULL); args=None; alias=default
+DEBUG 2024-04-10 14:19:44,106 schema ALTER TABLE `django_content_type` ADD CONSTRAINT `django_content_type_app_label_model_76bd3d3b_uniq` UNIQUE (`app_label`, `model`); (params ())
+DEBUG 2024-04-10 14:19:44,527 utils (0.422) ALTER TABLE `django_content_type` ADD CONSTRAINT `django_content_type_app_label_model_76bd3d3b_uniq` UNIQUE (`app_label`, `model`); args=(); alias=default
+DEBUG 2024-04-10 14:19:44,580 utils (0.047) INSERT INTO `django_migrations` (`app`, `name`, `applied`) VALUES ('contenttypes', '0001_initial', '2024-04-10 13:19:44.528869'); args=['contenttypes', '0001_initial', '2024-04-10 13:19:44.528869']; alias=default
+DEBUG 2024-04-10 14:19:44,581 schema ALTER TABLE `django_content_type` MODIFY `name` varchar(100) NULL; (params [])
+DEBUG 2024-04-10 14:19:46,200 utils (1.609) ALTER TABLE `django_content_type` MODIFY `name` varchar(100) NULL; args=[]; alias=default
+DEBUG 2024-04-10 14:19:46,201 utils (0.000) BEGIN; args=None; alias=default
+DEBUG 2024-04-10 14:19:46,202 utils (0.000) COMMIT; args=None; alias=default
+DEBUG 2024-04-10 14:19:46,204 schema ALTER TABLE `django_content_type` DROP COLUMN `name`; (params ())
+DEBUG 2024-04-10 14:19:46,580 utils (0.375) ALTER TABLE `django_content_type` DROP COLUMN `name`; args=(); alias=default
+DEBUG 2024-04-10 14:19:46,647 utils (0.062) INSERT INTO `django_migrations` (`app`, `name`, `applied`) VALUES ('contenttypes', '0002_remove_content_type_name', '2024-04-10 13:19:46.581399'); args=['contenttypes', '0002_remove_content_type_name', '2024-04-10 13:19:46.581399']; alias=default
+DEBUG 2024-04-10 14:19:46,654 schema CREATE TABLE `auth_permission` (`id` integer AUTO_INCREMENT NOT NULL PRIMARY KEY, `name` varchar(50) NOT NULL, `content_type_id` integer NOT NULL, `codename` varchar(100) NOT NULL); (params None)
+DEBUG 2024-04-10 14:19:46,656 utils (0.000) None; args=None; alias=default
+DEBUG 2024-04-10 16:05:05,641 utils (0.000) 
+                SELECT VERSION(),
+                       @@sql_mode,
+                       @@default_storage_engine,
+                       @@sql_auto_is_null,
+                       @@lower_case_table_names,
+                       CONVERT_TZ('2001-01-01 01:00:00', 'UTC', 'UTC') IS NOT NULL
+            ; args=None; alias=default
+DEBUG 2024-04-10 16:05:05,642 utils (0.000) SET SESSION TRANSACTION ISOLATION LEVEL READ COMMITTED; args=None; alias=default
+DEBUG 2024-04-10 16:05:05,643 utils (0.000) 
+                SELECT VERSION(),
+                       @@sql_mode,
+                       @@default_storage_engine,
+                       @@sql_auto_is_null,
+                       @@lower_case_table_names,
+                       CONVERT_TZ('2001-01-01 01:00:00', 'UTC', 'UTC') IS NOT NULL
+            ; args=None; alias=default
+DEBUG 2024-04-10 16:05:05,972 utils (0.000) SET SESSION TRANSACTION ISOLATION LEVEL READ COMMITTED; args=None; alias=default
+DEBUG 2024-04-10 16:05:05,974 utils (0.015) 
+            SELECT
+                table_name,
+                table_type,
+                table_comment
+            FROM information_schema.tables
+            WHERE table_schema = DATABASE()
+            ; args=None; alias=default
+DEBUG 2024-04-10 16:05:05,980 utils (0.000) SELECT `django_migrations`.`id`, `django_migrations`.`app`, `django_migrations`.`name`, `django_migrations`.`applied` FROM `django_migrations`; args=(); alias=default
+DEBUG 2024-04-10 16:05:05,982 utils (0.000) 
+            SELECT
+                table_name,
+                table_type,
+                table_comment
+            FROM information_schema.tables
+            WHERE table_schema = DATABASE()
+            ; args=None; alias=default
+DEBUG 2024-04-10 16:05:05,983 utils (0.000) SELECT `django_migrations`.`id`, `django_migrations`.`app`, `django_migrations`.`name`, `django_migrations`.`applied` FROM `django_migrations`; args=(); alias=default
+DEBUG 2024-04-10 16:05:05,985 utils (0.000) 
+            SELECT
+                table_name,
+                table_type,
+                table_comment
+            FROM information_schema.tables
+            WHERE table_schema = DATABASE()
+            ; args=None; alias=default
+DEBUG 2024-04-10 16:05:05,987 schema CREATE TABLE `auth_permission` (`id` integer AUTO_INCREMENT NOT NULL PRIMARY KEY, `name` varchar(50) NOT NULL, `content_type_id` integer NOT NULL, `codename` varchar(100) NOT NULL); (params None)
+DEBUG 2024-04-10 16:05:06,429 utils (0.453) CREATE TABLE `auth_permission` (`id` integer AUTO_INCREMENT NOT NULL PRIMARY KEY, `name` varchar(50) NOT NULL, `content_type_id` integer NOT NULL, `codename` varchar(100) NOT NULL); args=None; alias=default
+DEBUG 2024-04-10 16:05:06,434 utils (0.000) 
+            SELECT engine
+            FROM information_schema.tables
+            WHERE
+                table_name = 'auth_permission' AND
+                table_schema = DATABASE()
+            ; args=['auth_permission']; alias=default
+DEBUG 2024-04-10 16:05:06,442 schema CREATE TABLE `auth_group` (`id` integer AUTO_INCREMENT NOT NULL PRIMARY KEY, `name` varchar(80) NOT NULL UNIQUE); (params None)
+DEBUG 2024-04-10 16:05:06,446 utils (0.000) None; args=None; alias=default
+DEBUG 2024-04-10 16:06:26,522 utils (0.000) 
+                SELECT VERSION(),
+                       @@sql_mode,
+                       @@default_storage_engine,
+                       @@sql_auto_is_null,
+                       @@lower_case_table_names,
+                       CONVERT_TZ('2001-01-01 01:00:00', 'UTC', 'UTC') IS NOT NULL
+            ; args=None; alias=default
+DEBUG 2024-04-10 16:06:26,523 utils (0.000) SET SESSION TRANSACTION ISOLATION LEVEL READ COMMITTED; args=None; alias=default
+DEBUG 2024-04-10 16:06:26,523 utils (0.000) 
+                SELECT VERSION(),
+                       @@sql_mode,
+                       @@default_storage_engine,
+                       @@sql_auto_is_null,
+                       @@lower_case_table_names,
+                       CONVERT_TZ('2001-01-01 01:00:00', 'UTC', 'UTC') IS NOT NULL
+            ; args=None; alias=default
+DEBUG 2024-04-10 16:06:26,766 utils (0.000) SET SESSION TRANSACTION ISOLATION LEVEL READ COMMITTED; args=None; alias=default
+DEBUG 2024-04-10 16:06:26,769 utils (0.016) 
+            SELECT
+                table_name,
+                table_type,
+                table_comment
+            FROM information_schema.tables
+            WHERE table_schema = DATABASE()
+            ; args=None; alias=default
+DEBUG 2024-04-10 16:06:26,773 utils (0.000) SELECT `django_migrations`.`id`, `django_migrations`.`app`, `django_migrations`.`name`, `django_migrations`.`applied` FROM `django_migrations`; args=(); alias=default
+DEBUG 2024-04-10 16:06:26,775 utils (0.000) 
+            SELECT
+                table_name,
+                table_type,
+                table_comment
+            FROM information_schema.tables
+            WHERE table_schema = DATABASE()
+            ; args=None; alias=default
+DEBUG 2024-04-10 16:06:26,775 utils (0.000) SELECT `django_migrations`.`id`, `django_migrations`.`app`, `django_migrations`.`name`, `django_migrations`.`applied` FROM `django_migrations`; args=(); alias=default
+DEBUG 2024-04-10 16:06:26,778 utils (0.000) 
+            SELECT
+                table_name,
+                table_type,
+                table_comment
+            FROM information_schema.tables
+            WHERE table_schema = DATABASE()
+            ; args=None; alias=default
+DEBUG 2024-04-10 16:06:26,780 schema CREATE TABLE `auth_permission` (`id` integer AUTO_INCREMENT NOT NULL PRIMARY KEY, `name` varchar(50) NOT NULL, `content_type_id` integer NOT NULL, `codename` varchar(100) NOT NULL); (params None)
+DEBUG 2024-04-10 16:06:26,782 utils (0.000) None; args=None; alias=default
+DEBUG 2024-04-10 16:06:50,701 utils (0.000) 
+                SELECT VERSION(),
+                       @@sql_mode,
+                       @@default_storage_engine,
+                       @@sql_auto_is_null,
+                       @@lower_case_table_names,
+                       CONVERT_TZ('2001-01-01 01:00:00', 'UTC', 'UTC') IS NOT NULL
+            ; args=None; alias=default
+DEBUG 2024-04-10 16:06:50,702 utils (0.000) SET SESSION TRANSACTION ISOLATION LEVEL READ COMMITTED; args=None; alias=default
+DEBUG 2024-04-10 16:06:50,702 utils (0.000) 
+                SELECT VERSION(),
+                       @@sql_mode,
+                       @@default_storage_engine,
+                       @@sql_auto_is_null,
+                       @@lower_case_table_names,
+                       CONVERT_TZ('2001-01-01 01:00:00', 'UTC', 'UTC') IS NOT NULL
+            ; args=None; alias=default
+DEBUG 2024-04-10 16:06:50,909 utils (0.000) SET SESSION TRANSACTION ISOLATION LEVEL READ COMMITTED; args=None; alias=default
+DEBUG 2024-04-10 16:06:50,910 utils (0.016) 
+            SELECT
+                table_name,
+                table_type,
+                table_comment
+            FROM information_schema.tables
+            WHERE table_schema = DATABASE()
+            ; args=None; alias=default
+DEBUG 2024-04-10 16:06:50,915 utils (0.000) SELECT `django_migrations`.`id`, `django_migrations`.`app`, `django_migrations`.`name`, `django_migrations`.`applied` FROM `django_migrations`; args=(); alias=default
+DEBUG 2024-04-10 16:06:50,916 utils (0.000) 
+            SELECT
+                table_name,
+                table_type,
+                table_comment
+            FROM information_schema.tables
+            WHERE table_schema = DATABASE()
+            ; args=None; alias=default
+DEBUG 2024-04-10 16:06:50,916 utils (0.000) SELECT `django_migrations`.`id`, `django_migrations`.`app`, `django_migrations`.`name`, `django_migrations`.`applied` FROM `django_migrations`; args=(); alias=default
+DEBUG 2024-04-10 16:06:50,919 utils (0.000) 
+            SELECT
+                table_name,
+                table_type,
+                table_comment
+            FROM information_schema.tables
+            WHERE table_schema = DATABASE()
+            ; args=None; alias=default
+DEBUG 2024-04-10 16:06:50,921 schema CREATE TABLE `auth_permission` (`id` integer AUTO_INCREMENT NOT NULL PRIMARY KEY, `name` varchar(50) NOT NULL, `content_type_id` integer NOT NULL, `codename` varchar(100) NOT NULL); (params None)
+DEBUG 2024-04-10 16:06:51,311 utils (0.390) CREATE TABLE `auth_permission` (`id` integer AUTO_INCREMENT NOT NULL PRIMARY KEY, `name` varchar(50) NOT NULL, `content_type_id` integer NOT NULL, `codename` varchar(100) NOT NULL); args=None; alias=default
+DEBUG 2024-04-10 16:06:51,314 utils (0.000) 
+            SELECT engine
+            FROM information_schema.tables
+            WHERE
+                table_name = 'auth_permission' AND
+                table_schema = DATABASE()
+            ; args=['auth_permission']; alias=default
+DEBUG 2024-04-10 16:06:51,319 schema CREATE TABLE `auth_group` (`id` integer AUTO_INCREMENT NOT NULL PRIMARY KEY, `name` varchar(80) NOT NULL UNIQUE); (params None)
+DEBUG 2024-04-10 16:06:51,322 utils (0.000) None; args=None; alias=default
+DEBUG 2024-04-10 16:08:00,142 utils (0.000) 
+                SELECT VERSION(),
+                       @@sql_mode,
+                       @@default_storage_engine,
+                       @@sql_auto_is_null,
+                       @@lower_case_table_names,
+                       CONVERT_TZ('2001-01-01 01:00:00', 'UTC', 'UTC') IS NOT NULL
+            ; args=None; alias=default
+DEBUG 2024-04-10 16:08:00,142 utils (0.000) SET SESSION TRANSACTION ISOLATION LEVEL READ COMMITTED; args=None; alias=default
+DEBUG 2024-04-10 16:08:00,143 utils (0.000) 
+                SELECT VERSION(),
+                       @@sql_mode,
+                       @@default_storage_engine,
+                       @@sql_auto_is_null,
+                       @@lower_case_table_names,
+                       CONVERT_TZ('2001-01-01 01:00:00', 'UTC', 'UTC') IS NOT NULL
+            ; args=None; alias=default
+DEBUG 2024-04-10 16:08:00,343 utils (0.000) SET SESSION TRANSACTION ISOLATION LEVEL READ COMMITTED; args=None; alias=default
+DEBUG 2024-04-10 16:08:00,346 utils (0.000) 
+            SELECT
+                table_name,
+                table_type,
+                table_comment
+            FROM information_schema.tables
+            WHERE table_schema = DATABASE()
+            ; args=None; alias=default
+DEBUG 2024-04-10 16:08:00,350 utils (0.000) SELECT `django_migrations`.`id`, `django_migrations`.`app`, `django_migrations`.`name`, `django_migrations`.`applied` FROM `django_migrations`; args=(); alias=default
+DEBUG 2024-04-10 16:08:00,352 utils (0.000) 
+            SELECT
+                table_name,
+                table_type,
+                table_comment
+            FROM information_schema.tables
+            WHERE table_schema = DATABASE()
+            ; args=None; alias=default
+DEBUG 2024-04-10 16:08:00,352 utils (0.000) SELECT `django_migrations`.`id`, `django_migrations`.`app`, `django_migrations`.`name`, `django_migrations`.`applied` FROM `django_migrations`; args=(); alias=default
+DEBUG 2024-04-10 16:08:00,355 utils (0.000) 
+            SELECT
+                table_name,
+                table_type,
+                table_comment
+            FROM information_schema.tables
+            WHERE table_schema = DATABASE()
+            ; args=None; alias=default
+DEBUG 2024-04-10 16:08:00,357 schema CREATE TABLE `auth_permission` (`id` integer AUTO_INCREMENT NOT NULL PRIMARY KEY, `name` varchar(50) NOT NULL, `content_type_id` integer NOT NULL, `codename` varchar(100) NOT NULL); (params None)
+DEBUG 2024-04-10 16:08:00,359 utils (0.000) None; args=None; alias=default
+DEBUG 2024-04-10 16:08:14,461 utils (0.016) 
+                SELECT VERSION(),
+                       @@sql_mode,
+                       @@default_storage_engine,
+                       @@sql_auto_is_null,
+                       @@lower_case_table_names,
+                       CONVERT_TZ('2001-01-01 01:00:00', 'UTC', 'UTC') IS NOT NULL
+            ; args=None; alias=default
+DEBUG 2024-04-10 16:08:14,462 utils (0.000) SET SESSION TRANSACTION ISOLATION LEVEL READ COMMITTED; args=None; alias=default
+DEBUG 2024-04-10 16:08:14,462 utils (0.000) 
+                SELECT VERSION(),
+                       @@sql_mode,
+                       @@default_storage_engine,
+                       @@sql_auto_is_null,
+                       @@lower_case_table_names,
+                       CONVERT_TZ('2001-01-01 01:00:00', 'UTC', 'UTC') IS NOT NULL
+            ; args=None; alias=default
+DEBUG 2024-04-10 16:08:14,667 utils (0.000) SET SESSION TRANSACTION ISOLATION LEVEL READ COMMITTED; args=None; alias=default
+DEBUG 2024-04-10 16:08:14,668 utils (0.000) 
+            SELECT
+                table_name,
+                table_type,
+                table_comment
+            FROM information_schema.tables
+            WHERE table_schema = DATABASE()
+            ; args=None; alias=default
+DEBUG 2024-04-10 16:08:14,672 utils (0.000) SELECT `django_migrations`.`id`, `django_migrations`.`app`, `django_migrations`.`name`, `django_migrations`.`applied` FROM `django_migrations`; args=(); alias=default
+DEBUG 2024-04-10 16:08:14,673 utils (0.000) 
+            SELECT
+                table_name,
+                table_type,
+                table_comment
+            FROM information_schema.tables
+            WHERE table_schema = DATABASE()
+            ; args=None; alias=default
+DEBUG 2024-04-10 16:08:14,674 utils (0.000) SELECT `django_migrations`.`id`, `django_migrations`.`app`, `django_migrations`.`name`, `django_migrations`.`applied` FROM `django_migrations`; args=(); alias=default
+DEBUG 2024-04-10 16:08:14,678 utils (0.000) 
+            SELECT
+                table_name,
+                table_type,
+                table_comment
+            FROM information_schema.tables
+            WHERE table_schema = DATABASE()
+            ; args=None; alias=default
+DEBUG 2024-04-10 16:08:14,680 schema CREATE TABLE `auth_permission` (`id` integer AUTO_INCREMENT NOT NULL PRIMARY KEY, `name` varchar(50) NOT NULL, `content_type_id` integer NOT NULL, `codename` varchar(100) NOT NULL); (params None)
+DEBUG 2024-04-10 16:08:15,416 utils (0.735) CREATE TABLE `auth_permission` (`id` integer AUTO_INCREMENT NOT NULL PRIMARY KEY, `name` varchar(50) NOT NULL, `content_type_id` integer NOT NULL, `codename` varchar(100) NOT NULL); args=None; alias=default
+DEBUG 2024-04-10 16:08:15,419 utils (0.000) 
+            SELECT engine
+            FROM information_schema.tables
+            WHERE
+                table_name = 'auth_permission' AND
+                table_schema = DATABASE()
+            ; args=['auth_permission']; alias=default
+DEBUG 2024-04-10 16:08:15,425 schema CREATE TABLE `auth_group` (`id` integer AUTO_INCREMENT NOT NULL PRIMARY KEY, `name` varchar(80) NOT NULL UNIQUE); (params None)
+DEBUG 2024-04-10 16:08:16,225 utils (0.812) CREATE TABLE `auth_group` (`id` integer AUTO_INCREMENT NOT NULL PRIMARY KEY, `name` varchar(80) NOT NULL UNIQUE); args=None; alias=default
+DEBUG 2024-04-10 16:08:16,226 schema CREATE TABLE `auth_group_permissions` (`id` bigint AUTO_INCREMENT NOT NULL PRIMARY KEY, `group_id` integer NOT NULL, `permission_id` integer NOT NULL); (params None)
+DEBUG 2024-04-10 16:08:16,575 utils (0.344) CREATE TABLE `auth_group_permissions` (`id` bigint AUTO_INCREMENT NOT NULL PRIMARY KEY, `group_id` integer NOT NULL, `permission_id` integer NOT NULL); args=None; alias=default
+DEBUG 2024-04-10 16:08:16,578 utils (0.000) 
+            SELECT engine
+            FROM information_schema.tables
+            WHERE
+                table_name = 'auth_group_permissions' AND
+                table_schema = DATABASE()
+            ; args=['auth_group_permissions']; alias=default
+DEBUG 2024-04-10 16:08:16,580 utils (0.000) 
+            SELECT engine
+            FROM information_schema.tables
+            WHERE
+                table_name = 'auth_group_permissions' AND
+                table_schema = DATABASE()
+            ; args=['auth_group_permissions']; alias=default
+DEBUG 2024-04-10 16:08:16,586 schema ALTER TABLE `auth_permission` ADD CONSTRAINT `auth_permission_content_type_id_codename_01ab375a_uniq` UNIQUE (`content_type_id`, `codename`); (params ())
+DEBUG 2024-04-10 16:08:16,794 utils (0.203) ALTER TABLE `auth_permission` ADD CONSTRAINT `auth_permission_content_type_id_codename_01ab375a_uniq` UNIQUE (`content_type_id`, `codename`); args=(); alias=default
+DEBUG 2024-04-10 16:08:16,794 schema ALTER TABLE `auth_permission` ADD CONSTRAINT `auth_permission_content_type_id_2f476e4b_fk_django_co` FOREIGN KEY (`content_type_id`) REFERENCES `django_content_type` (`id`); (params ())
+DEBUG 2024-04-10 16:08:17,693 utils (0.906) ALTER TABLE `auth_permission` ADD CONSTRAINT `auth_permission_content_type_id_2f476e4b_fk_django_co` FOREIGN KEY (`content_type_id`) REFERENCES `django_content_type` (`id`); args=(); alias=default
+DEBUG 2024-04-10 16:08:17,693 schema ALTER TABLE `auth_group_permissions` ADD CONSTRAINT `auth_group_permissions_group_id_permission_id_0cd325b0_uniq` UNIQUE (`group_id`, `permission_id`); (params ())
+DEBUG 2024-04-10 16:08:17,942 utils (0.250) ALTER TABLE `auth_group_permissions` ADD CONSTRAINT `auth_group_permissions_group_id_permission_id_0cd325b0_uniq` UNIQUE (`group_id`, `permission_id`); args=(); alias=default
+DEBUG 2024-04-10 16:08:17,942 schema ALTER TABLE `auth_group_permissions` ADD CONSTRAINT `auth_group_permissions_group_id_b120cbf9_fk_auth_group_id` FOREIGN KEY (`group_id`) REFERENCES `auth_group` (`id`); (params ())
+DEBUG 2024-04-10 16:08:18,706 utils (0.766) ALTER TABLE `auth_group_permissions` ADD CONSTRAINT `auth_group_permissions_group_id_b120cbf9_fk_auth_group_id` FOREIGN KEY (`group_id`) REFERENCES `auth_group` (`id`); args=(); alias=default
+DEBUG 2024-04-10 16:08:18,707 schema ALTER TABLE `auth_group_permissions` ADD CONSTRAINT `auth_group_permissio_permission_id_84c5c92e_fk_auth_perm` FOREIGN KEY (`permission_id`) REFERENCES `auth_permission` (`id`); (params ())
+DEBUG 2024-04-10 16:08:19,577 utils (0.859) ALTER TABLE `auth_group_permissions` ADD CONSTRAINT `auth_group_permissio_permission_id_84c5c92e_fk_auth_perm` FOREIGN KEY (`permission_id`) REFERENCES `auth_permission` (`id`); args=(); alias=default
+DEBUG 2024-04-10 16:08:19,635 utils (0.062) INSERT INTO `django_migrations` (`app`, `name`, `applied`) VALUES ('auth', '0001_initial', '2024-04-10 15:08:19.578487'); args=['auth', '0001_initial', '2024-04-10 15:08:19.578487']; alias=default
+DEBUG 2024-04-10 16:08:19,649 schema ALTER TABLE `auth_permission` MODIFY `name` varchar(255) NOT NULL; (params [])
+DEBUG 2024-04-10 16:08:20,506 utils (0.859) ALTER TABLE `auth_permission` MODIFY `name` varchar(255) NOT NULL; args=[]; alias=default
+DEBUG 2024-04-10 16:08:20,576 utils (0.063) INSERT INTO `django_migrations` (`app`, `name`, `applied`) VALUES ('auth', '0002_alter_permission_name_max_length', '2024-04-10 15:08:20.506016'); args=['auth', '0002_alter_permission_name_max_length', '2024-04-10 15:08:20.506016']; alias=default
+DEBUG 2024-04-10 16:08:20,649 utils (0.062) INSERT INTO `django_migrations` (`app`, `name`, `applied`) VALUES ('auth', '0003_alter_user_email_max_length', '2024-04-10 15:08:20.583788'); args=['auth', '0003_alter_user_email_max_length', '2024-04-10 15:08:20.583788']; alias=default
+DEBUG 2024-04-10 16:08:20,708 utils (0.063) INSERT INTO `django_migrations` (`app`, `name`, `applied`) VALUES ('auth', '0004_alter_user_username_opts', '2024-04-10 15:08:20.654568'); args=['auth', '0004_alter_user_username_opts', '2024-04-10 15:08:20.654568']; alias=default
+DEBUG 2024-04-10 16:08:20,775 utils (0.062) INSERT INTO `django_migrations` (`app`, `name`, `applied`) VALUES ('auth', '0005_alter_user_last_login_null', '2024-04-10 15:08:20.720392'); args=['auth', '0005_alter_user_last_login_null', '2024-04-10 15:08:20.720392']; alias=default
+DEBUG 2024-04-10 16:08:20,834 utils (0.063) INSERT INTO `django_migrations` (`app`, `name`, `applied`) VALUES ('auth', '0006_require_contenttypes_0002', '2024-04-10 15:08:20.777242'); args=['auth', '0006_require_contenttypes_0002', '2024-04-10 15:08:20.777242']; alias=default
+DEBUG 2024-04-10 16:08:20,899 utils (0.062) INSERT INTO `django_migrations` (`app`, `name`, `applied`) VALUES ('auth', '0007_alter_validators_add_error_messages', '2024-04-10 15:08:20.845095'); args=['auth', '0007_alter_validators_add_error_messages', '2024-04-10 15:08:20.845095']; alias=default
+DEBUG 2024-04-10 16:08:20,983 utils (0.062) INSERT INTO `django_migrations` (`app`, `name`, `applied`) VALUES ('auth', '0008_alter_user_username_max_length', '2024-04-10 15:08:20.913876'); args=['auth', '0008_alter_user_username_max_length', '2024-04-10 15:08:20.913876']; alias=default
+DEBUG 2024-04-10 16:08:21,058 utils (0.062) INSERT INTO `django_migrations` (`app`, `name`, `applied`) VALUES ('auth', '0009_alter_user_last_name_max_length', '2024-04-10 15:08:20.989708'); args=['auth', '0009_alter_user_last_name_max_length', '2024-04-10 15:08:20.989708']; alias=default
+DEBUG 2024-04-10 16:08:21,063 schema ALTER TABLE `auth_group` MODIFY `name` varchar(150) NOT NULL; (params [])
+DEBUG 2024-04-10 16:08:22,126 utils (1.063) ALTER TABLE `auth_group` MODIFY `name` varchar(150) NOT NULL; args=[]; alias=default
+DEBUG 2024-04-10 16:08:22,200 utils (0.078) INSERT INTO `django_migrations` (`app`, `name`, `applied`) VALUES ('auth', '0010_alter_group_name_max_length', '2024-04-10 15:08:22.126856'); args=['auth', '0010_alter_group_name_max_length', '2024-04-10 15:08:22.126856']; alias=default
+DEBUG 2024-04-10 16:08:22,202 utils (0.000) BEGIN; args=None; alias=default
+DEBUG 2024-04-10 16:08:22,215 utils (0.000) COMMIT; args=None; alias=default
+DEBUG 2024-04-10 16:08:22,275 utils (0.062) INSERT INTO `django_migrations` (`app`, `name`, `applied`) VALUES ('auth', '0011_update_proxy_permissions', '2024-04-10 15:08:22.216615'); args=['auth', '0011_update_proxy_permissions', '2024-04-10 15:08:22.216615']; alias=default
+DEBUG 2024-04-10 16:08:22,341 utils (0.047) INSERT INTO `django_migrations` (`app`, `name`, `applied`) VALUES ('auth', '0012_alter_user_first_name_max_length', '2024-04-10 15:08:22.284444'); args=['auth', '0012_alter_user_first_name_max_length', '2024-04-10 15:08:22.284444']; alias=default
+DEBUG 2024-04-10 16:08:22,350 schema CREATE TABLE `users_user` (`id` bigint AUTO_INCREMENT NOT NULL PRIMARY KEY, `password` varchar(128) NOT NULL, `last_login` datetime(6) NULL, `is_superuser` bool NOT NULL, `email` varchar(254) NOT NULL UNIQUE, `username` varchar(100) NOT NULL, `is_active` bool NOT NULL, `is_staff` bool NOT NULL, `date_joined` datetime(6) NOT NULL, `preferList` json NOT NULL, `is_first_login` bool NOT NULL, `profile_pic` varchar(100) NULL, `birth_date` date NULL, `bio` longtext NOT NULL); (params None)
+DEBUG 2024-04-10 16:08:22,901 utils (0.547) CREATE TABLE `users_user` (`id` bigint AUTO_INCREMENT NOT NULL PRIMARY KEY, `password` varchar(128) NOT NULL, `last_login` datetime(6) NULL, `is_superuser` bool NOT NULL, `email` varchar(254) NOT NULL UNIQUE, `username` varchar(100) NOT NULL, `is_active` bool NOT NULL, `is_staff` bool NOT NULL, `date_joined` datetime(6) NOT NULL, `preferList` json NOT NULL, `is_first_login` bool NOT NULL, `profile_pic` varchar(100) NULL, `birth_date` date NULL, `bio` longtext NOT NULL); args=None; alias=default
+DEBUG 2024-04-10 16:08:22,901 schema CREATE TABLE `users_user_groups` (`id` bigint AUTO_INCREMENT NOT NULL PRIMARY KEY, `user_id` bigint NOT NULL, `group_id` integer NOT NULL); (params None)
+DEBUG 2024-04-10 16:08:23,442 utils (0.547) CREATE TABLE `users_user_groups` (`id` bigint AUTO_INCREMENT NOT NULL PRIMARY KEY, `user_id` bigint NOT NULL, `group_id` integer NOT NULL); args=None; alias=default
+DEBUG 2024-04-10 16:08:23,446 utils (0.000) 
+            SELECT engine
+            FROM information_schema.tables
+            WHERE
+                table_name = 'users_user_groups' AND
+                table_schema = DATABASE()
+            ; args=['users_user_groups']; alias=default
+DEBUG 2024-04-10 16:08:23,449 utils (0.000) 
+            SELECT engine
+            FROM information_schema.tables
+            WHERE
+                table_name = 'users_user_groups' AND
+                table_schema = DATABASE()
+            ; args=['users_user_groups']; alias=default
+DEBUG 2024-04-10 16:08:23,450 schema CREATE TABLE `users_user_user_permissions` (`id` bigint AUTO_INCREMENT NOT NULL PRIMARY KEY, `user_id` bigint NOT NULL, `permission_id` integer NOT NULL); (params None)
+DEBUG 2024-04-10 16:08:23,783 utils (0.328) CREATE TABLE `users_user_user_permissions` (`id` bigint AUTO_INCREMENT NOT NULL PRIMARY KEY, `user_id` bigint NOT NULL, `permission_id` integer NOT NULL); args=None; alias=default
+DEBUG 2024-04-10 16:08:23,785 utils (0.016) 
+            SELECT engine
+            FROM information_schema.tables
+            WHERE
+                table_name = 'users_user_user_permissions' AND
+                table_schema = DATABASE()
+            ; args=['users_user_user_permissions']; alias=default
+DEBUG 2024-04-10 16:08:23,786 utils (0.000) 
+            SELECT engine
+            FROM information_schema.tables
+            WHERE
+                table_name = 'users_user_user_permissions' AND
+                table_schema = DATABASE()
+            ; args=['users_user_user_permissions']; alias=default
+DEBUG 2024-04-10 16:08:23,792 schema CREATE TABLE `users_newslog` (`id` bigint AUTO_INCREMENT NOT NULL PRIMARY KEY, `news_id` varchar(255) NOT NULL, `body` longtext NOT NULL, `keywords` longtext NOT NULL, `timestamp` datetime(6) NOT NULL, `title` varchar(255) NOT NULL, `user_id` bigint NOT NULL); (params None)
+DEBUG 2024-04-10 16:08:24,192 utils (0.406) CREATE TABLE `users_newslog` (`id` bigint AUTO_INCREMENT NOT NULL PRIMARY KEY, `news_id` varchar(255) NOT NULL, `body` longtext NOT NULL, `keywords` longtext NOT NULL, `timestamp` datetime(6) NOT NULL, `title` varchar(255) NOT NULL, `user_id` bigint NOT NULL); args=None; alias=default
+DEBUG 2024-04-10 16:08:24,194 utils (0.000) 
+            SELECT engine
+            FROM information_schema.tables
+            WHERE
+                table_name = 'users_newslog' AND
+                table_schema = DATABASE()
+            ; args=['users_newslog']; alias=default
+DEBUG 2024-04-10 16:08:24,194 schema ALTER TABLE `users_user_groups` ADD CONSTRAINT `users_user_groups_user_id_group_id_b88eab82_uniq` UNIQUE (`user_id`, `group_id`); (params ())
+DEBUG 2024-04-10 16:08:24,526 utils (0.328) ALTER TABLE `users_user_groups` ADD CONSTRAINT `users_user_groups_user_id_group_id_b88eab82_uniq` UNIQUE (`user_id`, `group_id`); args=(); alias=default
+DEBUG 2024-04-10 16:08:24,527 schema ALTER TABLE `users_user_groups` ADD CONSTRAINT `users_user_groups_user_id_5f6f5a90_fk_users_user_id` FOREIGN KEY (`user_id`) REFERENCES `users_user` (`id`); (params ())
+DEBUG 2024-04-10 16:08:25,784 utils (1.250) ALTER TABLE `users_user_groups` ADD CONSTRAINT `users_user_groups_user_id_5f6f5a90_fk_users_user_id` FOREIGN KEY (`user_id`) REFERENCES `users_user` (`id`); args=(); alias=default
+DEBUG 2024-04-10 16:08:25,785 schema ALTER TABLE `users_user_groups` ADD CONSTRAINT `users_user_groups_group_id_9afc8d0e_fk_auth_group_id` FOREIGN KEY (`group_id`) REFERENCES `auth_group` (`id`); (params ())
+DEBUG 2024-04-10 16:08:26,936 utils (1.140) ALTER TABLE `users_user_groups` ADD CONSTRAINT `users_user_groups_group_id_9afc8d0e_fk_auth_group_id` FOREIGN KEY (`group_id`) REFERENCES `auth_group` (`id`); args=(); alias=default
+DEBUG 2024-04-10 16:08:26,936 schema ALTER TABLE `users_user_user_permissions` ADD CONSTRAINT `users_user_user_permissions_user_id_permission_id_43338c45_uniq` UNIQUE (`user_id`, `permission_id`); (params ())
+DEBUG 2024-04-10 16:08:27,229 utils (0.297) ALTER TABLE `users_user_user_permissions` ADD CONSTRAINT `users_user_user_permissions_user_id_permission_id_43338c45_uniq` UNIQUE (`user_id`, `permission_id`); args=(); alias=default
+DEBUG 2024-04-10 16:08:27,229 schema ALTER TABLE `users_user_user_permissions` ADD CONSTRAINT `users_user_user_permissions_user_id_20aca447_fk_users_user_id` FOREIGN KEY (`user_id`) REFERENCES `users_user` (`id`); (params ())
+DEBUG 2024-04-10 16:08:28,495 utils (1.266) ALTER TABLE `users_user_user_permissions` ADD CONSTRAINT `users_user_user_permissions_user_id_20aca447_fk_users_user_id` FOREIGN KEY (`user_id`) REFERENCES `users_user` (`id`); args=(); alias=default
+DEBUG 2024-04-10 16:08:28,496 schema ALTER TABLE `users_user_user_permissions` ADD CONSTRAINT `users_user_user_perm_permission_id_0b93982e_fk_auth_perm` FOREIGN KEY (`permission_id`) REFERENCES `auth_permission` (`id`); (params ())
+DEBUG 2024-04-10 16:08:29,868 utils (1.375) ALTER TABLE `users_user_user_permissions` ADD CONSTRAINT `users_user_user_perm_permission_id_0b93982e_fk_auth_perm` FOREIGN KEY (`permission_id`) REFERENCES `auth_permission` (`id`); args=(); alias=default
+DEBUG 2024-04-10 16:08:29,869 schema ALTER TABLE `users_newslog` ADD CONSTRAINT `users_newslog_user_id_9d4e2cc0_fk_users_user_id` FOREIGN KEY (`user_id`) REFERENCES `users_user` (`id`); (params ())
+DEBUG 2024-04-10 16:08:31,128 utils (1.265) ALTER TABLE `users_newslog` ADD CONSTRAINT `users_newslog_user_id_9d4e2cc0_fk_users_user_id` FOREIGN KEY (`user_id`) REFERENCES `users_user` (`id`); args=(); alias=default
+DEBUG 2024-04-10 16:08:31,218 utils (0.079) INSERT INTO `django_migrations` (`app`, `name`, `applied`) VALUES ('users', '0001_initial', '2024-04-10 15:08:31.129950'); args=['users', '0001_initial', '2024-04-10 15:08:31.129950']; alias=default
+DEBUG 2024-04-10 16:08:31,225 schema CREATE TABLE `django_admin_log` (`id` integer AUTO_INCREMENT NOT NULL PRIMARY KEY, `action_time` datetime(6) NOT NULL, `object_id` longtext NULL, `object_repr` varchar(200) NOT NULL, `action_flag` smallint UNSIGNED NOT NULL CHECK (`action_flag` >= 0), `change_message` longtext NOT NULL, `content_type_id` integer NULL, `user_id` bigint NOT NULL); (params None)
+DEBUG 2024-04-10 16:08:31,226 utils (0.000) None; args=None; alias=default
+DEBUG 2024-04-10 16:09:22,302 utils (0.000) 
+                SELECT VERSION(),
+                       @@sql_mode,
+                       @@default_storage_engine,
+                       @@sql_auto_is_null,
+                       @@lower_case_table_names,
+                       CONVERT_TZ('2001-01-01 01:00:00', 'UTC', 'UTC') IS NOT NULL
+            ; args=None; alias=default
+DEBUG 2024-04-10 16:09:22,302 utils (0.000) SET SESSION TRANSACTION ISOLATION LEVEL READ COMMITTED; args=None; alias=default
+DEBUG 2024-04-10 16:09:22,303 utils (0.000) 
+                SELECT VERSION(),
+                       @@sql_mode,
+                       @@default_storage_engine,
+                       @@sql_auto_is_null,
+                       @@lower_case_table_names,
+                       CONVERT_TZ('2001-01-01 01:00:00', 'UTC', 'UTC') IS NOT NULL
+            ; args=None; alias=default
+DEBUG 2024-04-10 16:09:22,518 utils (0.000) SET SESSION TRANSACTION ISOLATION LEVEL READ COMMITTED; args=None; alias=default
+DEBUG 2024-04-10 16:09:22,520 utils (0.016) 
+            SELECT
+                table_name,
+                table_type,
+                table_comment
+            FROM information_schema.tables
+            WHERE table_schema = DATABASE()
+            ; args=None; alias=default
+DEBUG 2024-04-10 16:09:22,524 utils (0.000) SELECT `django_migrations`.`id`, `django_migrations`.`app`, `django_migrations`.`name`, `django_migrations`.`applied` FROM `django_migrations`; args=(); alias=default
+DEBUG 2024-04-10 16:09:22,525 utils (0.000) 
+            SELECT
+                table_name,
+                table_type,
+                table_comment
+            FROM information_schema.tables
+            WHERE table_schema = DATABASE()
+            ; args=None; alias=default
+DEBUG 2024-04-10 16:09:22,526 utils (0.000) SELECT `django_migrations`.`id`, `django_migrations`.`app`, `django_migrations`.`name`, `django_migrations`.`applied` FROM `django_migrations`; args=(); alias=default
+DEBUG 2024-04-10 16:09:22,534 utils (0.000) 
+            SELECT
+                table_name,
+                table_type,
+                table_comment
+            FROM information_schema.tables
+            WHERE table_schema = DATABASE()
+            ; args=None; alias=default
+DEBUG 2024-04-10 16:09:22,540 schema CREATE TABLE `django_admin_log` (`id` integer AUTO_INCREMENT NOT NULL PRIMARY KEY, `action_time` datetime(6) NOT NULL, `object_id` longtext NULL, `object_repr` varchar(200) NOT NULL, `action_flag` smallint UNSIGNED NOT NULL CHECK (`action_flag` >= 0), `change_message` longtext NOT NULL, `content_type_id` integer NULL, `user_id` bigint NOT NULL); (params None)
+DEBUG 2024-04-10 16:09:22,946 utils (0.406) CREATE TABLE `django_admin_log` (`id` integer AUTO_INCREMENT NOT NULL PRIMARY KEY, `action_time` datetime(6) NOT NULL, `object_id` longtext NULL, `object_repr` varchar(200) NOT NULL, `action_flag` smallint UNSIGNED NOT NULL CHECK (`action_flag` >= 0), `change_message` longtext NOT NULL, `content_type_id` integer NULL, `user_id` bigint NOT NULL); args=None; alias=default
+DEBUG 2024-04-10 16:09:22,950 utils (0.000) 
+            SELECT engine
+            FROM information_schema.tables
+            WHERE
+                table_name = 'django_admin_log' AND
+                table_schema = DATABASE()
+            ; args=['django_admin_log']; alias=default
+DEBUG 2024-04-10 16:09:22,953 utils (0.000) 
+            SELECT engine
+            FROM information_schema.tables
+            WHERE
+                table_name = 'django_admin_log' AND
+                table_schema = DATABASE()
+            ; args=['django_admin_log']; alias=default
+DEBUG 2024-04-10 16:09:22,954 schema ALTER TABLE `django_admin_log` ADD CONSTRAINT `django_admin_log_content_type_id_c4bce8eb_fk_django_co` FOREIGN KEY (`content_type_id`) REFERENCES `django_content_type` (`id`); (params ())
+DEBUG 2024-04-10 16:09:24,698 utils (1.750) ALTER TABLE `django_admin_log` ADD CONSTRAINT `django_admin_log_content_type_id_c4bce8eb_fk_django_co` FOREIGN KEY (`content_type_id`) REFERENCES `django_content_type` (`id`); args=(); alias=default
+DEBUG 2024-04-10 16:09:24,698 schema ALTER TABLE `django_admin_log` ADD CONSTRAINT `django_admin_log_user_id_c564eba6_fk_users_user_id` FOREIGN KEY (`user_id`) REFERENCES `users_user` (`id`); (params ())
+DEBUG 2024-04-10 16:09:26,747 utils (2.047) ALTER TABLE `django_admin_log` ADD CONSTRAINT `django_admin_log_user_id_c564eba6_fk_users_user_id` FOREIGN KEY (`user_id`) REFERENCES `users_user` (`id`); args=(); alias=default
+DEBUG 2024-04-10 16:09:26,804 utils (0.062) INSERT INTO `django_migrations` (`app`, `name`, `applied`) VALUES ('admin', '0001_initial', '2024-04-10 15:09:26.748326'); args=['admin', '0001_initial', '2024-04-10 15:09:26.748326']; alias=default
+DEBUG 2024-04-10 16:09:26,895 utils (0.094) INSERT INTO `django_migrations` (`app`, `name`, `applied`) VALUES ('admin', '0002_logentry_remove_auto_add', '2024-04-10 15:09:26.812155'); args=['admin', '0002_logentry_remove_auto_add', '2024-04-10 15:09:26.812155']; alias=default
+DEBUG 2024-04-10 16:09:26,987 utils (0.078) INSERT INTO `django_migrations` (`app`, `name`, `applied`) VALUES ('admin', '0003_logentry_add_action_flag_choices', '2024-04-10 15:09:26.902912'); args=['admin', '0003_logentry_add_action_flag_choices', '2024-04-10 15:09:26.902912']; alias=default
+DEBUG 2024-04-10 16:09:26,989 schema CREATE TABLE `news_article` (`id` bigint AUTO_INCREMENT NOT NULL PRIMARY KEY, `title` varchar(255) NOT NULL, `link` varchar(200) NOT NULL, `description` longtext NOT NULL, `pub_date` datetime(6) NOT NULL, `image` varchar(200) NOT NULL, `author` varchar(255) NULL, `category` varchar(255) NULL, `keywords` longtext NULL, `robots` varchar(255) NULL, `body` longtext NULL, `timestamp` datetime(6) NOT NULL); (params None)
+DEBUG 2024-04-10 16:09:26,991 utils (0.000) None; args=None; alias=default
+DEBUG 2024-04-10 16:10:04,478 utils (0.000) 
+                SELECT VERSION(),
+                       @@sql_mode,
+                       @@default_storage_engine,
+                       @@sql_auto_is_null,
+                       @@lower_case_table_names,
+                       CONVERT_TZ('2001-01-01 01:00:00', 'UTC', 'UTC') IS NOT NULL
+            ; args=None; alias=default
+DEBUG 2024-04-10 16:10:04,479 utils (0.000) SET SESSION TRANSACTION ISOLATION LEVEL READ COMMITTED; args=None; alias=default
+DEBUG 2024-04-10 16:10:04,479 utils (0.000) 
+                SELECT VERSION(),
+                       @@sql_mode,
+                       @@default_storage_engine,
+                       @@sql_auto_is_null,
+                       @@lower_case_table_names,
+                       CONVERT_TZ('2001-01-01 01:00:00', 'UTC', 'UTC') IS NOT NULL
+            ; args=None; alias=default
+DEBUG 2024-04-10 16:10:04,705 utils (0.000) SET SESSION TRANSACTION ISOLATION LEVEL READ COMMITTED; args=None; alias=default
+DEBUG 2024-04-10 16:10:04,706 utils (0.000) 
+            SELECT
+                table_name,
+                table_type,
+                table_comment
+            FROM information_schema.tables
+            WHERE table_schema = DATABASE()
+            ; args=None; alias=default
+DEBUG 2024-04-10 16:10:04,710 utils (0.000) SELECT `django_migrations`.`id`, `django_migrations`.`app`, `django_migrations`.`name`, `django_migrations`.`applied` FROM `django_migrations`; args=(); alias=default
+DEBUG 2024-04-10 16:10:04,712 utils (0.000) 
+            SELECT
+                table_name,
+                table_type,
+                table_comment
+            FROM information_schema.tables
+            WHERE table_schema = DATABASE()
+            ; args=None; alias=default
+DEBUG 2024-04-10 16:10:04,712 utils (0.000) SELECT `django_migrations`.`id`, `django_migrations`.`app`, `django_migrations`.`name`, `django_migrations`.`applied` FROM `django_migrations`; args=(); alias=default
+DEBUG 2024-04-10 16:10:04,721 utils (0.000) 
+            SELECT
+                table_name,
+                table_type,
+                table_comment
+            FROM information_schema.tables
+            WHERE table_schema = DATABASE()
+            ; args=None; alias=default
+DEBUG 2024-04-10 16:10:04,723 schema CREATE TABLE `news_article` (`id` bigint AUTO_INCREMENT NOT NULL PRIMARY KEY, `title` varchar(255) NOT NULL, `link` varchar(200) NOT NULL, `description` longtext NOT NULL, `pub_date` datetime(6) NOT NULL, `image` varchar(200) NOT NULL, `author` varchar(255) NULL, `category` varchar(255) NULL, `keywords` longtext NULL, `robots` varchar(255) NULL, `body` longtext NULL, `timestamp` datetime(6) NOT NULL); (params None)
+DEBUG 2024-04-10 16:10:05,116 utils (0.391) CREATE TABLE `news_article` (`id` bigint AUTO_INCREMENT NOT NULL PRIMARY KEY, `title` varchar(255) NOT NULL, `link` varchar(200) NOT NULL, `description` longtext NOT NULL, `pub_date` datetime(6) NOT NULL, `image` varchar(200) NOT NULL, `author` varchar(255) NULL, `category` varchar(255) NULL, `keywords` longtext NULL, `robots` varchar(255) NULL, `body` longtext NULL, `timestamp` datetime(6) NOT NULL); args=None; alias=default
+DEBUG 2024-04-10 16:10:05,165 utils (0.047) INSERT INTO `django_migrations` (`app`, `name`, `applied`) VALUES ('news', '0001_initial', '2024-04-10 15:10:05.116110'); args=['news', '0001_initial', '2024-04-10 15:10:05.116110']; alias=default
+DEBUG 2024-04-10 16:10:05,167 schema CREATE TABLE `django_session` (`session_key` varchar(40) NOT NULL PRIMARY KEY, `session_data` longtext NOT NULL, `expire_date` datetime(6) NOT NULL); (params None)
+DEBUG 2024-04-10 16:10:05,168 utils (0.000) None; args=None; alias=default
+DEBUG 2024-04-10 16:10:32,110 utils (0.000) 
+                SELECT VERSION(),
+                       @@sql_mode,
+                       @@default_storage_engine,
+                       @@sql_auto_is_null,
+                       @@lower_case_table_names,
+                       CONVERT_TZ('2001-01-01 01:00:00', 'UTC', 'UTC') IS NOT NULL
+            ; args=None; alias=default
+DEBUG 2024-04-10 16:10:32,111 utils (0.000) SET SESSION TRANSACTION ISOLATION LEVEL READ COMMITTED; args=None; alias=default
+DEBUG 2024-04-10 16:10:32,111 utils (0.000) 
+                SELECT VERSION(),
+                       @@sql_mode,
+                       @@default_storage_engine,
+                       @@sql_auto_is_null,
+                       @@lower_case_table_names,
+                       CONVERT_TZ('2001-01-01 01:00:00', 'UTC', 'UTC') IS NOT NULL
+            ; args=None; alias=default
+DEBUG 2024-04-10 16:10:32,366 utils (0.000) SET SESSION TRANSACTION ISOLATION LEVEL READ COMMITTED; args=None; alias=default
+DEBUG 2024-04-10 16:10:32,368 utils (0.000) 
+            SELECT
+                table_name,
+                table_type,
+                table_comment
+            FROM information_schema.tables
+            WHERE table_schema = DATABASE()
+            ; args=None; alias=default
+DEBUG 2024-04-10 16:10:32,372 utils (0.000) SELECT `django_migrations`.`id`, `django_migrations`.`app`, `django_migrations`.`name`, `django_migrations`.`applied` FROM `django_migrations`; args=(); alias=default
+DEBUG 2024-04-10 16:10:32,374 utils (0.000) 
+            SELECT
+                table_name,
+                table_type,
+                table_comment
+            FROM information_schema.tables
+            WHERE table_schema = DATABASE()
+            ; args=None; alias=default
+DEBUG 2024-04-10 16:10:32,375 utils (0.000) SELECT `django_migrations`.`id`, `django_migrations`.`app`, `django_migrations`.`name`, `django_migrations`.`applied` FROM `django_migrations`; args=(); alias=default
+DEBUG 2024-04-10 16:10:32,387 utils (0.000) 
+            SELECT
+                table_name,
+                table_type,
+                table_comment
+            FROM information_schema.tables
+            WHERE table_schema = DATABASE()
+            ; args=None; alias=default
+DEBUG 2024-04-10 16:10:32,388 schema CREATE TABLE `django_session` (`session_key` varchar(40) NOT NULL PRIMARY KEY, `session_data` longtext NOT NULL, `expire_date` datetime(6) NOT NULL); (params None)
+DEBUG 2024-04-10 16:10:33,036 utils (0.657) CREATE TABLE `django_session` (`session_key` varchar(40) NOT NULL PRIMARY KEY, `session_data` longtext NOT NULL, `expire_date` datetime(6) NOT NULL); args=None; alias=default
+DEBUG 2024-04-10 16:10:33,039 utils (0.000) 
+            SELECT engine
+            FROM information_schema.tables
+            WHERE
+                table_name = 'django_session' AND
+                table_schema = DATABASE()
+            ; args=['django_session']; alias=default
+DEBUG 2024-04-10 16:10:33,039 schema CREATE INDEX `django_session_expire_date_a5c62663` ON `django_session` (`expire_date`); (params ())
+DEBUG 2024-04-10 16:10:33,369 utils (0.328) CREATE INDEX `django_session_expire_date_a5c62663` ON `django_session` (`expire_date`); args=(); alias=default
+DEBUG 2024-04-10 16:10:33,442 utils (0.078) INSERT INTO `django_migrations` (`app`, `name`, `applied`) VALUES ('sessions', '0001_initial', '2024-04-10 15:10:33.369142'); args=['sessions', '0001_initial', '2024-04-10 15:10:33.369142']; alias=default
+DEBUG 2024-04-10 16:10:33,445 utils (0.000) SELECT `django_migrations`.`id`, `django_migrations`.`app`, `django_migrations`.`name`, `django_migrations`.`applied` FROM `django_migrations`; args=(); alias=default
+DEBUG 2024-04-10 16:10:33,451 utils (0.000) SELECT `django_content_type`.`id`, `django_content_type`.`app_label`, `django_content_type`.`model` FROM `django_content_type` WHERE `django_content_type`.`app_label` = 'users'; args=('users',); alias=default
+DEBUG 2024-04-10 16:10:33,453 utils (0.000) BEGIN; args=None; alias=default
+DEBUG 2024-04-10 16:10:33,454 utils (0.000) INSERT INTO `django_content_type` (`app_label`, `model`) VALUES ('users', 'user'), ('users', 'newslog'); args=('users', 'user', 'users', 'newslog'); alias=default
+DEBUG 2024-04-10 16:10:33,613 utils (0.172) COMMIT; args=None; alias=default
+DEBUG 2024-04-10 16:10:33,616 utils (0.000) SELECT `django_content_type`.`id`, `django_content_type`.`app_label`, `django_content_type`.`model` FROM `django_content_type` WHERE (`django_content_type`.`app_label` = 'users' AND `django_content_type`.`model` = 'user') LIMIT 21; args=('users', 'user'); alias=default
+DEBUG 2024-04-10 16:10:33,618 utils (0.000) SELECT `django_content_type`.`id`, `django_content_type`.`app_label`, `django_content_type`.`model` FROM `django_content_type` WHERE (`django_content_type`.`app_label` = 'users' AND `django_content_type`.`model` = 'newslog') LIMIT 21; args=('users', 'newslog'); alias=default
+DEBUG 2024-04-10 16:10:33,625 utils (0.000) SELECT `auth_permission`.`content_type_id`, `auth_permission`.`codename` FROM `auth_permission` INNER JOIN `django_content_type` ON (`auth_permission`.`content_type_id` = `django_content_type`.`id`) WHERE `auth_permission`.`content_type_id` IN (1, 2) ORDER BY `django_content_type`.`app_label` ASC, `django_content_type`.`model` ASC, `auth_permission`.`codename` ASC; args=(1, 2); alias=default
+DEBUG 2024-04-10 16:10:33,626 utils (0.000) BEGIN; args=None; alias=default
+DEBUG 2024-04-10 16:10:33,627 utils (0.000) INSERT INTO `auth_permission` (`name`, `content_type_id`, `codename`) VALUES ('Can add user', 1, 'add_user'), ('Can change user', 1, 'change_user'), ('Can delete user', 1, 'delete_user'), ('Can view user', 1, 'view_user'), ('Can add news log', 2, 'add_newslog'), ('Can change news log', 2, 'change_newslog'), ('Can delete news log', 2, 'delete_newslog'), ('Can view news log', 2, 'view_newslog'); args=('Can add user', 1, 'add_user', 'Can change user', 1, 'change_user', 'Can delete user', 1, 'delete_user', 'Can view user', 1, 'view_user', 'Can add news log', 2, 'add_newslog', 'Can change news log', 2, 'change_newslog', 'Can delete news log', 2, 'delete_newslog', 'Can view news log', 2, 'view_newslog'); alias=default
+DEBUG 2024-04-10 16:10:33,700 utils (0.078) COMMIT; args=None; alias=default
+DEBUG 2024-04-10 16:10:33,701 utils (0.000) SELECT `django_content_type`.`id`, `django_content_type`.`app_label`, `django_content_type`.`model` FROM `django_content_type` WHERE `django_content_type`.`app_label` = 'users'; args=('users',); alias=default
+DEBUG 2024-04-10 16:10:33,703 utils (0.000) SELECT `django_content_type`.`id`, `django_content_type`.`app_label`, `django_content_type`.`model` FROM `django_content_type` WHERE `django_content_type`.`app_label` = 'admin'; args=('admin',); alias=default
+DEBUG 2024-04-10 16:10:33,703 utils (0.000) BEGIN; args=None; alias=default
+DEBUG 2024-04-10 16:10:33,704 utils (0.000) INSERT INTO `django_content_type` (`app_label`, `model`) VALUES ('admin', 'logentry'); args=('admin', 'logentry'); alias=default
+DEBUG 2024-04-10 16:10:33,775 utils (0.078) COMMIT; args=None; alias=default
+DEBUG 2024-04-10 16:10:33,777 utils (0.000) SELECT `django_content_type`.`id`, `django_content_type`.`app_label`, `django_content_type`.`model` FROM `django_content_type` WHERE (`django_content_type`.`app_label` = 'admin' AND `django_content_type`.`model` = 'logentry') LIMIT 21; args=('admin', 'logentry'); alias=default
+DEBUG 2024-04-10 16:10:33,779 utils (0.000) SELECT `auth_permission`.`content_type_id`, `auth_permission`.`codename` FROM `auth_permission` INNER JOIN `django_content_type` ON (`auth_permission`.`content_type_id` = `django_content_type`.`id`) WHERE `auth_permission`.`content_type_id` IN (3) ORDER BY `django_content_type`.`app_label` ASC, `django_content_type`.`model` ASC, `auth_permission`.`codename` ASC; args=(3,); alias=default
+DEBUG 2024-04-10 16:10:33,780 utils (0.000) BEGIN; args=None; alias=default
+DEBUG 2024-04-10 16:10:33,780 utils (0.000) INSERT INTO `auth_permission` (`name`, `content_type_id`, `codename`) VALUES ('Can add log entry', 3, 'add_logentry'), ('Can change log entry', 3, 'change_logentry'), ('Can delete log entry', 3, 'delete_logentry'), ('Can view log entry', 3, 'view_logentry'); args=('Can add log entry', 3, 'add_logentry', 'Can change log entry', 3, 'change_logentry', 'Can delete log entry', 3, 'delete_logentry', 'Can view log entry', 3, 'view_logentry'); alias=default
+DEBUG 2024-04-10 16:10:33,833 utils (0.063) COMMIT; args=None; alias=default
+DEBUG 2024-04-10 16:10:33,835 utils (0.000) SELECT `django_content_type`.`id`, `django_content_type`.`app_label`, `django_content_type`.`model` FROM `django_content_type` WHERE `django_content_type`.`app_label` = 'admin'; args=('admin',); alias=default
+DEBUG 2024-04-10 16:10:33,836 utils (0.000) SELECT `django_content_type`.`id`, `django_content_type`.`app_label`, `django_content_type`.`model` FROM `django_content_type` WHERE `django_content_type`.`app_label` = 'auth'; args=('auth',); alias=default
+DEBUG 2024-04-10 16:10:33,837 utils (0.000) BEGIN; args=None; alias=default
+DEBUG 2024-04-10 16:10:33,838 utils (0.000) INSERT INTO `django_content_type` (`app_label`, `model`) VALUES ('auth', 'permission'), ('auth', 'group'); args=('auth', 'permission', 'auth', 'group'); alias=default
+DEBUG 2024-04-10 16:10:33,900 utils (0.062) COMMIT; args=None; alias=default
+DEBUG 2024-04-10 16:10:33,903 utils (0.000) SELECT `django_content_type`.`id`, `django_content_type`.`app_label`, `django_content_type`.`model` FROM `django_content_type` WHERE (`django_content_type`.`app_label` = 'auth' AND `django_content_type`.`model` = 'permission') LIMIT 21; args=('auth', 'permission'); alias=default
+DEBUG 2024-04-10 16:10:33,906 utils (0.000) SELECT `django_content_type`.`id`, `django_content_type`.`app_label`, `django_content_type`.`model` FROM `django_content_type` WHERE (`django_content_type`.`app_label` = 'auth' AND `django_content_type`.`model` = 'group') LIMIT 21; args=('auth', 'group'); alias=default
+DEBUG 2024-04-10 16:10:33,911 utils (0.000) SELECT `auth_permission`.`content_type_id`, `auth_permission`.`codename` FROM `auth_permission` INNER JOIN `django_content_type` ON (`auth_permission`.`content_type_id` = `django_content_type`.`id`) WHERE `auth_permission`.`content_type_id` IN (4, 5) ORDER BY `django_content_type`.`app_label` ASC, `django_content_type`.`model` ASC, `auth_permission`.`codename` ASC; args=(4, 5); alias=default
+DEBUG 2024-04-10 16:10:33,913 utils (0.000) BEGIN; args=None; alias=default
+DEBUG 2024-04-10 16:10:33,916 utils (0.000) INSERT INTO `auth_permission` (`name`, `content_type_id`, `codename`) VALUES ('Can add permission', 4, 'add_permission'), ('Can change permission', 4, 'change_permission'), ('Can delete permission', 4, 'delete_permission'), ('Can view permission', 4, 'view_permission'), ('Can add group', 5, 'add_group'), ('Can change group', 5, 'change_group'), ('Can delete group', 5, 'delete_group'), ('Can view group', 5, 'view_group'); args=('Can add permission', 4, 'add_permission', 'Can change permission', 4, 'change_permission', 'Can delete permission', 4, 'delete_permission', 'Can view permission', 4, 'view_permission', 'Can add group', 5, 'add_group', 'Can change group', 5, 'change_group', 'Can delete group', 5, 'delete_group', 'Can view group', 5, 'view_group'); alias=default
+DEBUG 2024-04-10 16:10:33,975 utils (0.062) COMMIT; args=None; alias=default
+DEBUG 2024-04-10 16:10:33,978 utils (0.000) SELECT `django_content_type`.`id`, `django_content_type`.`app_label`, `django_content_type`.`model` FROM `django_content_type` WHERE `django_content_type`.`app_label` = 'auth'; args=('auth',); alias=default
+DEBUG 2024-04-10 16:10:33,981 utils (0.000) SELECT `django_content_type`.`id`, `django_content_type`.`app_label`, `django_content_type`.`model` FROM `django_content_type` WHERE `django_content_type`.`app_label` = 'contenttypes'; args=('contenttypes',); alias=default
+DEBUG 2024-04-10 16:10:33,982 utils (0.000) BEGIN; args=None; alias=default
+DEBUG 2024-04-10 16:10:33,984 utils (0.000) INSERT INTO `django_content_type` (`app_label`, `model`) VALUES ('contenttypes', 'contenttype'); args=('contenttypes', 'contenttype'); alias=default
+DEBUG 2024-04-10 16:10:34,034 utils (0.047) COMMIT; args=None; alias=default
+DEBUG 2024-04-10 16:10:34,038 utils (0.000) SELECT `django_content_type`.`id`, `django_content_type`.`app_label`, `django_content_type`.`model` FROM `django_content_type` WHERE (`django_content_type`.`app_label` = 'contenttypes' AND `django_content_type`.`model` = 'contenttype') LIMIT 21; args=('contenttypes', 'contenttype'); alias=default
+DEBUG 2024-04-10 16:10:34,042 utils (0.000) SELECT `auth_permission`.`content_type_id`, `auth_permission`.`codename` FROM `auth_permission` INNER JOIN `django_content_type` ON (`auth_permission`.`content_type_id` = `django_content_type`.`id`) WHERE `auth_permission`.`content_type_id` IN (6) ORDER BY `django_content_type`.`app_label` ASC, `django_content_type`.`model` ASC, `auth_permission`.`codename` ASC; args=(6,); alias=default
+DEBUG 2024-04-10 16:10:34,044 utils (0.000) BEGIN; args=None; alias=default
+DEBUG 2024-04-10 16:10:34,047 utils (0.000) INSERT INTO `auth_permission` (`name`, `content_type_id`, `codename`) VALUES ('Can add content type', 6, 'add_contenttype'), ('Can change content type', 6, 'change_contenttype'), ('Can delete content type', 6, 'delete_contenttype'), ('Can view content type', 6, 'view_contenttype'); args=('Can add content type', 6, 'add_contenttype', 'Can change content type', 6, 'change_contenttype', 'Can delete content type', 6, 'delete_contenttype', 'Can view content type', 6, 'view_contenttype'); alias=default
+DEBUG 2024-04-10 16:10:34,117 utils (0.078) COMMIT; args=None; alias=default
+DEBUG 2024-04-10 16:10:34,120 utils (0.000) SELECT `django_content_type`.`id`, `django_content_type`.`app_label`, `django_content_type`.`model` FROM `django_content_type` WHERE `django_content_type`.`app_label` = 'contenttypes'; args=('contenttypes',); alias=default
+DEBUG 2024-04-10 16:10:34,123 utils (0.000) SELECT `django_content_type`.`id`, `django_content_type`.`app_label`, `django_content_type`.`model` FROM `django_content_type` WHERE `django_content_type`.`app_label` = 'sessions'; args=('sessions',); alias=default
+DEBUG 2024-04-10 16:10:34,124 utils (0.000) BEGIN; args=None; alias=default
+DEBUG 2024-04-10 16:10:34,126 utils (0.000) INSERT INTO `django_content_type` (`app_label`, `model`) VALUES ('sessions', 'session'); args=('sessions', 'session'); alias=default
+DEBUG 2024-04-10 16:10:34,166 utils (0.047) COMMIT; args=None; alias=default
+DEBUG 2024-04-10 16:10:34,170 utils (0.000) SELECT `django_content_type`.`id`, `django_content_type`.`app_label`, `django_content_type`.`model` FROM `django_content_type` WHERE (`django_content_type`.`app_label` = 'sessions' AND `django_content_type`.`model` = 'session') LIMIT 21; args=('sessions', 'session'); alias=default
+DEBUG 2024-04-10 16:10:34,175 utils (0.000) SELECT `auth_permission`.`content_type_id`, `auth_permission`.`codename` FROM `auth_permission` INNER JOIN `django_content_type` ON (`auth_permission`.`content_type_id` = `django_content_type`.`id`) WHERE `auth_permission`.`content_type_id` IN (7) ORDER BY `django_content_type`.`app_label` ASC, `django_content_type`.`model` ASC, `auth_permission`.`codename` ASC; args=(7,); alias=default
+DEBUG 2024-04-10 16:10:34,177 utils (0.000) BEGIN; args=None; alias=default
+DEBUG 2024-04-10 16:10:34,179 utils (0.000) INSERT INTO `auth_permission` (`name`, `content_type_id`, `codename`) VALUES ('Can add session', 7, 'add_session'), ('Can change session', 7, 'change_session'), ('Can delete session', 7, 'delete_session'), ('Can view session', 7, 'view_session'); args=('Can add session', 7, 'add_session', 'Can change session', 7, 'change_session', 'Can delete session', 7, 'delete_session', 'Can view session', 7, 'view_session'); alias=default
+DEBUG 2024-04-10 16:10:34,305 utils (0.125) COMMIT; args=None; alias=default
+DEBUG 2024-04-10 16:10:34,306 utils (0.000) SELECT `django_content_type`.`id`, `django_content_type`.`app_label`, `django_content_type`.`model` FROM `django_content_type` WHERE `django_content_type`.`app_label` = 'sessions'; args=('sessions',); alias=default
+DEBUG 2024-04-10 16:10:34,307 utils (0.000) SELECT `django_content_type`.`id`, `django_content_type`.`app_label`, `django_content_type`.`model` FROM `django_content_type` WHERE `django_content_type`.`app_label` = 'news'; args=('news',); alias=default
+DEBUG 2024-04-10 16:10:34,308 utils (0.000) BEGIN; args=None; alias=default
+DEBUG 2024-04-10 16:10:34,308 utils (0.000) INSERT INTO `django_content_type` (`app_label`, `model`) VALUES ('news', 'article'); args=('news', 'article'); alias=default
+DEBUG 2024-04-10 16:10:34,375 utils (0.063) COMMIT; args=None; alias=default
+DEBUG 2024-04-10 16:10:34,376 utils (0.000) SELECT `django_content_type`.`id`, `django_content_type`.`app_label`, `django_content_type`.`model` FROM `django_content_type` WHERE (`django_content_type`.`app_label` = 'news' AND `django_content_type`.`model` = 'article') LIMIT 21; args=('news', 'article'); alias=default
+DEBUG 2024-04-10 16:10:34,378 utils (0.000) SELECT `auth_permission`.`content_type_id`, `auth_permission`.`codename` FROM `auth_permission` INNER JOIN `django_content_type` ON (`auth_permission`.`content_type_id` = `django_content_type`.`id`) WHERE `auth_permission`.`content_type_id` IN (8) ORDER BY `django_content_type`.`app_label` ASC, `django_content_type`.`model` ASC, `auth_permission`.`codename` ASC; args=(8,); alias=default
+DEBUG 2024-04-10 16:10:34,379 utils (0.000) BEGIN; args=None; alias=default
+DEBUG 2024-04-10 16:10:34,380 utils (0.000) INSERT INTO `auth_permission` (`name`, `content_type_id`, `codename`) VALUES ('Can add article', 8, 'add_article'), ('Can change article', 8, 'change_article'), ('Can delete article', 8, 'delete_article'), ('Can view article', 8, 'view_article'); args=('Can add article', 8, 'add_article', 'Can change article', 8, 'change_article', 'Can delete article', 8, 'delete_article', 'Can view article', 8, 'view_article'); alias=default
+DEBUG 2024-04-10 16:10:34,442 utils (0.063) COMMIT; args=None; alias=default
+DEBUG 2024-04-10 16:10:34,444 utils (0.000) SELECT `django_content_type`.`id`, `django_content_type`.`app_label`, `django_content_type`.`model` FROM `django_content_type` WHERE `django_content_type`.`app_label` = 'news'; args=('news',); alias=default
