@@ -3,6 +3,7 @@ from django.contrib.auth import authenticate, login
 from django.contrib.auth.decorators import login_required
 from django.core.exceptions import ValidationError
 from django.http import JsonResponse
+from django.views.decorators.csrf import csrf_exempt
 from django.views.decorators.http import require_http_methods
 from django.utils import timezone
 from news.models import Article
@@ -11,6 +12,8 @@ from .models import User, NewsLog
 # Create your views here.
 
 # Parse the json file sent by the react frontend and register it
+
+@csrf_exempt
 def register(request):
     if request.method == 'POST':
         try:
@@ -30,9 +33,9 @@ def register(request):
             user = User(
                 username=username,
                 email=email,
-                password=password,
                 preferList={}
             )
+            user.set_password(password)
             user.save()
 
             # Returns the successful registration information
@@ -45,14 +48,18 @@ def register(request):
         return JsonResponse({'message': 'Invalid request method'}, status=400)
 
 # login
+@csrf_exempt
 def user_login(request):
     if request.method == 'POST':
         try:
             data = json.loads(request.body)
-            username = data.get('username')
+            # usename = data.get('usename')
+            email   = data.get('email', None)
             password = data.get('password')
 
-            user = authenticate(username=username, password=password)
+
+            # user = authenticate(usename=usename, password=password)
+            user = authenticate(email=email, password=password)
 
             if user is not None:
                 login(request, user)
@@ -83,6 +90,7 @@ def normalize_prefer_list(prefer_list):
         item['weight'] = item['weight'] / total_weight if total_weight else 0
     return prefer_list
 
+@csrf_exempt
 @login_required
 def get_user_profile(request):
     current_user: User = request.user
@@ -91,7 +99,7 @@ def get_user_profile(request):
             prefer_list = current_user.preferList
             normalized_prefer_list = normalize_prefer_list(prefer_list)
 
-            recent_news_logs_query = (NewsLog.objects.filter(user=current_user)
+            recent_news_logs_query = (NewsLog.objects.filter(user=current_user)      # front-end
                                 .order_by('-timestamp')[:10])
 
             recent_news_logs = [
@@ -114,6 +122,7 @@ def get_user_profile(request):
     else:
         return JsonResponse({'message': 'Invalid request method'}, status=400)
 
+@csrf_exempt
 @login_required
 @require_http_methods(['POST'])
 def update_prefer_list(request):
@@ -134,20 +143,22 @@ def update_prefer_list(request):
     except Exception as e:
         return JsonResponse({'message': str(e)}, status=500)
 
+@csrf_exempt
 @login_required
 def log_news(request):
     user: User = request.user
-    news_id = request.POST.get('news_id')
+    # news_id = request.POST.get('news_id')
+    title = request.POST.get('title')
 
     try:
-        article = Article.objects.get(id=news_id)
+        article = Article.objects.get(title=title)
         NewsLog.objects.create(
             user_id=user,
-            news_id=news_id,
+            news_id=article.id,
             body=article.body,
             keywords=article.keywords,
             timestamp=timezone.now(),
-            title=article.title
+            title=title
         )
 
         return JsonResponse({'message': 'News logged successfully'}, status=200)

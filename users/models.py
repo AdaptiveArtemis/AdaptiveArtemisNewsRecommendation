@@ -35,9 +35,9 @@ class User(AbstractBaseUser, PermissionsMixin):              # PermissionsMixin 
     USERNAME_FIELD = 'email'                                 # Set the login field
     REQUIRED_FIELDS = ['username']                           # import! Required when creating a superuser, aside from email and password
 
-    def set_password(self, raw_password):
-        self.password = make_password(raw_password)
-        self._password = raw_password
+    # def set_password(self, raw_password):
+    #     self.password = make_password(raw_password)
+    #     self._password = raw_password
 
     def set_prefer_list(self, prefer_list):
         self.is_first_login = False
