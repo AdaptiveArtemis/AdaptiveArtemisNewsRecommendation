@@ -4,7 +4,6 @@ from django.contrib.auth.decorators import login_required
 from django.contrib.auth.hashers import make_password
 from django.http import JsonResponse
 from django.views.decorators.http import require_http_methods
-
 from .models import User, NewsLog
 
 # Create your views here.
@@ -79,15 +78,22 @@ def normalize_prefer_list(prefer_list):
 
 @login_required
 def get_user_profile(request):
-    current_user = request.user
+    current_user: User = request.user
     if request.method == 'GET':
         try:
             prefer_list = current_user.preferList
             normalized_prefer_list = normalize_prefer_list(prefer_list)
 
-            recent_news_logs = (NewsLog.objects.filter(user=current_user)
+            recent_news_logs_query = (NewsLog.objects.filter(user=current_user)
                                 .order_by('-timestamp')[:10])
-                                # .values('news_id', 'timestamp')
+
+            recent_news_logs = [
+                {
+                    'title': log.title,
+                    'timestamp': log.timestamp.strftime('%Y-%m-%d %H:%M:%S')
+                }
+                for log in recent_news_logs_query
+            ]
 
             user_info = {
                 'username': current_user.username,
@@ -104,12 +110,13 @@ def get_user_profile(request):
 @login_required
 @require_http_methods(['POST'])
 def update_prefer_list(request):
+    current_user: User = request.user
     try:
         data = json.loads(request.body)
         prefer_list = data.get('prefer_list')
 
         if isinstance(prefer_list, list) and len(prefer_list) > 0:
-            request.user.set_prefer_list(prefer_list)
+            current_user.set_prefer_list(prefer_list)
             return JsonResponse({'message': 'Prefer list updated successfully'}, status=200)
         else:
             return JsonResponse({'message': 'Invalid prefer list'}, status=400)

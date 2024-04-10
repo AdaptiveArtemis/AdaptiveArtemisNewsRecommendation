@@ -25,3 +25,4 @@ class NewsLog(models.Model):
     content = models.TextField()  # 新闻内容
     keywords = models.TextField()  # 新闻关键词列表的JSON字符串
     timestamp = models.DateTimeField()
+    title = models.CharField(max_length=255)
