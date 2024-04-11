@@ -21,7 +21,7 @@ def update_user_prefer_lists():
     end_of_today = timezone.make_aware(datetime.datetime.combine(today, datetime.time.max))
     today_logs = NewsLog.objects.filter(timestamp__range=(start_of_today, end_of_today))
     # yesterday_logs = NewsLog.objects.filter(timestamp__range=(start_of_yesterday, end_of_yesterday))
-    logger.info(today_logs)
+
     user_logs = {}
     for log in today_logs:
         user_logs.setdefault(log.user, []).append(log)
@@ -35,17 +35,14 @@ def update_user_prefer_lists():
         documents = [log.body for log in logs]
         vectorizer = TfidfVectorizer()
         tfidf_matrix = vectorizer.fit_transform(documents)
+        logger.info(tfidf_matrix)
         feature_names = vectorizer.get_feature_names_out()
         feature_index = {name: index for index, name in enumerate(feature_names)}
-        logger.info(documents)
-        logger.info(feature_names, feature_index)
+        logger.info(feature_index)
         for log in logs:
-            doc_keywords = log.keywords.split(',') if log.keywords else []
-
-            for keyword in doc_keywords:
-                keyword = keyword.strip()
-                logging.info(keyword)
+            for keyword in log.keywords1:
                 if keyword in feature_index:
+                    logger.info(keyword)
                     keyword_index = feature_index[keyword]
                     doc_index = documents.index(log.body)
                     keyword_weight = tfidf_matrix[doc_index, keyword_index]

@@ -55,3 +55,4 @@ class NewsLog(models.Model):
     keywords = models.TextField()
     timestamp = models.DateTimeField()
     title = models.CharField(max_length=255)
+    keywords1 = models.JSONField(default=list)

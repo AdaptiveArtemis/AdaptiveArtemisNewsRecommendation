@@ -57,9 +57,8 @@ def user_login(request):
         try:
             data = json.loads(request.body)
             # usename = data.get('usename')
-            email   = data.get('email', None)
+            email = data.get('email', None)
             password = data.get('password')
-
 
             # user = authenticate(usename=usename, password=password)
             user = authenticate(email=email, password=password)
@@ -174,7 +173,7 @@ def log_news(request):
                 user=user, # user_id=user.id
                 news_id=article.id,
                 body=article.body,
-                keywords=article.keywords,
+                keywords1=article.keywords1,
                 timestamp=timezone.now(),
                 title=article.title
             )

@@ -17,7 +17,7 @@ class Article(models.Model):
     body = models.TextField(null=True, blank=True)
     # timestamp = models.DateTimeField(auto_now_add=True,default=timezone.now)
     timestamp = models.DateTimeField(auto_now_add=True)
-
+    keywords1 = models.JSONField(default=list)
 
     def __str__(self):
         return self.title

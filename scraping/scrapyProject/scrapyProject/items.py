@@ -13,3 +13,4 @@ class ArticleItem(scrapy.Item):
     keywords = scrapy.Field()
     robots = scrapy.Field()
     body = scrapy.Field()
+    keywords1 = scrapy.Field()
