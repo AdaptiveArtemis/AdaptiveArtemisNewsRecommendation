@@ -4,7 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="35dd998c-1290-4c26-9012-1ed06d87c8c0" name="Changes" comment="fix userModeling">
+    <list default="true" id="35dd998c-1290-4c26-9012-1ed06d87c8c0" name="Changes" comment="change preferList number to 15">
       <change beforePath="$PROJECT_DIR$/userModeling/utils.py" beforeDir="false" afterPath="$PROJECT_DIR$/userModeling/utils.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -146,7 +146,7 @@
       <workItem from="1712751103638" duration="84000" />
       <workItem from="1712752054168" duration="3284000" />
       <workItem from="1712756207853" duration="3119000" />
-      <workItem from="1712840836975" duration="11928000" />
+      <workItem from="1712840836975" duration="12461000" />
     </task>
     <task id="LOCAL-00001" summary="user modeling">
       <created>1712740426127</created>
@@ -211,7 +211,14 @@
       <option name="project" value="LOCAL" />
       <updated>1712855287933</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="change preferList number to 15">
+      <created>1712856701338</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1712856701338</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -234,7 +241,8 @@
     <MESSAGE value="fix log_news and get_user_profile" />
     <MESSAGE value="log_news is unavailable right now, please don't change" />
     <MESSAGE value="fix userModeling" />
-    <option name="LAST_COMMIT_MESSAGE" value="fix userModeling" />
+    <MESSAGE value="change preferList number to 15" />
+    <option name="LAST_COMMIT_MESSAGE" value="change preferList number to 15" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/AdaptiveArtemisNewsRecommendation$settings.coverage" NAME="settings Coverage Results" MODIFIED="1712182198657" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/scraping/scrapyProject/scrapyProject" />
