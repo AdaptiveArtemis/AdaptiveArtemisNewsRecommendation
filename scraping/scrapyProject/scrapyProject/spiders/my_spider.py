@@ -1,32 +1,50 @@
 # Handle data crawling and cleansing (ETL)
 import json
-
 import scrapy
-from scrapy import Selector
-
 from ..items import ArticleItem
 
 # RSS source
 class SmithsonianMagRSSSpider(scrapy.Spider):
     name = 'mag_rss'
     allowed_domains = [
-        'smithsonianmag.com',
-        'newscientist.com'
+        'smithsonianmag.com'
     ]
     start_urls = [
-        'https://www.smithsonianmag.com/rss/latest_articles/',
-        'https://www.smithsonianmag.com/rss/air-space-magazine/',
-        'https://www.smithsonianmag.com/rss/articles/',
-        'https://www.smithsonianmag.com/rss/arts-culture/',
-        'https://www.smithsonianmag.com/rss/smithsonian-institution/',
-        'https://www.smithsonianmag.com/rss/history/',
-        'https://www.smithsonianmag.com/rss/innovation/',
-        'https://www.smithsonianmag.com/rss/magazine/',
-        'https://www.smithsonianmag.com/rss/newsletters/',
-        'https://www.smithsonianmag.com/rss/multimedia/',      # Photos
-        'https://www.smithsonianmag.com/rss/science-nature/',  # Science
-        'https://www.smithsonianmag.com/rss/second-opinion/',
-        'https://www.smithsonianmag.com/rss/travel/',
+        'https://www.smithsonianmag.com/category/archaeology/',
+        'https://www.smithsonianmag.com/category/us-history/',
+        'https://www.smithsonianmag.com/category/world-history/',
+        'https://www.smithsonianmag.com/category/human-behavior/',
+        'https://www.smithsonianmag.com/category/mind-body/',
+        'https://www.smithsonianmag.com/category/our-planet/',
+        'https://www.smithsonianmag.com/category/space/',
+        'https://www.smithsonianmag.com/category/wildlife/',
+        'https://www.smithsonianmag.com/category/education/',
+        'https://www.smithsonianmag.com/category/energy/',
+        'https://www.smithsonianmag.com/category/health-medicine/',
+        'https://www.smithsonianmag.com/category/technology/',
+        'https://www.smithsonianmag.com/category/art-artists/',
+        'https://www.smithsonianmag.com/category/books-2/',
+        'https://www.smithsonianmag.com/category/design/',
+        'https://www.smithsonianmag.com/category/food/',
+        'https://www.smithsonianmag.com/category/music-film/',
+        'https://www.smithsonianmag.com/category/africa-middleeast/',
+        'https://www.smithsonianmag.com/category/asia-pacific/',
+        'https://www.smithsonianmag.com/category/europe/',
+        'https://www.smithsonianmag.com/category/central-south-america/',
+        'https://www.smithsonianmag.com/category/us-canada/',
+        # 'https://www.smithsonianmag.com/rss/latest_articles/',
+        # 'https://www.smithsonianmag.com/rss/air-space-magazine/',
+        # 'https://www.smithsonianmag.com/rss/articles/',
+        # 'https://www.smithsonianmag.com/rss/arts-culture/',
+        # 'https://www.smithsonianmag.com/rss/smithsonian-institution/',
+        # 'https://www.smithsonianmag.com/rss/history/',
+        # 'https://www.smithsonianmag.com/rss/innovation/',
+        # 'https://www.smithsonianmag.com/rss/magazine/',
+        # 'https://www.smithsonianmag.com/rss/newsletters/',
+        # 'https://www.smithsonianmag.com/rss/multimedia/',      # Photos
+        # 'https://www.smithsonianmag.com/rss/science-nature/',  # Science
+        # 'https://www.smithsonianmag.com/rss/second-opinion/',
+        # 'https://www.smithsonianmag.com/rss/travel/',
 
         # 'https://www.newscientist.com/feed/home/',
         # 'https://www.newscientist.com/section/news/feed/',

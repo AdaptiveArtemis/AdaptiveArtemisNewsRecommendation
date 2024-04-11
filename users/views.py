@@ -1,4 +1,5 @@
 import json
+import logging
 from django.contrib.auth import authenticate, login
 from django.contrib.auth.decorators import login_required
 from django.core.exceptions import ValidationError
@@ -12,6 +13,7 @@ from .models import User, NewsLog
 # Create your views here.
 
 # Parse the json file sent by the react frontend and register it
+
 
 @csrf_exempt
 def register(request):
@@ -46,6 +48,7 @@ def register(request):
             return JsonResponse({'message': str(e)}, status=500)
     else:
         return JsonResponse({'message': 'Invalid request method'}, status=400)
+
 
 # login
 @csrf_exempt
@@ -84,11 +87,16 @@ def user_login(request):
 
 
 def normalize_prefer_list(prefer_list):
-    # Normalize the prefer list to a list of strings
-    total_weight = sum([item['weight'] for item in prefer_list])
-    for item in prefer_list:
-        item['weight'] = item['weight'] / total_weight if total_weight else 0
-    return prefer_list
+    # Normalize the prefer list to a list of strings,prefer_list is a dictionary
+    total_weight = sum(prefer_list.values())
+
+    if total_weight:
+        normalized_prefer_list = {keyword: weight / total_weight for keyword, weight in prefer_list.items()}
+    else:
+        normalized_prefer_list = {keyword: 0 for keyword in prefer_list.keys()}
+
+    return normalized_prefer_list
+
 
 @csrf_exempt
 @login_required
@@ -97,18 +105,24 @@ def get_user_profile(request):
     if request.method == 'GET':
         try:
             prefer_list = current_user.preferList
-            normalized_prefer_list = normalize_prefer_list(prefer_list)
+            if not prefer_list:
+                normalized_prefer_list = "No preferences set"
+            else:
+                normalized_prefer_list = normalize_prefer_list(prefer_list)
 
             recent_news_logs_query = (NewsLog.objects.filter(user=current_user)      # front-end
                                 .order_by('-timestamp')[:10])
 
-            recent_news_logs = [
-                {
-                    'title': log.title,
-                    'timestamp': log.timestamp.strftime('%Y-%m-%d %H:%M:%S')
-                }
-                for log in recent_news_logs_query
-            ]
+            if not recent_news_logs_query:
+                recent_news_logs = "No recent news logs found"
+            else:
+                recent_news_logs = [
+                    {
+                        'title': log.title,
+                        'timestamp': log.timestamp.strftime('%Y-%m-%d %H:%M:%S')
+                    }
+                    for log in recent_news_logs_query
+                ]
 
             user_info = {
                 'username': current_user.username,
@@ -121,6 +135,7 @@ def get_user_profile(request):
             return JsonResponse({'message': str(e)}, status=500)
     else:
         return JsonResponse({'message': 'Invalid request method'}, status=400)
+
 
 @csrf_exempt
 @login_required
@@ -143,6 +158,7 @@ def update_prefer_list(request):
     except Exception as e:
         return JsonResponse({'message': str(e)}, status=500)
 
+
 @csrf_exempt
 @login_required
 def log_news(request):
@@ -151,6 +167,8 @@ def log_news(request):
     title = request.POST.get('title')
 
     try:
+        total_logs = Article.objects.count()
+        logging.log(logging.INFO, f'Total logs: {total_logs}')
         article = Article.objects.get(title=title)
         NewsLog.objects.create(
             user_id=user,
@@ -158,11 +176,13 @@ def log_news(request):
             body=article.body,
             keywords=article.keywords,
             timestamp=timezone.now(),
-            title=title
+            title=article.title
         )
 
         return JsonResponse({'message': 'News logged successfully'}, status=200)
     except Article.DoesNotExist:
         return JsonResponse({'message': 'News not found'}, status=404)
+    except Exception as e:
+        return JsonResponse({'message': str(e)}, status=500)
 
 

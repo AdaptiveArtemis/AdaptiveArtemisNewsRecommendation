@@ -5,15 +5,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="35dd998c-1290-4c26-9012-1ed06d87c8c0" name="Changes" comment="user modeling">
-      <change afterPath="$PROJECT_DIR$/scraping/scrapyProject/smithsonian_rss_v_4.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/AdaptiveArtemisNewsRecommendation.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/AdaptiveArtemisNewsRecommendation.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/logs/celery.log" beforeDir="false" afterPath="$PROJECT_DIR$/logs/celery.log" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/users/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/users/models.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/users/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/users/urls.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/scraping/scrapyProject/scrapyProject/spiders/my_spider.py" beforeDir="false" afterPath="$PROJECT_DIR$/scraping/scrapyProject/scrapyProject/spiders/my_spider.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/users/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/users/views.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -81,7 +77,6 @@
   <component name="RunManager" selected="Django Server.AdaptiveArtemisNewsRecommendation">
     <configuration name="settings" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="AdaptiveArtemisNewsRecommendation" />
-      <option name="ENV_FILES" value="" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
       <envs>
@@ -104,7 +99,6 @@
     </configuration>
     <configuration name="AdaptiveArtemisNewsRecommendation" type="Python.DjangoServer" factoryName="Django server">
       <module name="AdaptiveArtemisNewsRecommendation" />
-      <option name="ENV_FILES" value="" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
       <envs>
