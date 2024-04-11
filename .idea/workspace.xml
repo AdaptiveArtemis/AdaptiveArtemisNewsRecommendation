@@ -4,7 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="35dd998c-1290-4c26-9012-1ed06d87c8c0" name="Changes" comment="log_news is unavailable right now, please don't change" />
+    <list default="true" id="35dd998c-1290-4c26-9012-1ed06d87c8c0" name="Changes" comment="log_news is unavailable right now, please don't change">
+      <change beforePath="$PROJECT_DIR$/users/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/users/views.py" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -144,7 +146,7 @@
       <workItem from="1712751103638" duration="84000" />
       <workItem from="1712752054168" duration="3284000" />
       <workItem from="1712756207853" duration="3119000" />
-      <workItem from="1712840836975" duration="1257000" />
+      <workItem from="1712840836975" duration="5285000" />
     </task>
     <task id="LOCAL-00001" summary="user modeling">
       <created>1712740426127</created>
@@ -167,7 +169,14 @@
       <option name="project" value="LOCAL" />
       <updated>1712841553355</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="log_news is unavailable right now, please don't change">
+      <created>1712842405418</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1712842405418</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
