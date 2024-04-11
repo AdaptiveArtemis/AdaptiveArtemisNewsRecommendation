@@ -11,14 +11,16 @@ def apply_decay_to_user(preferList, decay=0.8):
 
 def update_user_prefer_lists():
     today = timezone.now().date()
-    yesterday = today - timezone.timedelta(days=1)
-    start_of_yesterday = datetime.datetime.combine(yesterday, datetime.time.min)
-    end_of_yesterday = datetime.datetime.combine(yesterday, datetime.time.max)
-
-    yesterday_logs = NewsLog.objects.filter(timestamp__range=(start_of_yesterday, end_of_yesterday))
+    # yesterday = today - timezone.timedelta(days=1)
+    # start_of_yesterday = datetime.datetime.combine(yesterday, datetime.time.min)
+    # end_of_yesterday = datetime.datetime.combine(yesterday, datetime.time.max)
+    start_of_today = datetime.datetime.combine(today, datetime.time.min)
+    end_of_today = datetime.datetime.combine(today, datetime.time.max)
+    today_logs = NewsLog.objects.filter(timestamp__range=(start_of_today, end_of_today))
+    # yesterday_logs = NewsLog.objects.filter(timestamp__range=(start_of_yesterday, end_of_yesterday))
 
     user_logs = {}
-    for log in yesterday_logs:
+    for log in today_logs:
         user_logs.setdefault(log.user, []).append(log)
 
     for user, logs in user_logs.items():
