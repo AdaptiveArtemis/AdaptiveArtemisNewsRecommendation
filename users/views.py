@@ -110,7 +110,7 @@ def get_user_profile(request):
             else:
                 normalized_prefer_list = normalize_prefer_list(prefer_list)
 
-            recent_news_logs_query = (NewsLog.objects.filter(user_id=current_user)      # front-end
+            recent_news_logs_query = (NewsLog.objects.filter(user=current_user)      # front-end
                                 .order_by('-timestamp')[:10])
 
             if not recent_news_logs_query:
@@ -171,7 +171,7 @@ def log_news(request):
         try:
             article = Article.objects.get(title=title)
             NewsLog.objects.create(
-                user_id=user,
+                user=user, # user_id=user.id
                 news_id=article.id,
                 body=article.body,
                 keywords=article.keywords,

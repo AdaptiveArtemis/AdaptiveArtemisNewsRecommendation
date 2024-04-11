@@ -49,7 +49,7 @@ class User(AbstractBaseUser, PermissionsMixin):              # PermissionsMixin 
 
 
 class NewsLog(models.Model):
-    user_id = models.ForeignKey(User, on_delete=models.CASCADE)           # user - news
+    user = models.ForeignKey(User, on_delete=models.CASCADE)           # user - news
     news_id = models.CharField(max_length=255)
     body = models.TextField()
     keywords = models.TextField()
