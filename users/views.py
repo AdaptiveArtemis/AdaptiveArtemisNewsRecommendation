@@ -169,8 +169,6 @@ def log_news(request):
         title = data.get('title')
 
         try:
-            total_logs = Article.objects.count()
-            logging.log(logging.INFO, f'Total logs: {total_logs}')
             article = Article.objects.get(title=title)
             NewsLog.objects.create(
                 user_id=user,
