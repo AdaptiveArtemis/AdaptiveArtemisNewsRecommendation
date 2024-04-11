@@ -110,7 +110,7 @@ def get_user_profile(request):
             else:
                 normalized_prefer_list = normalize_prefer_list(prefer_list)
 
-            recent_news_logs_query = (NewsLog.objects.filter(user=current_user)      # front-end
+            recent_news_logs_query = (NewsLog.objects.filter(user_id=current_user)      # front-end
                                 .order_by('-timestamp')[:10])
 
             if not recent_news_logs_query:
@@ -164,25 +164,29 @@ def update_prefer_list(request):
 def log_news(request):
     user: User = request.user
     # news_id = request.POST.get('news_id')
-    title = request.POST.get('title')
+    if request.method == 'POST':
+        data = json.loads(request.body)
+        title = data.get('title')
 
-    try:
-        total_logs = Article.objects.count()
-        logging.log(logging.INFO, f'Total logs: {total_logs}')
-        article = Article.objects.get(title=title)
-        NewsLog.objects.create(
-            user_id=user,
-            news_id=article.id,
-            body=article.body,
-            keywords=article.keywords,
-            timestamp=timezone.now(),
-            title=article.title
-        )
+        try:
+            total_logs = Article.objects.count()
+            logging.log(logging.INFO, f'Total logs: {total_logs}')
+            article = Article.objects.get(title=title)
+            NewsLog.objects.create(
+                user_id=user,
+                news_id=article.id,
+                body=article.body,
+                keywords=article.keywords,
+                timestamp=timezone.now(),
+                title=article.title
+            )
 
-        return JsonResponse({'message': 'News logged successfully'}, status=200)
-    except Article.DoesNotExist:
-        return JsonResponse({'message': 'News not found'}, status=404)
-    except Exception as e:
-        return JsonResponse({'message': str(e)}, status=500)
+            return JsonResponse({'message': 'News logged successfully'}, status=200)
+        except Article.DoesNotExist:
+            return JsonResponse({'message': 'News not found'}, status=404)
+        except Exception as e:
+            return JsonResponse({'message': str(e)}, status=500)
+    else:
+        return JsonResponse({'message': 'Invalid request method'}, status=400)
 
 
