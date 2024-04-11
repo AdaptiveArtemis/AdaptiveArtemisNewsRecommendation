@@ -58,7 +58,7 @@ def update_user_prefer_lists():
         #             prefer_list[keyword] = prefer_list.get(keyword, 0) + keyword_weight
 
         # Make sure to keep only the top 5 weighted keywords
-        prefer_list = dict(sorted(prefer_list.items(), key=lambda x: x[1], reverse=True)[:5])
+        prefer_list = dict(sorted(prefer_list.items(), key=lambda x: x[1], reverse=True)[:15])
 
         # Save the updated prefer list
         user.preferList = prefer_list
