@@ -1,11 +1,12 @@
 import datetime
-import json
 import logging
 
 from django.utils import timezone
 from sklearn.feature_extraction.text import TfidfVectorizer
 
 from users.models import User, NewsLog
+
+logger = logging.getLogger('userModeling')
 
 def apply_decay_to_user(preferList, decay=0.8):
     """preferlist: list of tuples (keyword, weight)"""
@@ -20,7 +21,7 @@ def update_user_prefer_lists():
     end_of_today = timezone.make_aware(datetime.datetime.combine(today, datetime.time.max))
     today_logs = NewsLog.objects.filter(timestamp__range=(start_of_today, end_of_today))
     # yesterday_logs = NewsLog.objects.filter(timestamp__range=(start_of_yesterday, end_of_yesterday))
-    logging.info(today_logs)
+    logger.info(today_logs)
     user_logs = {}
     for log in today_logs:
         user_logs.setdefault(log.user, []).append(log)
@@ -36,8 +37,8 @@ def update_user_prefer_lists():
         tfidf_matrix = vectorizer.fit_transform(documents)
         feature_names = vectorizer.get_feature_names_out()
         feature_index = {name: index for index, name in enumerate(feature_names)}
-        logging.info(documents)
-        logging.info(feature_names, feature_index)
+        logger.info(documents)
+        logger.info(feature_names, feature_index)
         for log in logs:
             doc_keywords = log.keywords.split(',') if log.keywords else []
 
