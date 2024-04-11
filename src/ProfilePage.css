@@ -1,0 +1,91 @@
+.page-taskbar {
+    display:flex;
+    margin: 3%;
+}
+
+#logo {
+    display: flex;
+    flex: 1;
+}
+
+.page-title {
+    display: flex;
+    font-size: 40px;
+    justify-content: center;
+    flex: 6;
+    text-align: center;
+}
+
+#user-info {
+    margin: 1%;
+    padding: 1%;
+    border: 2px solid black;
+    border-radius: 10px;
+}
+
+#userName {
+    font-size: 25px;
+}
+
+#userEmail {
+    font-size: 15px;
+}
+
+#user-details {
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.section-heading {
+    display: flex;
+    justify-content: space-between;
+}
+
+.section-heading button {
+    height: min-content;
+}
+
+#article-history, #category-pref {
+    margin: 1%;
+    padding: 1%;
+    flex: 1;
+    border: 2px solid black;
+    border-radius: 10px;
+}
+
+#article-history {
+    flex: 3;
+}
+
+.articleItem {
+    display: flex;
+    padding: 1%;
+    justify-content: space-evenly;
+    border-top: 0.5px dashed grey;
+    border-bottom: 0.5px dashed grey;
+}
+
+.articleTitle {
+    flex: 1;
+    text-align: start;
+}
+
+.articleSubtitle {
+    flex: 3;
+    text-align: start;
+}
+
+.preferenceSlider {
+    display: flex;
+    padding: 1%;
+    justify-content: space-evenly;
+}
+
+.preferenceSlider label {
+    flex: 2;
+    text-align: start;
+}
+
+.preferenceSlider input {
+    flex: 2;
+}
