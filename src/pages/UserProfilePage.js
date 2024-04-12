@@ -1,5 +1,5 @@
 import '../stylesheets/UserProfilePage.css';
-import React, {useState, useEffect, useEffect} from 'react';
+import React, {useState, useEffect} from 'react';
 
 export default function ProfilePage() {
     
@@ -8,11 +8,11 @@ export default function ProfilePage() {
         email: 'Email',
     })
     const [articles, setArticles] = useState([
-        { ""title"": 'Article Title 1', ""subtitle"": 'Sub-title 1', "timestamp": "2024-04-11 19:45:50", "timestamp": "2024-04-11 19:45:50" },
-        { ""title"": 'Article Title 2', ""subtitle"": 'Sub-title 2', "timestamp": "2024-04-11 19:45:50", "timestamp": "2024-04-11 19:45:50" },
-        { ""title"": 'Article Title 3', ""subtitle"": 'Sub-title 3', "timestamp": "2024-04-11 19:45:50", "timestamp": "2024-04-11 19:45:50" },
-        { ""title"": 'Article Title 4', ""subtitle"": 'Sub-title 4', "timestamp": "2024-04-11 19:45:50", "timestamp": "2024-04-11 19:45:50" },
-        { ""title"": 'Article Title 5', ""subtitle"": 'Sub-title 5', "timestamp": "2024-04-11 19:45:50", "timestamp": "2024-04-11 19:45:50" },
+        { "title": 'Article Title 1', "subtitle": 'Sub-title 1', "timestamp": "2024-04-11 19:45:50" },
+        { "title": 'Article Title 2', "subtitle": 'Sub-title 2', "timestamp": "2024-04-11 19:45:50" },
+        { "title": 'Article Title 3', "subtitle": 'Sub-title 3', "timestamp": "2024-04-11 19:45:50" },
+        { "title": 'Article Title 4', "subtitle": 'Sub-title 4', "timestamp": "2024-04-11 19:45:50" },
+        { "title": 'Article Title 5', "subtitle": 'Sub-title 5', "timestamp": "2024-04-11 19:45:50" },
     ])
     const [preferences, setPreferences] = useState({
         History: 0.5,
@@ -21,35 +21,7 @@ export default function ProfilePage() {
         Technology: 1,
         Politics: 0.1,
         International: 0.4,
-        History: 0.5,
-        Art: 0.2,
-        Cybersecurity: 0.3,
-        Technology: 1,
-        Politics: 0.1,
-        International: 0.4,
     })
-
-    const getUserData = async () => {
-        try {
-            // Send a POST request to the backend login endpoint
-            const response = await fetch('http://127.0.0.1:8000/users/user/profile', {
-                method: 'GET',
-                headers: {
-                    'Content-Type': 'application/json'
-                },
-            })
-            const data = await response.json();
-            console.log("User data Successfully retrieved from the backend");
-            setUserInfo({
-                name: data["username"],
-                email: data["email"],
-            });
-            setPreferences(data["preferList"]);
-            setArticles(data["recentNewsLogs"])
-        } catch {
-            alert("There was a problem while contacting the backend to get the user data")
-        }
-    }
 
     const getUserData = async () => {
         try {
@@ -88,10 +60,6 @@ export default function ProfilePage() {
         getUserData()
     }, [])
 
-    useEffect(() => {
-        getUserData()
-    }, [])
-
     return (
         <div className="profile-page">
             <div className="page-taskbar">
@@ -112,7 +80,6 @@ export default function ProfilePage() {
                     <div key={index} className="articleItem">
                         <div className="articleTitle">{article.title}</div>
                         <div className="articleTimestamp">{Date(article.timestamp).toLocaleString()}</div>
-                        <div className="articleTimestamp">{Date(article.timestamp).toLocaleString()}</div>
                     </div>
                     ))}
                 </div>
@@ -127,7 +94,6 @@ export default function ProfilePage() {
                         type="range"
                         min="0"
                         max="10"
-                        value={preferences[pref]*10}
                         value={preferences[pref]*10}
                         onChange={(e) => handlePreferenceChange(pref, e.target.value)}
                         />
