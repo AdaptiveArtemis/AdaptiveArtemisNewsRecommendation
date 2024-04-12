@@ -58,7 +58,6 @@
 }
 
 .articleItem {
-    display: flex;
     padding: 1%;
     justify-content: space-evenly;
     border-top: 0.5px dashed grey;
@@ -66,12 +65,12 @@
 }
 
 .articleTitle {
-    flex: 1;
+    font-size: 120%;
     text-align: start;
 }
 
-.articleSubtitle {
-    flex: 3;
+.articleTimestamp {
+    font-size: 75%;
     text-align: start;
 }
 
