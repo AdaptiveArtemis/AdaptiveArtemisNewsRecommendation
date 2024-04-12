@@ -66,9 +66,12 @@
 
 .articleTitle {
     font-size: 120%;
+    font-size: 120%;
     text-align: start;
 }
 
+.articleTimestamp {
+    font-size: 75%;
 .articleTimestamp {
     font-size: 75%;
     text-align: start;
