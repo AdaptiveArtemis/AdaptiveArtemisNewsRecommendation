@@ -1,5 +1,5 @@
 import '../stylesheets/UserProfilePage.css';
-import React, {useState} from 'react';
+import React, {useState, useEffect} from 'react';
 
 export default function ProfilePage() {
     
@@ -8,21 +8,42 @@ export default function ProfilePage() {
         email: 'Email',
     })
     const [articles, setArticles] = useState([
-        { title: 'Article Title 1', subtitle: 'Sub-title 1' },
-        { title: 'Article Title 2', subtitle: 'Sub-title 2' },
-        { title: 'Article Title 3', subtitle: 'Sub-title 3' },
-        { title: 'Article Title 4', subtitle: 'Sub-title 4' },
-        { title: 'Article Title 5', subtitle: 'Sub-title 5' },
+        { "title": 'Article Title 1', "subtitle": 'Sub-title 1', "timestamp": "2024-04-11 19:45:50" },
+        { "title": 'Article Title 2', "subtitle": 'Sub-title 2', "timestamp": "2024-04-11 19:45:50" },
+        { "title": 'Article Title 3', "subtitle": 'Sub-title 3', "timestamp": "2024-04-11 19:45:50" },
+        { "title": 'Article Title 4', "subtitle": 'Sub-title 4', "timestamp": "2024-04-11 19:45:50" },
+        { "title": 'Article Title 5', "subtitle": 'Sub-title 5', "timestamp": "2024-04-11 19:45:50" },
     ])
-
     const [preferences, setPreferences] = useState({
-        History: 5,
-        Art: 2,
-        Cybersecurity: 3,
-        Technology: 10,
-        Politics: 1,
-        International: 4,
+        History: 0.5,
+        Art: 0.2,
+        Cybersecurity: 0.3,
+        Technology: 1,
+        Politics: 0.1,
+        International: 0.4,
     })
+
+    const getUserData = async () => {
+        try {
+            // Send a POST request to the backend login endpoint
+            const response = await fetch('http://127.0.0.1:8000/users/user/profile', {
+                method: 'GET',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+            })
+            const data = await response.json();
+            console.log("User data Successfully retrieved from the backend");
+            setUserInfo({
+                name: data["username"],
+                email: data["email"],
+            });
+            setPreferences(data["preferList"]);
+            setArticles(data["recentNewsLogs"])
+        } catch {
+            alert("There was a problem while contacting the backend to get the user data")
+        }
+    }
 
     const clearHistory = () => {
         setArticles([])
@@ -34,6 +55,10 @@ export default function ProfilePage() {
         [category]: value,
         }))
     }
+
+    useEffect(() => {
+        getUserData()
+    }, [])
 
     return (
         <div className="profile-page">
@@ -54,7 +79,7 @@ export default function ProfilePage() {
                     {articles.map((article, index) => (
                     <div key={index} className="articleItem">
                         <div className="articleTitle">{article.title}</div>
-                        <div className="articleSubTitle">{article.subtitle}</div>
+                        <div className="articleTimestamp">{Date(article.timestamp).toLocaleString()}</div>
                     </div>
                     ))}
                 </div>
@@ -69,7 +94,7 @@ export default function ProfilePage() {
                         type="range"
                         min="0"
                         max="10"
-                        value={preferences[pref]}
+                        value={preferences[pref]*10}
                         onChange={(e) => handlePreferenceChange(pref, e.target.value)}
                         />
                     </div>
