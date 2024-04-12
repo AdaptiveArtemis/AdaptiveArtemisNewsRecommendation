@@ -15,5 +15,15 @@
         </introspection-scope>
       </schema-mapping>
     </data-source>
+    <data-source name="@localhost" uuid="5f6f48b8-a9e6-41a8-86bf-449cae99d022">
+      <database-info product="" version="" jdbc-version="" driver-name="" driver-version="" dbms="MYSQL" exact-version="0">
+        <extra-name-characters>#@</extra-name-characters>
+        <identifier-quote-string>`</identifier-quote-string>
+      </database-info>
+      <case-sensitivity plain-identifiers="lower" quoted-identifiers="lower" />
+      <secret-storage>master_key</secret-storage>
+      <user-name>root</user-name>
+      <schema-mapping />
+    </data-source>
   </component>
 </project>

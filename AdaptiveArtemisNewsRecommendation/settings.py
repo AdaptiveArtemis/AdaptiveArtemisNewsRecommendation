@@ -25,12 +25,15 @@ SECRET_KEY = 'django-insecure-*k(713agrm1@+ql4xwen!ur&p3r521plnm%6f@4mko^f_yc!_8
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+# Setting up user models
 
+ALLOWED_HOSTS = []
+AUTH_USER_MODEL = 'users.User'
 
 # Application definition
-
+# order is important.
 INSTALLED_APPS = [
+    'users',                              # users module
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -38,8 +41,8 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'recommend',                         # recommend module
-    'users',                             # users module
     'news',
+    'userModeling',
     'rest_framework',
     'corsheaders'
 ]
@@ -52,6 +55,12 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'corsheaders.middleware.CorsMiddleware',
+    'django.middleware.common.CommonMiddleware',
+]
+
+CORS_ALLOWED_ORIGINS = [
+    "http://localhost:3000",
 ]
 
 ROOT_URLCONF = 'AdaptiveArtemisNewsRecommendation.urls'
@@ -170,15 +179,51 @@ LOGGING = {
             'filename': os.path.join(BASE_DIR, 'logs/celery.log'),
             'formatter': 'verbose',
         },
+        'console': {
+            'level': 'INFO',
+            'class': 'logging.StreamHandler',
+            'formatter': 'verbose',
+        },
     },
     'loggers': {
         'django': {
-            'handlers': ['file'],
+            'handlers': ['file', 'console'],  # 日志同时输出到文件和控制台
             'level': 'DEBUG',
+            'propagate': True,
+        },
+        # 如果你希望你自己的应用也有日志输出，可以添加你的应用的 logger 配置
+        'userModeling': {
+            'handlers': ['file', 'console'],  # 添加 'console' 以便将日志信息输出到控制台
+            'level': 'DEBUG',  # 根据需要设定日志等级
             'propagate': True,
         },
     },
 }
+# LOGGING = {
+#     'version': 1,
+#     'disable_existing_loggers': False,
+#     'formatters': {
+#         'verbose': {
+#             'format': '{levelname} {asctime} {module} {message}',
+#             'style': '{',
+#         },
+#     },
+#     'handlers': {
+#         'file': {
+#             'level': 'DEBUG',
+#             'class': 'logging.FileHandler',
+#             'filename': os.path.join(BASE_DIR, 'logs/celery.log'),
+#             'formatter': 'verbose',
+#         },
+#     },
+#     'loggers': {
+#         'django': {
+#             'handlers': ['file'],
+#             'level': 'DEBUG',
+#             'propagate': True,
+#         },
+#     },
+# }
 
 
 

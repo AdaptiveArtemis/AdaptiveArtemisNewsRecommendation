@@ -4,63 +4,14 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="35dd998c-1290-4c26-9012-1ed06d87c8c0" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/AdaptiveArtemisNewsRecommendation.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/profiles_settings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/AdaptiveArtemisNewsRecommendation/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/AdaptiveArtemisNewsRecommendation/asgi.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/AdaptiveArtemisNewsRecommendation/celery.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/AdaptiveArtemisNewsRecommendation/settings.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/AdaptiveArtemisNewsRecommendation/urls.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/AdaptiveArtemisNewsRecommendation/wsgi.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/db.sqlite3" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/logs/celery.log" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/manage.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/news/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/news/admin.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/news/apps.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/news/migrations/0001_initial.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/news/migrations/0002_article_timestamp.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/news/migrations/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/news/models.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/news/tests.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/news/views.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/recommend/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/recommend/admin.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/recommend/apps.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/recommend/migrations/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/recommend/models.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/recommend/service/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/recommend/service/recommendation_engine.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/recommend/service/user_pref_refresher.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/recommend/tests.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/recommend/views.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/requirements.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/scraping/scrapyProject/scrapy.cfg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/scraping/scrapyProject/scrapyProject/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/scraping/scrapyProject/scrapyProject/items.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/scraping/scrapyProject/scrapyProject/middlewares.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/scraping/scrapyProject/scrapyProject/pipelines.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/scraping/scrapyProject/scrapyProject/settings.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/scraping/scrapyProject/scrapyProject/spiders/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/scraping/scrapyProject/scrapyProject/spiders/my_spider.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/scraping/scrapyProject/service.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/scraping/scrapyProject/smithsonian_rss_v_1.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/scraping/scrapyProject/smithsonian_rss_v_2.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/scraping/scrapyProject/smithsonian_rss_v_3.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/scraping/scrapyProject/task.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/users/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/users/admin.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/users/apps.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/users/migrations/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/users/models.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/users/tests.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/users/views.py" afterDir="false" />
+    <list default="true" id="35dd998c-1290-4c26-9012-1ed06d87c8c0" name="Changes" comment="fix userModeling">
+      <change beforePath="$PROJECT_DIR$/AdaptiveArtemisNewsRecommendation/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/AdaptiveArtemisNewsRecommendation/settings.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/AdaptiveArtemisNewsRecommendation.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/AdaptiveArtemisNewsRecommendation.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/aaa/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/aaa/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/celery.log" beforeDir="false" afterPath="$PROJECT_DIR$/logs/celery.log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/users/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/users/urls.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -78,7 +29,13 @@
     </option>
   </component>
   <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="jiayi" />
+      </map>
+    </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="ROOT_SYNC" value="DONT_SYNC" />
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
@@ -103,14 +60,16 @@
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "RunOnceActivity.pycharm.django.structure.promotion.once.per.project": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "git-widget-placeholder": "master",
+    "WebServerToolWindowFactoryState": "false",
+    "git-widget-placeholder": "main",
     "ignore.virus.scanning.warn.message": "true",
+    "last_opened_file_path": "C:/Users/Alienware/PycharmProjects/AdaptiveArtemisNewsRecommendation/aaa",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
     "node.js.selected.package.tslint": "(autodetect)",
     "nodejs_package_manager_path": "npm",
-    "settings.editor.selected.configurable": "preferences.lookFeel",
+    "settings.editor.selected.configurable": "com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable",
     "vue.rearranger.settings.migration": "true"
   },
   "keyToStringList": {
@@ -122,7 +81,7 @@
     ]
   }
 }]]></component>
-  <component name="RunManager" selected="Python.settings">
+  <component name="RunManager" selected="Django Server.AdaptiveArtemisNewsRecommendation">
     <configuration name="settings" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="AdaptiveArtemisNewsRecommendation" />
       <option name="ENV_FILES" value="" />
@@ -173,6 +132,8 @@
     <recent_temporary>
       <list>
         <item itemvalue="Python.settings" />
+        <item itemvalue="Python.settings" />
+        <item itemvalue="Python.settings" />
       </list>
     </recent_temporary>
   </component>
@@ -196,14 +157,115 @@
       <workItem from="1712188489576" duration="4649000" />
       <workItem from="1712195667552" duration="1503000" />
       <workItem from="1712197187299" duration="7031000" />
+      <workItem from="1712670796750" duration="4351000" />
+      <workItem from="1712737296927" duration="5016000" />
+      <workItem from="1712751103638" duration="84000" />
+      <workItem from="1712752054168" duration="3284000" />
+      <workItem from="1712756207853" duration="3119000" />
+      <workItem from="1712840836975" duration="14461000" />
     </task>
+    <task id="LOCAL-00001" summary="user modeling">
+      <created>1712740426127</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1712740426127</updated>
+    </task>
+    <task id="LOCAL-00002" summary="fix log_news and get_user_profile">
+      <created>1712833775480</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1712833775480</updated>
+    </task>
+    <task id="LOCAL-00003" summary="log_news is unavailable right now, please don't change">
+      <created>1712841553355</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1712841553355</updated>
+    </task>
+    <task id="LOCAL-00004" summary="log_news is unavailable right now, please don't change">
+      <created>1712842405418</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1712842405418</updated>
+    </task>
+    <task id="LOCAL-00005" summary="log_news is unavailable right now, please don't change">
+      <created>1712849081321</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1712849081321</updated>
+    </task>
+    <task id="LOCAL-00006" summary="log_news is unavailable right now, please don't change">
+      <created>1712849084053</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1712849084053</updated>
+    </task>
+    <task id="LOCAL-00007" summary="log_news is unavailable right now, please don't change">
+      <created>1712852506147</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1712852506147</updated>
+    </task>
+    <task id="LOCAL-00008" summary="fix userModeling">
+      <created>1712853527683</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1712853527683</updated>
+    </task>
+    <task id="LOCAL-00009" summary="fix userModeling">
+      <created>1712855287933</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1712855287933</updated>
+    </task>
+    <task id="LOCAL-00010" summary="change preferList number to 15">
+      <created>1712856701338</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1712856701338</updated>
+    </task>
+    <task id="LOCAL-00011" summary="fix userModeling">
+      <created>1712857249243</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1712857249243</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
   </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
+    <MESSAGE value="user modeling" />
+    <MESSAGE value="fix log_news and get_user_profile" />
+    <MESSAGE value="log_news is unavailable right now, please don't change" />
+    <MESSAGE value="change preferList number to 15" />
+    <MESSAGE value="fix userModeling" />
+    <option name="LAST_COMMIT_MESSAGE" value="fix userModeling" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/AdaptiveArtemisNewsRecommendation$settings.coverage" NAME="settings Coverage Results" MODIFIED="1712182198657" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/scraping/scrapyProject/scrapyProject" />

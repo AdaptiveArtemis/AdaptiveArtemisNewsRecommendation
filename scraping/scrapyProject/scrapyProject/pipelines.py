@@ -41,7 +41,7 @@ class ScrapyprojectPipeline:
                 'description': item['description'],
                 'pub_date': pub_date,
                 'image': item['image'],
-                'keywords': item.get('keywords', ''),
+                'keywords1': item.get('keywords', ''),
                 'robots': item.get('robots', ''),
                 'author': item.get('author', ''),
                 'category': item.get('category', ''),
