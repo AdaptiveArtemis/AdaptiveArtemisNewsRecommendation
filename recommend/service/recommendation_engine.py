@@ -34,13 +34,16 @@ class EmbeddingRecommender():
 
     def keyword_intersection(self, article_keywords, user_keywords):
 
-        article_keywords = set([x.strip().lower() for x in article_keywords.split(",")])
+        # article_keywords = set([x.strip().lower() for x in article_keywords.split(",")])
+        article_keywords = set(article_keywords)
+        print(article_keywords)
         user_keywords = set([x.strip().lower() for x in user_keywords.keys()])
+        print(user_keywords)
         return list(article_keywords.intersection(user_keywords))
     
     def get_most_relevant_keyword(self, article):
 
-        article_keywords = article.keywords
+        article_keywords = article.keywords1
         user_prefer_list = self.user.preferList
 
         most_relevant_keywords = self.keyword_intersection(article_keywords, user_prefer_list)
@@ -79,14 +82,14 @@ class EmbeddingRecommender():
         article_embeddings = []
         for article in self.articles:
             try:
-                article_tags = article.keywords
+                article_tags = ' '.join(article.keywords1)
                 if not article_tags:
                     continue
                 article_embedding = self.get_bert_embeddings(article_tags)
                 article_embeddings.append(article_embedding)
                 articles_used.append(article)
             except Exception as e:
-                print(f"Error processing article: {article.title}, {str(e)}")   
+                print(f"Error processing article: {article.title}, {str(e)}")
 
         # Calculate cosine similarity between user tags and article tags
         similarities = [
@@ -98,9 +101,12 @@ class EmbeddingRecommender():
         top_article_indices = sorted_article_indices[-num_recommendations:]
         top_articles = []
         for index in top_article_indices:
+            print(index)
             index = int(index)
             curr_article = articles_used[index]
+            print(curr_article)
             most_relevant_keyword = self.get_most_relevant_keyword(curr_article)
+            print(most_relevant_keyword)
             top_articles.append({
                 "title": curr_article.title,
                 "subtitle": curr_article.description,
@@ -111,5 +117,5 @@ class EmbeddingRecommender():
     
     def retrieve_recent_articles(self):
         # Retrieve articles with a pub_date within the last 2 days
-        recent_articles = Article.objects.filter(pub_date__gte=datetime.now() - timedelta(days=2))
+        recent_articles = Article.objects.filter(timestamp__gte=datetime.now() - timedelta(days=2))
         return recent_articles
