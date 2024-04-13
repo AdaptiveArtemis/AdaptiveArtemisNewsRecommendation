@@ -92,6 +92,7 @@ def update_user_prefer_lists2():
 
         # Prepare the document for TF-IDF calculations
         documents = [spacy_preprocess(log.body) for log in logs]
+        logger.info(documents)
         keywords_documents = [" ".join(log.keywords1) for log in logs]
         # logger.info(keywords_documents)
         combined_documents = documents + keywords_documents
