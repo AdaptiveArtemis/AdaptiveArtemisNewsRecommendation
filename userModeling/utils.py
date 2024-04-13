@@ -98,7 +98,7 @@ def update_user_prefer_lists2():
 
         # Update preferList with new keywords,adding to existing keywords, prefer_list is a dictionary
         for doc_index in range(len(documents)):
-            similarity = cosine_similarity(documents_tfidf[doc_index], keywords_tfidf)
+            similarity = cosine_similarity(documents_tfidf[doc_index:doc_index+1], keywords_tfidf)
             highest_indices = np.argsort(similarity.flatten())[::-1][:len(logs[doc_index].keywords1)]
 
             for idx in highest_indices:
