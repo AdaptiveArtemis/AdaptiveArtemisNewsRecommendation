@@ -4,13 +4,13 @@ import RegistrationPage from './pages/RegistrationPage'
 import LoginPage from './pages/LoginPage'
 import HomePage from './pages/HomePage'
 import UserProfilePage from './pages/UserProfilePage'
+import NavigationBar from './pages/Navbar'
 
 function App () {
   return (
     <Router>
       <div>
-        <nav>
-        </nav>
+        <NavigationBar />
         <Routes>
           <Route path="/register" element={<RegistrationPage />} />
           <Route path="/login" element={<LoginPage />} />

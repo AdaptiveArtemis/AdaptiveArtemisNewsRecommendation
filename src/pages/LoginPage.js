@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 import { useNavigate, Link } from 'react-router-dom'
+import 'bootstrap/dist/css/bootstrap.min.css'
 
 export default function LoginPage () {
   const [email, setEmail] = useState('') // State for storing email
@@ -35,31 +36,41 @@ export default function LoginPage () {
   }
 
   return (
-    <div className="login-page">
-      <div className="login-form">
-        <h2>Login</h2>
-        <div className="form-group">
-          <label htmlFor="email">Email:</label>
-          <input
-            type="email"
-            id="email"
-            value={email}
-            onChange={(e) => setEmail(e.target.value)}
-          />
+    <div className="container">
+      <div className="row justify-content-center">
+        <div className="col-12 col-md-8 col-lg-6">
+          <form className="my-5" onSubmit={handleLogin}>
+            <h4 className="mb-3 fw-normal">Welcome to the Daily SciSync! To continue, please sign in.</h4>
+            <div className="form-floating mb-3">
+              <input
+                type="email"
+                id="email"
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
+                className="form-control"
+                placeholder="Enter your email"
+              />
+              <label htmlFor="email">Email address</label>
+            </div>
+
+            <div className="form-floating mb-3">
+              <input
+                type="password"
+                id="password"
+                value={password}
+                onChange={(e) => setPassword(e.target.value)}
+                className="form-control"
+                placeholder="Enter your password"
+              />
+              <label htmlFor="password">Password</label>
+            </div>
+
+            <button className="w-100 btn btn-lg btn-primary" type="submit">Sign in</button>
+            <p className="mt-3 text-center">
+              Don't have an account? <Link to="/register">Register</Link>
+            </p>
+          </form>
         </div>
-        <div className="form-group">
-          <label htmlFor="password">Password:</label>
-          <input
-            type="password"
-            id="password"
-            value={password}
-            onChange={(e) => setPassword(e.target.value)}
-          />
-        </div>
-        <button onClick={handleLogin}>Login</button>
-        <p>
-          Don't have an account? <Link to="/register">Register</Link>
-        </p>
       </div>
     </div>
   )
