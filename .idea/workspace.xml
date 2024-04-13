@@ -5,8 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="35dd998c-1290-4c26-9012-1ed06d87c8c0" name="Changes" comment="change userModeling logic">
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/userModeling/utils.py" beforeDir="false" afterPath="$PROJECT_DIR$/userModeling/utils.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -159,7 +159,7 @@
       <workItem from="1712756207853" duration="3119000" />
       <workItem from="1712840836975" duration="14461000" />
       <workItem from="1712914627775" duration="2372000" />
-      <workItem from="1713007348922" duration="1113000" />
+      <workItem from="1713007348922" duration="4194000" />
     </task>
     <task id="LOCAL-00001" summary="user modeling">
       <created>1712740426127</created>
@@ -245,7 +245,14 @@
       <option name="project" value="LOCAL" />
       <updated>1713007448140</updated>
     </task>
-    <option name="localTasksCounter" value="13" />
+    <task id="LOCAL-00013" summary="change userModeling logic">
+      <created>1713008637823</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1713008637823</updated>
+    </task>
+    <option name="localTasksCounter" value="14" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
