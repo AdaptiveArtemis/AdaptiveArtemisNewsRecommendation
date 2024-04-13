@@ -34,6 +34,7 @@ def update_user_prefer_lists():
 
         # Prepare the document for TF-IDF calculations
         documents = [preprocess_document(log.body) for log in logs]
+        logger.info(documents)
         vectorizer = TfidfVectorizer(max_features=40, token_pattern=r'(?u)\b\w+\b', stop_words='english')
         tfidf_matrix = vectorizer.fit_transform(documents)
         logger.info(tfidf_matrix)
