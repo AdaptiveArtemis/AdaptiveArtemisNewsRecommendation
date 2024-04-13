@@ -26,7 +26,7 @@ export default function ProfilePage() {
     const getUserData = async () => {
         try {
             // Send a POST request to the backend login endpoint
-            const response = await fetch('http://127.0.0.1:8000/users/user/profile', {
+            const response = await fetch('http://127.0.0.1:8000/users/user/profile/', {
                 method: 'GET',
                 headers: {
                     'Content-Type': 'application/json'

@@ -25,7 +25,7 @@ const RegistrationPage = () => {
       return
     }
     try {
-      const response = await fetch('YOUR_BACKEND_API_ENDPOINT', {
+      const response = await fetch('http://127.0.0.1:8000/users/api/register/', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
