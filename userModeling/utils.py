@@ -66,7 +66,13 @@ def update_user_prefer_lists():
 
 def spacy_preprocess(document):
     doc = nlp(document)
-    tokens = [token.lemma_ for token in doc if not token.is_stop and not token.is_punct and len(token.text) > 1]
+    tokens = [
+        token.lemma_ for token in doc
+        if not token.is_stop  # 移除停用词
+        and not token.is_punct  # 移除标点符号
+        and not token.like_num  # 移除数字
+        and len(token.text) > 1  # 只接受长度大于1的词
+    ]
     return " ".join(tokens)
 
 def update_user_prefer_lists2():
@@ -86,12 +92,13 @@ def update_user_prefer_lists2():
 
         # Prepare the document for TF-IDF calculations
         documents = [spacy_preprocess(log.body) for log in logs]
+        logger.info(documents)
         keywords_documents = [" ".join(log.keywords1) for log in logs]
-        logger.info(keywords_documents)
+        # logger.info(keywords_documents)
         combined_documents = documents + keywords_documents
         vectorizer = TfidfVectorizer(token_pattern=r'(?u)\b\w\w+\b')
         tfidf_matrix = vectorizer.fit_transform(combined_documents)
-        logger.info(tfidf_matrix)
+        # logger.info(tfidf_matrix)
 
         documents_tfidf = tfidf_matrix[:len(documents)]
         keywords_tfidf = tfidf_matrix[len(documents):]
@@ -100,6 +107,11 @@ def update_user_prefer_lists2():
         for doc_index in range(len(documents)):
             similarity = cosine_similarity(documents_tfidf[doc_index:doc_index+1], keywords_tfidf)
             highest_indices = np.argsort(similarity.flatten())[::-1][:len(logs[doc_index].keywords1)]
+
+            logger.info(f"Document index: {doc_index}")
+            logger.info(f"Similarity scores: {similarity}")
+            logger.info(f"Highest indices: {highest_indices}")
+            logger.info(f"Feature names: {vectorizer.get_feature_names_out()}")
 
             for idx in highest_indices:
                 keyword = vectorizer.get_feature_names_out()[idx]
