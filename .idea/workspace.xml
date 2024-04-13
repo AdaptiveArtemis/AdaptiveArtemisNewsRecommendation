@@ -215,7 +215,6 @@
   <component name="RunManager" selected="Django Server.AdaptiveArtemisNewsRecommendation">
     <configuration name="settings" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="AdaptiveArtemisNewsRecommendation" />
-      <option name="ENV_FILES" value="" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
       <envs>
@@ -238,7 +237,6 @@
     </configuration>
     <configuration name="AdaptiveArtemisNewsRecommendation" type="Python.DjangoServer" factoryName="Django server">
       <module name="AdaptiveArtemisNewsRecommendation" />
-      <option name="ENV_FILES" value="" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
       <envs>
@@ -296,7 +294,7 @@
       <workItem from="1712756207853" duration="3119000" />
       <workItem from="1712840836975" duration="14461000" />
       <workItem from="1712914627775" duration="2372000" />
-      <workItem from="1713007348922" duration="4194000" />
+      <workItem from="1713007348922" duration="7187000" />
     </task>
     <task id="LOCAL-00001" summary="user modeling">
       <created>1712740426127</created>
@@ -389,7 +387,14 @@
       <option name="project" value="LOCAL" />
       <updated>1713008637823</updated>
     </task>
-    <option name="localTasksCounter" value="14" />
+    <task id="LOCAL-00014" summary="change userModeling logic">
+      <created>1713011790937</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1713011790937</updated>
+    </task>
+    <option name="localTasksCounter" value="15" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

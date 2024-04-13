@@ -1,13 +1,12 @@
 import datetime
 import logging
 import re
-
 import numpy as np
 import spacy
 
 from django.utils import timezone
 from sklearn.feature_extraction.text import TfidfVectorizer
-from torch import cosine_similarity
+from sklearn.metrics.pairwise import cosine_similarity
 
 from users.models import User, NewsLog
 
