@@ -1,6 +1,8 @@
 # Handle data crawling and cleansing (ETL)
 import json
 import scrapy
+from bs4 import BeautifulSoup
+
 from ..items import ArticleItem
 
 # RSS source
@@ -90,14 +92,27 @@ class SmithsonianMagRSSSpider(scrapy.Spider):
         article_item['author'] = response.css('meta[name="author"]::attr(content)').get()
         article_item['category'] = response.css('meta[name="category"]::attr(content)').get()
 
-        p_tags = response.xpath('//div[@data-article-body]//p')
+        # p_tags = response.xpath('//div[@data-article-body]//p')
+        # all_text = []
+        # for p in p_tags:
+        #     text_segments = p.xpath('text()').getall()
+        #     a_text = p.xpath('a/text()').getall()
+        #     full_text = " ".join(text_segments + a_text)
+        #     all_text.append(full_text)
+        #
+        #
+        # article_item['body'] = ' '.join(all_text).strip()
+        html_content = response.body.decode('utf-8')
+        soup = BeautifulSoup(html_content, 'html.parser')
+
+        p_tags = soup.find_all('p')
         all_text = []
         for p in p_tags:
-            text_segments = p.xpath('text()').getall()
-            a_text = p.xpath('a/text()').getall()
-            full_text = " ".join(text_segments + a_text)
-            all_text.append(full_text)
+            # 使用get_text()提取文本，可以处理特殊字符
+            text = p.get_text(separator=' ', strip=True)
+            all_text.append(text)
 
+        # 合并所有文本为一个字符串
         article_item['body'] = ' '.join(all_text).strip()
         # getting body
         yield article_item
