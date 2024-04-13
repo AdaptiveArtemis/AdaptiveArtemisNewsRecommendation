@@ -120,3 +120,4 @@ cython_debug/
 # JetBrains IDEs
 .idea/
 
+frontend/node_modules
