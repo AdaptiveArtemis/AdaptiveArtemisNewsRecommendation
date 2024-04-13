@@ -17,7 +17,8 @@ export default function LoginPage () {
         body: JSON.stringify({
           email: email, // Use the user-entered email
           password: password // Use the user-entered password
-        })
+        }),
+        credentials: 'include'
       })
 
       const data = await response.json()

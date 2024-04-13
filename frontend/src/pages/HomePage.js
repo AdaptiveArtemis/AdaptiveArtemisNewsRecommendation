@@ -20,7 +20,8 @@ const PreferencesModal = ({ preferences, onSave }) => {
         headers: {
           'Content-Type': 'application/json',
         },
-        body: JSON.stringify(dataToSend)
+        body: JSON.stringify(dataToSend),
+        credentials: 'include',
       })
 
       if (response.ok) {

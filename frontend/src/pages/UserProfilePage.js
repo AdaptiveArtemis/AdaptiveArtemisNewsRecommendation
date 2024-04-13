@@ -31,6 +31,7 @@ export default function ProfilePage() {
                 headers: {
                     'Content-Type': 'application/json'
                 },
+                credentials: 'include'
             })
             const data = await response.json();
             console.log("User data Successfully retrieved from the backend");
