@@ -1,87 +1,106 @@
-import React, { useState } from 'react'
-import '../ProfilePage.css'
+import '../stylesheets/UserProfilePage.css';
+import React, {useState, useEffect} from 'react';
 
-const ProfilePage = () => {
-  // State for user info
-  const [userInfo, setUserInfo] = useState({
-    name: 'Name',
-    email: 'Email',
-  })
+export default function ProfilePage() {
+    
+    const [userInfo, setUserInfo] = useState({
+        name: 'Name',
+        email: 'Email',
+    })
+    const [articles, setArticles] = useState([
+        { "title": 'Article Title 1', "subtitle": 'Sub-title 1', "timestamp": "2024-04-11 19:45:50" },
+        { "title": 'Article Title 2', "subtitle": 'Sub-title 2', "timestamp": "2024-04-11 19:45:50" },
+        { "title": 'Article Title 3', "subtitle": 'Sub-title 3', "timestamp": "2024-04-11 19:45:50" },
+        { "title": 'Article Title 4', "subtitle": 'Sub-title 4', "timestamp": "2024-04-11 19:45:50" },
+        { "title": 'Article Title 5', "subtitle": 'Sub-title 5', "timestamp": "2024-04-11 19:45:50" },
+    ])
+    const [preferences, setPreferences] = useState({
+        History: 0.5,
+        Art: 0.2,
+        Cybersecurity: 0.3,
+        Technology: 1,
+        Politics: 0.1,
+        International: 0.4,
+    })
 
-  // Handling user info changes
-  const handleUserInfoChange = (field, value) => {
-    setUserInfo(prevState => ({
-      ...prevState,
-      [field]: value,
-    }))
-  }
+    const getUserData = async () => {
+        try {
+            // Send a POST request to the backend login endpoint
+            const response = await fetch('http://127.0.0.1:8000/users/user/profile', {
+                method: 'GET',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+            })
+            const data = await response.json();
+            console.log("User data Successfully retrieved from the backend");
+            setUserInfo({
+                name: data["username"],
+                email: data["email"],
+            });
+            setPreferences(data["preferList"]);
+            setArticles(data["recentNewsLogs"])
+        } catch {
+            alert("There was a problem while contacting the backend to get the user data")
+        }
+    }
 
-  // State for articles and preferences
-  const [articles, setArticles] = useState([
-    // Initial articles data
-  ])
-  const [preferences, setPreferences] = useState({
-    // Initial preferences data
-  })
+    const clearHistory = () => {
+        setArticles([])
+    }
 
-  // Functions to modify articles and preferences
-  const clearHistory = () => setArticles([])
-  const handlePreferenceChange = (category, value) => {
-    setPreferences(prevPreferences => ({
-      ...prevPreferences,
-      [category]: parseInt(value, 10),
-    }))
-  }
+    const handlePreferenceChange = (category, value) => {
+        setPreferences((prevPreferences) => ({
+        ...prevPreferences,
+        [category]: value,
+        }))
+    }
 
-  return (
-    <div className="profile-page">
-      <div className="page-taskbar">
-        {/* Logo and Page Title */}
-      </div>
-      <div id="user-info">
-        {/* Display and edit user info */}
-        <input
-          type="text"
-          value={userInfo.name}
-          onChange={(e) => handleUserInfoChange('name', e.target.value)}
-          placeholder="Name"
-        />
-        <input
-          type="email"
-          value={userInfo.email}
-          onChange={(e) => handleUserInfoChange('email', e.target.value)}
-          placeholder="Email"
-        />
-      </div>
-      <div id="user-details">
-        {/* Articles and Preferences */}
-        <div id="article-history">
-          {/* Article history section */}
-          {articles.map((article, index) => (
-            <div key={index} className="articleItem">
-              {/* Article item */}
+    useEffect(() => {
+        getUserData()
+    }, [])
+
+    return (
+        <div className="profile-page">
+            <div className="page-taskbar">
+                <div id="logo">Logo</div>
+                <div className="page-title">User Profile</div>
             </div>
-          ))}
-          <button onClick={clearHistory}>Clear History</button>
-        </div>
-        <div id="category-pref">
-          {/* Preferences section */}
-          {Object.keys(preferences).map((pref) => (
-            <div key={pref} className="preferenceSlider">
-              <label>{pref}</label>
-              <input
-                type="range"
-                min="0"
-                max="10"
-                value={preferences[pref]}
-                onChange={(e) => handlePreferenceChange(pref, e.target.value)}
-              />
+            <div id="user-info">
+                <div id="userName">{userInfo.name}</div>
+                <div id="userEmail">{userInfo.email}</div>
             </div>
-          ))}
+            <div id="user-details">
+                <div id="article-history">
+                    <div className="section-heading">
+                        <h2>Article Read History</h2>
+                        <button onClick={clearHistory}>Clear</button>
+                    </div>
+                    {articles.map((article, index) => (
+                    <div key={index} className="articleItem">
+                        <div className="articleTitle">{article.title}</div>
+                        <div className="articleTimestamp">{Date(article.timestamp).toLocaleString()}</div>
+                    </div>
+                    ))}
+                </div>
+                <div id="category-pref">
+                    <div className="section-heading">
+                        <h2>Category Preferences</h2>
+                    </div>
+                    {Object.keys(preferences).map((pref) => (
+                    <div key={pref} className="preferenceSlider">
+                        <label>{pref}</label>
+                        <input
+                        type="range"
+                        min="0"
+                        max="10"
+                        value={preferences[pref]*10}
+                        onChange={(e) => handlePreferenceChange(pref, e.target.value)}
+                        />
+                    </div>
+                    ))}
+                </div>
+            </div>
         </div>
-      </div>
-    </div>
-  )
+    );
 }
-
-export default ProfilePage
