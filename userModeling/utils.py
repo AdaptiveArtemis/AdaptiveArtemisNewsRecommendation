@@ -20,27 +20,14 @@ nltk.download('averaged_perceptron_tagger')
 nltk.download('punkt')
 
 POS_SCORE = {
-    'NN': 3.0, 'NNS': 3.0, 'NNP': 3.0, 'NNPS': 3.0,
+    'NN': 3.0, 'NNS': 3.0, 'NNP': 3.0, 'NNPS': 3.0,   'PRP': 0.1,
+    'PRP$': 0.1,
     'JJ': 0.1, 'RB': 0.1,
     'VB': 0.0, 'VBD': 0.0, 'VBG': 0.0, 'VBN': 0.0, 'VBP': 0.0, 'VBZ': 0.0
 }
 
 KEYWORD_BOOST = 7
 DEC_COEE = 0.7
-
-# def auto_dec_refresh(users):
-#     for user in users:
-#         if hasattr(user, 'preferList') and user.preferList:
-#             new_pref_list = {}
-#             # 对每个关键词应用衰减系数
-#             for keyword, score in user.preferList.items():
-#                 new_score = score * DEC_COEE
-#                 if new_score >= MIN_SCORE:  # 仅保留分数大于等于10的关键词
-#                     new_pref_list[keyword] = new_score
-#
-#             # 更新用户的喜好列表
-#             user.preferList = new_pref_list
-#             user.save()  # 保存更新
 
 
 def compute_weighted_tfidf(text, keywords):
@@ -60,7 +47,7 @@ def compute_weighted_tfidf(text, keywords):
             weight = POS_SCORE.get(pos, 1.0) * (KEYWORD_BOOST if word in keyword_tokens else 1)
             weighted_scores[token] = score * weight
 
-    sorted_scores = sorted(weighted_scores.items(), key=lambda x: x[1], reverse=True)[:topK]
+    sorted_scores = sorted(weighted_scores.items(), key=lambda x: x[1], reverse=True)
     return sorted_scores
 
 def spacy_preprocess(document):
@@ -86,19 +73,25 @@ def update_user_prefer_lists2():
 
     for user, logs in user_logs.items():
         prefer_list = user.preferList if user.preferList else {}
+        all_scores = {}
         for log in logs:
             processed_doc = spacy_preprocess(log.body)
             keywords_text = ' '.join(log.keywords1)
             weighted_scores = compute_weighted_tfidf(processed_doc, keywords_text)
 
             for keyword, score in weighted_scores:
-                if keyword in prefer_list:
-                    prefer_list[keyword] += score
+                if keyword in all_scores:
+                    all_scores[keyword] += score
                 else:
-                    prefer_list[keyword] = score
+                    all_scores[keyword] = score
 
-        min_score_threshold = 0.1
-        prefer_list = {k: v for k, v in prefer_list.items() if v >= min_score_threshold}
+        top_keywords = sorted(all_scores.items(), key=lambda item: item[1], reverse=True)[:15]
+
+        for keyword, score in top_keywords:
+            if keyword in prefer_list:
+                prefer_list[keyword] += score
+            else:
+                prefer_list[keyword] = score
 
         user.preferList = prefer_list
         user.save()

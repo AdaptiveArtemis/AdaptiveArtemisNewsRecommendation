@@ -169,7 +169,7 @@ def update_prefer_list(request):
         categories = data.get('prefer_list')
         is_first_login = data.get('is_first_login', True)
         if isinstance(categories, list) and len(categories) == 5:
-            prefer_list = {category: 1 for category in categories}
+            prefer_list = {category: 7 for category in categories}
             current_user.set_prefer_list(prefer_list)
 
             if not is_first_login:
