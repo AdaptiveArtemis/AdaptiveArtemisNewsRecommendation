@@ -144,10 +144,14 @@ def update_prefer_list(request):
     try:
         data = json.loads(request.body)
         categories = data.get('prefer_list')
-
+        is_first_login = data.get('is_first_login', True)
         if isinstance(categories, list) and len(categories) == 5:
             prefer_list = {category: 1 for category in categories}
             current_user.set_prefer_list(prefer_list)
+
+            if not is_first_login:
+                current_user.is_first_login = False
+
             current_user.save()
             return JsonResponse({'message': 'Preference list updated successfully'}, status=200)
         else:

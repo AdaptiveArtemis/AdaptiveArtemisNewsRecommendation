@@ -5,8 +5,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="35dd998c-1290-4c26-9012-1ed06d87c8c0" name="Changes" comment="change userModeling logic">
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/userModeling/utils.py" beforeDir="false" afterPath="$PROJECT_DIR$/userModeling/utils.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/pages/LoginPage.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/pages/LoginPage.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/users/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/users/views.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -183,6 +185,7 @@
       <workItem from="1712840836975" duration="14461000" />
       <workItem from="1712914627775" duration="2372000" />
       <workItem from="1713007348922" duration="18254000" />
+      <workItem from="1713087612429" duration="1950000" />
     </task>
     <task id="LOCAL-00001" summary="user modeling">
       <created>1712740426127</created>
@@ -324,7 +327,14 @@
       <option name="project" value="LOCAL" />
       <updated>1713048089818</updated>
     </task>
-    <option name="localTasksCounter" value="21" />
+    <task id="LOCAL-00021" summary="change userModeling logic">
+      <created>1713059847644</created>
+      <option name="number" value="00021" />
+      <option name="presentableId" value="LOCAL-00021" />
+      <option name="project" value="LOCAL" />
+      <updated>1713059847644</updated>
+    </task>
+    <option name="localTasksCounter" value="22" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

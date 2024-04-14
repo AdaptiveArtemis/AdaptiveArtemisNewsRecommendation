@@ -24,7 +24,8 @@ export default function LoginPage () {
       const data = await response.json()
       if (data.message === "Login successful") {
         // Login successful, take actions based on the backend response
-        navigate('/HomePage') // Navigate to the homepage
+        navigate('/HomePage')
+        // Navigate to the homepage
       } else {
         // Login failed, display an error message
         alert('Login failed: ' + data.message)

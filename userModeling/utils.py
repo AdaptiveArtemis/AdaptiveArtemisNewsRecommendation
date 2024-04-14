@@ -50,7 +50,7 @@ def compute_weighted_tfidf(text, keywords, topK=10):
     tagged_tokens = pos_tag(all_tokens)
 
     vectorizer = TfidfVectorizer()
-    tfidf_matrix = vectorizer.fit_transform(' '.join(all_tokens))
+    tfidf_matrix = vectorizer.fit_transform([' '.join(all_tokens)])
     feature_names = vectorizer.get_feature_names_out()
     tfidf_scores = tfidf_matrix.toarray().flatten()
 
@@ -138,6 +138,7 @@ def update_user_prefer_lists2():
         for log in logs:
             processed_doc = spacy_preprocess(log.body)
             keywords_text = ' '.join(log.keywords1)
+            full_text = processed_doc + ' ' + keywords_text
             weighted_scores = compute_weighted_tfidf(processed_doc, keywords_text)
 
             for keyword, score in weighted_scores:
