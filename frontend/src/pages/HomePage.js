@@ -104,8 +104,9 @@ const HomePage = () => {
         const response = await fakeApiCall()
         setIsFirstLogin(false) // 假设用户完成了首次登录流程，更新状态为 false
         setPreferences(response.preferences)
-        fetchRecommendations()  // 获取推荐信息
+
       }
+      fetchRecommendations()  // 获取推荐信息
     }
 
     fetchUserStatus()
