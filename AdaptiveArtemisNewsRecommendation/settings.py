@@ -65,7 +65,7 @@ MIDDLEWARE = [
 
 CORS_ORIGIN_ALLOW_ALL = True    # 允许所有域名跨域
 CORS_ALLOW_CREDENTIALS = True   # 允许跨域请求包含 cookies
-APPEND_SLASH = True            # 解决重定向问题
+# APPEND_SLASH = True            # 解决重定向问题
 # LOGIN_URL = '/users/user/login/'  # 重定向后的路径(LOGIN_URL = '/accounts/login/'是django默认给的路径，如果自己设置了view)
 # LOGOUT_URL = '/users/user/logout/'
 

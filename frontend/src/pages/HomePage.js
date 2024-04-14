@@ -28,8 +28,14 @@ const PreferencesModal = ({ preferences, onSave }) => {
         headers: {
           'Content-Type': 'application/json',
         },
-        body: JSON.stringify({dataToSend}),   //  "prefer_list":["History", "Travel", "Innovation", "Arts & Culture", "Human Behavior"]
-        credentials: 'include'              //  cookie
+        // body: JSON.stringify({
+          // "is_first_login": false,
+          // "username": "jaro",
+          // "prefer_list":["History", "Travel", "Innovation", "Arts & Culture", "Human Behavior"]
+        // }),
+        body: JSON.stringify(dataToSend),   //  "prefer_list":["History", "Travel", "Innovation", "Arts & Culture", "Human Behavior"]
+        // credentials: 'include'              //  cookie
+
       })
 
       if (response.ok) {

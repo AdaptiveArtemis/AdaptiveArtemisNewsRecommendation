@@ -164,7 +164,7 @@ def get_user_profile(request):
 def update_prefer_list(request):
     try:
         data = json.loads(request.body)
-        username = request.get('username')
+        username = data.get('username')
         current_user = User.objects.filter(username=username).first()
         categories = data.get('prefer_list')
         is_first_login = data.get('is_first_login', True)
