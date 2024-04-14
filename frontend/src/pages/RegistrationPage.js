@@ -1,4 +1,5 @@
-import React, { useState } from 'react'
+import React, { useState } from 'react';
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 const RegistrationPage = () => {
   const [formData, setFormData] = useState({
@@ -8,7 +9,6 @@ const RegistrationPage = () => {
     confirmPassword: ''
   })
 
-  // Update the state on input change
   const handleChange = (e) => {
     const { name, value } = e.target
     setFormData(prevFormData => ({
@@ -17,7 +17,6 @@ const RegistrationPage = () => {
     }))
   }
 
-  // Handle form submission
   const handleSubmit = async (e) => {
     e.preventDefault()
     if (formData.password !== formData.confirmPassword) {
@@ -25,7 +24,7 @@ const RegistrationPage = () => {
       return
     }
     try {
-      const response = await fetch('http://127.0.0.1:8000/users/api/register/', {
+      const response = await fetch('http://localhost:8000/users/api/register/', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -37,63 +36,76 @@ const RegistrationPage = () => {
         }),
       })
       const data = await response.json()
-      alert(data.message) // Or handle the response accordingly
+      alert(data.message)
+      // Redirect to the login page
+      window.location.href = '/login'
     } catch (error) {
       alert("An error occurred while registering the user.")
     }
   }
 
   return (
-    <div className="registration-page">
-      <header>
-        {/* Your logo here */}
-        <nav>
-          {/* Navigation for login can go here */}
-        </nav>
-      </header>
-      <form className="registration-form" onSubmit={handleSubmit}>
-        <label htmlFor="username">Name:</label>
-        <input
-          type="text"
-          id="username"
-          name="username"
-          value={formData.username}
-          onChange={handleChange}
-          placeholder="Enter your name"
-        />
+    <div className="container">
+      <div className="row justify-content-center">
+        <div className="col-12 col-md-8 col-lg-6">
+          <form className="my-5" onSubmit={handleSubmit}>
+          <h4 className="mb-3 fw-normal">Welcome to the Daily SciSync! To continue, please register.</h4>
+            <div className="form-floating mb-3">
+              <input
+                type="text"
+                id="username"
+                name="username"
+                value={formData.username}
+                onChange={handleChange}
+                className="form-control"
+                placeholder="Enter your name"
+              />
+              <label htmlFor="username">Name</label>
+            </div>
 
-        <label htmlFor="email">Email:</label>
-        <input
-          type="email"
-          id="email"
-          name="email"
-          value={formData.email}
-          onChange={handleChange}
-          placeholder="Enter your email"
-        />
+            <div className="form-floating mb-3">
+              <input
+                type="email"
+                id="email"
+                name="email"
+                value={formData.email}
+                onChange={handleChange}
+                className="form-control"
+                placeholder="Enter your email"
+              />
+              <label htmlFor="email">Email address</label>
+            </div>
 
-        <label htmlFor="password">Password:</label>
-        <input
-          type="password"
-          id="password"
-          name="password"
-          value={formData.password}
-          onChange={handleChange}
-          placeholder="Create a password"
-        />
+            <div className="form-floating mb-3">
+              <input
+                type="password"
+                id="password"
+                name="password"
+                value={formData.password}
+                onChange={handleChange}
+                className="form-control"
+                placeholder="Create a password"
+              />
+              <label htmlFor="password">Password</label>
+            </div>
 
-        <label htmlFor="confirmPassword">Confirm Password:</label>
-        <input
-          type="password"
-          id="confirmPassword"
-          name="confirmPassword"
-          value={formData.confirmPassword}
-          onChange={handleChange}
-          placeholder="Confirm your password"
-        />
+            <div className="form-floating mb-3">
+              <input
+                type="password"
+                id="confirmPassword"
+                name="confirmPassword"
+                value={formData.confirmPassword}
+                onChange={handleChange}
+                className="form-control"
+                placeholder="Confirm your password"
+              />
+              <label htmlFor="confirmPassword">Confirm Password</label>
+            </div>
 
-        <button type="submit">Register</button>
-      </form>
+            <button className="w-100 btn btn-lg btn-primary" type="submit">Register</button>
+          </form>
+        </div>
+      </div>
     </div>
   )
 }
