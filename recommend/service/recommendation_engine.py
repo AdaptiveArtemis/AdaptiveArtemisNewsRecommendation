@@ -50,23 +50,22 @@ class EmbeddingRecommender():
         if len(most_relevant_keywords) > 0:
             return most_relevant_keywords[0]
 
-        # TODO: The following code is very slow. Find a faster alternative
-        # max_similarity = -1
-        # most_relevant_keyword = None
-        # for keyword in user_prefer_list.keys():
-        #     keyword_embedding = self.get_bert_embeddings(keyword)
+        max_similarity = -1
+        most_relevant_keyword = None
+        for keyword in user_prefer_list.keys():
+            keyword_embedding = self.get_bert_embeddings(keyword)
 
-        #     # Calculate the cosine similarity between the keyword and each of the article's keywords
-        #     for article_keyword in article_keywords.split(","):
-        #         article_keyword_embedding = self.get_bert_embeddings(article_keyword)
-        #         similarity = cosine_similarity(keyword_embedding, article_keyword_embedding)[0][0]
+            # Calculate the cosine similarity between the keyword and each of the article's keywords
+            for article_keyword in article_keywords:
+                article_keyword_embedding = self.get_bert_embeddings(article_keyword)
+                similarity = cosine_similarity(keyword_embedding, article_keyword_embedding)[0][0]
 
-        #         # If this similarity is higher than the current max_similarity, update max_similarity and most_relevant_keyword
-        #         if similarity > max_similarity:
-        #             max_similarity = similarity
-        #             most_relevant_keyword = keyword
+                # If this similarity is higher than the current max_similarity, update max_similarity and most_relevant_keyword
+                if similarity > max_similarity:
+                    max_similarity = similarity
+                    most_relevant_keyword = keyword
 
-        # return most_relevant_keyword if max_similarity > 0.9 else None
+        return most_relevant_keyword if max_similarity > 0.6 else None
     
     def generate_recommendations(self, num_recommendations=5):
         # Retrieve user keyword tags and weights
