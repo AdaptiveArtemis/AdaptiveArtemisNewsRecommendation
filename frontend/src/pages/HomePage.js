@@ -125,6 +125,7 @@ const RecommendationsList = ({ articles }) => {
                     <a href={article.link} target="_blank" rel="noopener noreferrer" onClick={() => handleArticleClick(article.title)}>
                       <h3>{article.title}</h3>
                       <p>{article.subtitle}</p>
+                      <p>Relevant Keyword: {article.relevant_keyword}</p>
                     </a>
                   </li>
               ))}
@@ -163,7 +164,7 @@ const HomePage = () => {
   //这里需要改 用户的初始状态是根据token来定的
   const location = useLocation()  // 从 React Router 钩子中获取 location 对象
   const [isFirstLogin, setIsFirstLogin] = useState(
-      location.state?.isFirstLogin || true  // 使用 location.state 中的 isFirstLogin 或默认为 true
+      location.state?.isFirstLogin || true // 使用 location.state 中的 isFirstLogin 或默认为 true
   )
   const [preferences, setPreferences] = useState([])
   const [recommendations, setRecommendations] = useState([])

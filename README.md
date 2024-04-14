@@ -10,7 +10,24 @@ Adaptive Artemis is an advanced news recommendation system that personalizes con
 - User profile management including preference settings.
 - Dynamic updating of user preferences based on browsing history.
 
-## Getting Started
+## Getting Test
+- 1 Sign up(success and fail)
+- username: lily
+- email: lily@gmail.com
+- password: P@ssword123
+- 
+- 2 Login(success and fail)
+- 
+- 3. Select the initial preferences
+- 
+- 4. Navigate to News recommendations
+- 5. Clicking the news link will take you to the news content and store your browsing history
+- 6. Go to the profile screen and see your current preferences and browsing history
+- 7. Simulate the execution of a scheduled task in the terminal to crawl new news and update the user list
+- 8. Log in again
+- 9. Go straight to the news page and see new recommendations
+- 10. Go to profile to see the updated preferences
+
 
 ### Prerequisites
 
