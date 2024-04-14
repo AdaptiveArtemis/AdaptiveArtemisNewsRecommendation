@@ -62,30 +62,42 @@ def user_login(request):
             email = data.get('email', None)
             password = data.get('password')
 
-            # user = authenticate(usename=usename, password=password)
-            user = authenticate(email=email, password=password)
+            user = User.objects.filter(email=email).first()
 
-            if user is not None:
-                login(request, user)
-                jwt_payload_handler = api_settings.JWT_PAYLOAD_HANDLER
-                jwt_encode_handler = api_settings.JWT_ENCODE_HANDLER
-                payload = jwt_payload_handler(user)
-                token = jwt_encode_handler(payload)
+            if user:
                 if user.is_first_login:
                     return JsonResponse({
                         'message': 'Login successful',
                         'is_First_Login': True,
                         'username': user.username,
-                        'token': token,
                     }, status=200)
                 else:
                     return JsonResponse({
                         'message': 'Login successful',
                         'is_First_Login': False,
-                        'token': token,
+                        'username': user.username,
                     }, status=200)
             else:
-                return JsonResponse({'message': 'Invalid credentials'}, status=400)
+                return JsonResponse({'message': 'User does not exist'}, status=400)
+            # user = authenticate(usename=usename, password=password)
+            # user = authenticate(email=email, password=password)
+
+            # if user is not None:
+            #     login(request, user)
+            #     if user.is_first_login:
+            #         return JsonResponse({
+            #             'message': 'Login successful',
+            #             'is_First_Login': True,
+            #             'username': user.username,
+            #         }, status=200)
+            #     else:
+            #         return JsonResponse({
+            #             'message': 'Login successful',
+            #             'is_First_Login': False,
+            #             'username': user.username,
+            #         }, status=200)
+            # else:
+            #     return JsonResponse({'message': 'Invalid credentials'}, status=400)
         except json.JSONDecodeError:
             return JsonResponse({'message': 'Invalid request body'}, status=400)
         except Exception as e:
@@ -93,7 +105,7 @@ def user_login(request):
     else:
         return JsonResponse({'message': 'Invalid request method'}, status=400)
 
-@login_required
+
 def normalize_prefer_list(prefer_list):
     # Normalize the prefer list to a list of strings,prefer_list is a dictionary
     total_weight = sum(prefer_list.values())
@@ -107,10 +119,11 @@ def normalize_prefer_list(prefer_list):
 
 
 @csrf_exempt
-@login_required
+# @login_required
 def get_user_profile(request):
-    current_user: User = request.user
     if request.method == 'GET':
+        username = request.GET.get('username')
+        current_user = User.objects.filter(username=username).first()
         try:
             prefer_list = current_user.preferList
             if not prefer_list:
@@ -146,17 +159,17 @@ def get_user_profile(request):
 
 
 @csrf_exempt
-@login_required
+# @login_required
 @require_http_methods(['POST'])
 def update_prefer_list(request):
-    current_user: User = request.user
     try:
         data = json.loads(request.body)
+        username = request.get('username')
+        current_user = User.objects.filter(username=username).first()
         categories = data.get('prefer_list')
         is_first_login = data.get('is_first_login', True)
         if isinstance(categories, list) and len(categories) == 5:
             prefer_list = {category: 1 for category in categories}
-            print(current_user)
             current_user.set_prefer_list(prefer_list)
 
             if not is_first_login:
@@ -173,12 +186,14 @@ def update_prefer_list(request):
 
 
 @csrf_exempt
-@login_required
+# @login_required
 def log_news(request):
-    user: User = request.user
+    # user: User = request.user
     # news_id = request.POST.get('news_id')
     if request.method == 'POST':
         data = json.loads(request.body)
+        username = data.get('username')
+        user = User.objects.filter(username=username).first()
         title = data.get('title')
 
         try:

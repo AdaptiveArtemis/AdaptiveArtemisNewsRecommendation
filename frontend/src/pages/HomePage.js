@@ -14,7 +14,8 @@ const PreferencesModal = ({ preferences, onSave }) => {
     )
     const dataToSend = {
       prefer_list: selectedPreferencesNames,
-      isFirstLogin: false, // 因为用户已经设置了偏好，所以不是首次登录了
+      is_first_login: false,
+      username: localStorage.getItem('username')
     }
 
     // 构建要发送的数据
@@ -26,9 +27,8 @@ const PreferencesModal = ({ preferences, onSave }) => {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
-          'Authorization': 'Bearer ${token}'
         },
-        body: JSON.stringify(dataToSend),   //  "prefer_list":["History", "Travel", "Innovation", "Arts & Culture", "Human Behavior"]
+        body: JSON.stringify({dataToSend}),   //  "prefer_list":["History", "Travel", "Innovation", "Arts & Culture", "Human Behavior"]
         credentials: 'include'              //  cookie
       })
 
@@ -135,10 +135,12 @@ const handleArticleClick = async (articleTitle) => {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
-        'Authorization': 'Bearer ${token}'
         // 如果需要的话，这里添加认证头部，比如 'Authorization': 'Bearer ' + token
       },
-      body: JSON.stringify({ title: articleTitle })
+      body: JSON.stringify({
+        title: articleTitle,
+        username: localStorage.getItem('username')
+      })
     })
 
     if (!response.ok) {
@@ -181,7 +183,6 @@ const HomePage = () => {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
-          'Authorization': 'Bearer ${token}'
         },
         // body:{
         //   'username': localStorage.getItem('username')
