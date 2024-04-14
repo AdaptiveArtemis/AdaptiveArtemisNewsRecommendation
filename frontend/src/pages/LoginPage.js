@@ -24,7 +24,8 @@ export default function LoginPage () {
       if (data.message === "Login successful") {
         // Login successful, take actions based on the backend response
         localStorage.setItem('username', data.username)
-        navigate('/HomePage', { state: { isFirstLogin: data.is_First_Login}})
+        localStorage.setItem('token', data.token)
+        navigate('/HomePage')
         // Navigate to the homepage
       } else {
         // Login failed, display an error message

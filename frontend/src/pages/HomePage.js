@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react'
 import { Link } from 'react-router-dom'
 import { useLocation } from 'react-router-dom'
 
+const token = localStorage.getItem('token')
 // Preferences Modal Component
 const PreferencesModal = ({ preferences, onSave }) => {
   const [selectedPreferences, setSelectedPreferences] = useState([])
@@ -25,6 +26,7 @@ const PreferencesModal = ({ preferences, onSave }) => {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
+          'Authorization': 'Bearer ${token}'
         },
         body: JSON.stringify(dataToSend),   //  "prefer_list":["History", "Travel", "Innovation", "Arts & Culture", "Human Behavior"]
         credentials: 'include'              //  cookie
@@ -133,6 +135,7 @@ const handleArticleClick = async (articleTitle) => {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
+        'Authorization': 'Bearer ${token}'
         // 如果需要的话，这里添加认证头部，比如 'Authorization': 'Bearer ' + token
       },
       body: JSON.stringify({ title: articleTitle })
@@ -178,6 +181,7 @@ const HomePage = () => {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
+          'Authorization': 'Bearer ${token}'
         },
         // body:{
         //   'username': localStorage.getItem('username')

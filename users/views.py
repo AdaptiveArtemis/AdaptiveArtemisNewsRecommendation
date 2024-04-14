@@ -7,6 +7,8 @@ from django.http import JsonResponse
 from django.views.decorators.csrf import csrf_exempt
 from django.views.decorators.http import require_http_methods
 from django.utils import timezone
+from rest_framework.settings import api_settings
+
 from news.models import Article
 from .models import User, NewsLog
 
@@ -65,16 +67,22 @@ def user_login(request):
 
             if user is not None:
                 login(request, user)
+                jwt_payload_handler = api_settings.JWT_PAYLOAD_HANDLER
+                jwt_encode_handler = api_settings.JWT_ENCODE_HANDLER
+                payload = jwt_payload_handler(user)
+                token = jwt_encode_handler(payload)
                 if user.is_first_login:
                     return JsonResponse({
                         'message': 'Login successful',
                         'is_First_Login': True,
-                        'username': user.username
+                        'username': user.username,
+                        'token': token,
                     }, status=200)
                 else:
                     return JsonResponse({
                         'message': 'Login successful',
-                        'is_First_Login': False
+                        'is_First_Login': False,
+                        'token': token,
                     }, status=200)
             else:
                 return JsonResponse({'message': 'Invalid credentials'}, status=400)

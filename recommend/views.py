@@ -6,7 +6,7 @@ from django.contrib.auth.decorators import login_required
 from recommend.service.recommendation_engine import EmbeddingRecommender
 
 @csrf_exempt
-# @login_required
+@login_required
 def get_recommendations(request):
     req_body = json.loads(request.body)
     username = req_body["username"]
