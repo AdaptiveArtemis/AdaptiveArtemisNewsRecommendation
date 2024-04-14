@@ -21,8 +21,8 @@ nltk.download('punkt')
 
 POS_SCORE = {
     'NN': 3.0, 'NNS': 3.0, 'NNP': 3.0, 'NNPS': 3.0,
-    'JJ': 0.2, 'RB': 0.2, 'VB': 0.2, 'VBD': 0.2,
-    'VBG': 0.2, 'VBN': 0.2, 'VBP': 0.2, 'VBZ': 0.2
+    'JJ': 0.1, 'RB': 0.1,
+    'VB': 0.0, 'VBD': 0.0, 'VBG': 0.0, 'VBN': 0.0, 'VBP': 0.0, 'VBZ': 0.0
 }
 
 KEYWORD_BOOST = 5
@@ -62,50 +62,6 @@ def compute_weighted_tfidf(text, keywords, topK=10):
 
     sorted_scores = sorted(weighted_scores.items(), key=lambda x: x[1], reverse=True)[:topK]
     return sorted_scores
-# def update_user_prefer_lists():
-#     today = timezone.now().date()
-#     start_of_today = timezone.make_aware(datetime.datetime.combine(today, datetime.time.min))
-#     end_of_today = timezone.make_aware(datetime.datetime.combine(today, datetime.time.max))
-#     today_logs = NewsLog.objects.filter(timestamp__range=(start_of_today, end_of_today))
-#
-#     user_logs = {}
-#     for log in today_logs:
-#         user_logs.setdefault(log.user, []).append(log)
-#
-#     for user, logs in user_logs.items():
-#         prefer_list = user.preferList if user.preferList else {}
-#         # apply decay to user's prefer list
-#         prefer_list = apply_decay_to_user(prefer_list)
-#
-#         # Prepare the document for TF-IDF calculations
-#         documents = [preprocess_document(log.body) for log in logs]
-#         logger.info(documents)
-#         vectorizer = TfidfVectorizer(max_features=40, token_pattern=r'(?u)\b\w+\b', stop_words='english')
-#         tfidf_matrix = vectorizer.fit_transform(documents)
-#         logger.info(tfidf_matrix)
-#
-#         feature_names = vectorizer.get_feature_names_out()
-#         avg_scores = tfidf_matrix.mean(axis=0).A1
-#         feature_index = dict(zip(feature_names, avg_scores))
-#         logger.info(feature_index)
-#
-#         # Update preferList with new keywords,adding to existing keywords, prefer_list is a dictionary
-#         for keyword, score in feature_index.items():
-#             if keyword in prefer_list:
-#                 prefer_list[keyword] += score
-#             else:
-#                 prefer_list[keyword] = score
-#
-#         # Remove keywords with weight less than 0.02
-#         min_weight = 0.02
-#         prefer_list = {keyword: weight for keyword, weight in prefer_list.items() if weight >= min_weight}
-#
-#         # Save the updated prefer list, sorting to keep the highest scores first
-#         user.preferList = dict(sorted(prefer_list.items(), key=lambda x: x[1], reverse=True))
-#         user.save()
-#
-#         logger.info(f"Updated preferList for user {user.username}: {user.preferList}")
-
 
 def spacy_preprocess(document):
     doc = nlp(document)
@@ -130,15 +86,9 @@ def update_user_prefer_lists2():
 
     for user, logs in user_logs.items():
         prefer_list = user.preferList if user.preferList else {}
-        # apply decay to user's prefer list
-        # prefer_list = apply_decay_to_user(prefer_list)
-
-        # Prepare the document for TF-IDF calculations
-        documents = []
         for log in logs:
             processed_doc = spacy_preprocess(log.body)
             keywords_text = ' '.join(log.keywords1)
-            full_text = processed_doc + ' ' + keywords_text
             weighted_scores = compute_weighted_tfidf(processed_doc, keywords_text)
 
             for keyword, score in weighted_scores:

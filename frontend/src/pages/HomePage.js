@@ -121,7 +121,7 @@ const HomePage = () => {
     const fetchUserStatus = async () => {
       if (isFirstLogin) {
         const response = await fakeApiCall()
-        setIsFirstLogin(false) // 假设用户完成了首次登录流程，更新状态为 false
+        // setIsFirstLogin(false) // 假设用户完成了首次登录流程，更新状态为 false
         setPreferences(response.preferences)
         // fetchRecommendations()  // 获取推荐信息
       }
@@ -140,7 +140,7 @@ const HomePage = () => {
           'Content-Type': 'application/json',
         },
         body:{
-
+          'username': localStorage.getItem('username')
         }
       })
 
@@ -185,7 +185,7 @@ const HomePage = () => {
 const fakeApiCall = () => {
   return Promise.resolve({
     //在这里改成token获得的isFirstLogin
-    isFirstLogin: false,  // Assume this dynamically changes based on actual user status
+    // isFirstLogin: false,  // Assume this dynamically changes based on actual user status
     preferences: [
       { id: 1, name: 'History' },
       { id: 2, name: 'Science' },

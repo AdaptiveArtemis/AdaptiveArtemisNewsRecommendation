@@ -68,7 +68,8 @@ def user_login(request):
                 if user.is_first_login:
                     return JsonResponse({
                         'message': 'Login successful',
-                        'is_First_Login': True
+                        'is_First_Login': True,
+                        'username': user.username
                     }, status=200)
                 else:
                     return JsonResponse({
