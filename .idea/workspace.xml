@@ -5,10 +5,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="35dd998c-1290-4c26-9012-1ed06d87c8c0" name="Changes" comment="change userModeling logic">
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/AdaptiveArtemisNewsRecommendation.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/AdaptiveArtemisNewsRecommendation.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/pages/HomePage.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/pages/HomePage.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/frontend/src/pages/LoginPage.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/pages/LoginPage.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/users/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/users/views.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -82,7 +83,6 @@
   <component name="RunManager" selected="Python.utils">
     <configuration name="settings" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="AdaptiveArtemisNewsRecommendation" />
-      <option name="ENV_FILES" value="" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
       <envs>
@@ -105,7 +105,6 @@
     </configuration>
     <configuration name="utils" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="AdaptiveArtemisNewsRecommendation" />
-      <option name="ENV_FILES" value="" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
       <envs>
@@ -128,7 +127,6 @@
     </configuration>
     <configuration name="AdaptiveArtemisNewsRecommendation" type="Python.DjangoServer" factoryName="Django server">
       <module name="AdaptiveArtemisNewsRecommendation" />
-      <option name="ENV_FILES" value="" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
       <envs>
@@ -188,7 +186,7 @@
       <workItem from="1712840836975" duration="14461000" />
       <workItem from="1712914627775" duration="2372000" />
       <workItem from="1713007348922" duration="18254000" />
-      <workItem from="1713087612429" duration="1950000" />
+      <workItem from="1713087612429" duration="3416000" />
     </task>
     <task id="LOCAL-00001" summary="user modeling">
       <created>1712740426127</created>
@@ -337,7 +335,14 @@
       <option name="project" value="LOCAL" />
       <updated>1713059847644</updated>
     </task>
-    <option name="localTasksCounter" value="22" />
+    <task id="LOCAL-00022" summary="change userModeling logic">
+      <created>1713089833728</created>
+      <option name="number" value="00022" />
+      <option name="presentableId" value="LOCAL-00022" />
+      <option name="project" value="LOCAL" />
+      <updated>1713089833728</updated>
+    </task>
+    <option name="localTasksCounter" value="23" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
