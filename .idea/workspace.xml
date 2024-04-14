@@ -80,6 +80,7 @@
   <component name="RunManager" selected="Python.utils">
     <configuration name="settings" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="AdaptiveArtemisNewsRecommendation" />
+      <option name="ENV_FILES" value="" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
       <envs>
@@ -102,6 +103,7 @@
     </configuration>
     <configuration name="utils" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="AdaptiveArtemisNewsRecommendation" />
+      <option name="ENV_FILES" value="" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
       <envs>
@@ -124,6 +126,7 @@
     </configuration>
     <configuration name="AdaptiveArtemisNewsRecommendation" type="Python.DjangoServer" factoryName="Django server">
       <module name="AdaptiveArtemisNewsRecommendation" />
+      <option name="ENV_FILES" value="" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
       <envs>
