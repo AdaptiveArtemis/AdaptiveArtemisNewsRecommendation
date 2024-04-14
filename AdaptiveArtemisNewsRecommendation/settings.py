@@ -44,7 +44,7 @@ INSTALLED_APPS = [
     'news',
     'userModeling',
     'rest_framework',
-    'corsheaders'
+    'corsheaders'                       #  设置 CORS 中间件
 ]
 
 MIDDLEWARE = [
@@ -56,12 +56,18 @@ MIDDLEWARE = [
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
     'corsheaders.middleware.CorsMiddleware',
-    'django.middleware.common.CommonMiddleware',
+    'django.middleware.common.CommonMiddleware',      # CorsMiddleware 需要在每个请求的响应之前处理跨域规则
 ]
 
-CORS_ALLOWED_ORIGINS = [
-    "http://localhost:3000",
-]
+# CORS_ALLOWED_ORIGINS = [      #  如果你想要指定允许的源，使用这个设置
+#     "http://localhost:3000",
+# ]
+
+CORS_ORIGIN_ALLOW_ALL = True    # 允许所有域名跨域
+CORS_ALLOW_CREDENTIALS = True   # 允许跨域请求包含 cookies
+APPEND_SLASH = True            # 解决重定向问题
+# LOGIN_URL = '/users/user/login/'  # 重定向后的路径(LOGIN_URL = '/accounts/login/'是django默认给的路径，如果自己设置了view)
+# LOGOUT_URL = '/users/user/logout/'
 
 ROOT_URLCONF = 'AdaptiveArtemisNewsRecommendation.urls'
 

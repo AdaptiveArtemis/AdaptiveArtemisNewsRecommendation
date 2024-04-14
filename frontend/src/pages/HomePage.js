@@ -7,24 +7,27 @@ const PreferencesModal = ({ preferences, onSave }) => {
   const [selectedPreferences, setSelectedPreferences] = useState([])
 
   const handleSave = async () => {
-    // 构建要发送的数据
+    // 获取偏好名称的列表
+    const selectedPreferencesNames = selectedPreferences.map(id =>
+        preferences.find(preference => preference.id === id).name
+    )
     const dataToSend = {
-      prefer_list: selectedPreferences.map(id =>
-          preferences.find(preference => preference.id === id).name
-      )
+      prefer_list: selectedPreferencesNames,
+      isFirstLogin: false, // 因为用户已经设置了偏好，所以不是首次登录了
     }
+
+    // 构建要发送的数据
+
     console.log('Sending the following data to the backend:', JSON.stringify(dataToSend))
     try {
       // 执行POST请求
-      const response = await fetch('http://127.0.0.1:8000/users/user/update', {
+      const response = await fetch('http://127.0.0.1:8000/users/user/update/', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
         },
-        body: JSON.stringify({
-          prefer_list: selectedPreferences,
-          isFirstLogin: false, // 用户已经设置了偏好
-        }),
+        body: JSON.stringify(dataToSend),   //  "prefer_list":["History", "Travel", "Innovation", "Arts & Culture", "Human Behavior"]
+        credentials: 'include'              //  cookie
       })
 
       if (response.ok) {
@@ -38,6 +41,43 @@ const PreferencesModal = ({ preferences, onSave }) => {
       console.error('Error saving preferences:', error)
     }
   }
+
+  // const handleSave = async () => {
+  //   // console.log('handleSave is called')
+  //   // 构建要发送的数据
+  //   const dataToSend = {
+  //     prefer_list: selectedPreferences.map(id =>
+  //         preferences.find(preference => preference.id === id).name
+  //     )
+  //   }
+  //   console.log('Sending the following data to the backend:', JSON.stringify(dataToSend))
+  //   try {
+  //     // 执行POST请求
+  //     const response = await fetch('http://127.0.0.1:8000/users/user/update/', {
+  //       method: 'POST',
+  //       headers: {
+  //         'Content-Type': 'application/json',
+  //       },
+  //       body: JSON.stringify({
+  //         prefer_list:["History", "Science","Energy","Education","Europe"],
+  //         // prefer_list: selectedPreferences,
+  //         // prefer_list: dataToSend,
+  //         isFirstLogin: false, // 用户已经设置了偏好
+  //       }),
+  //       credentials: 'include'           // 实现session_id
+  //     })
+  //
+  //     if (response.ok) {
+  //       const responseData = await response.json()
+  //       console.log('Preferences saved:', responseData)
+  //       onSave(selectedPreferences)
+  //     } else {
+  //       console.error('Failed to save preferences:', response.statusText)
+  //     }
+  //   } catch (error) {
+  //     console.error('Error saving preferences:', error)
+  //   }
+  // }
 
   return (
       <div className="modal">
@@ -124,12 +164,12 @@ const HomePage = () => {
         // setIsFirstLogin(false) // 假设用户完成了首次登录流程，更新状态为 false
         setPreferences(response.preferences)
         // fetchRecommendations()  // 获取推荐信息
-      }
+      }else{
       fetchRecommendations()  // 获取推荐信息
-    }
+    }}
 
     fetchUserStatus()
-  }, [])
+  }, [isFirstLogin])
 
   const fetchRecommendations = async () => {
     try {
@@ -139,9 +179,12 @@ const HomePage = () => {
         headers: {
           'Content-Type': 'application/json',
         },
-        body:{
+        // body:{
+        //   'username': localStorage.getItem('username')
+        // }
+        body: JSON.stringify({ // 确保对 body 进行字符串化
           'username': localStorage.getItem('username')
-        }
+        })
       })
 
       if (response.ok) {

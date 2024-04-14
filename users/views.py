@@ -13,7 +13,7 @@ from .models import User, NewsLog
 # Create your views here.
 
 # Parse the json file sent by the react frontend and register it
-
+# 注册和登录是不需要@login_required
 
 @csrf_exempt
 def register(request):
@@ -85,7 +85,7 @@ def user_login(request):
     else:
         return JsonResponse({'message': 'Invalid request method'}, status=400)
 
-
+@login_required
 def normalize_prefer_list(prefer_list):
     # Normalize the prefer list to a list of strings,prefer_list is a dictionary
     total_weight = sum(prefer_list.values())
@@ -148,6 +148,7 @@ def update_prefer_list(request):
         is_first_login = data.get('is_first_login', True)
         if isinstance(categories, list) and len(categories) == 5:
             prefer_list = {category: 1 for category in categories}
+            print(current_user)
             current_user.set_prefer_list(prefer_list)
 
             if not is_first_login:
