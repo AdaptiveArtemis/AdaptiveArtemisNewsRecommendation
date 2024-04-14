@@ -25,7 +25,7 @@ POS_SCORE = {
     'VB': 0.0, 'VBD': 0.0, 'VBG': 0.0, 'VBN': 0.0, 'VBP': 0.0, 'VBZ': 0.0
 }
 
-KEYWORD_BOOST = 5
+KEYWORD_BOOST = 7
 DEC_COEE = 0.7
 
 # def auto_dec_refresh(users):
@@ -43,7 +43,7 @@ DEC_COEE = 0.7
 #             user.save()  # 保存更新
 
 
-def compute_weighted_tfidf(text, keywords, topK=10):
+def compute_weighted_tfidf(text, keywords):
     tokens = word_tokenize(text)
     keyword_tokens = word_tokenize(keywords)
     all_tokens = tokens + keyword_tokens

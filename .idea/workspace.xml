@@ -5,16 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="35dd998c-1290-4c26-9012-1ed06d87c8c0" name="Changes" comment="change update frontend logic">
-      <change beforePath="$PROJECT_DIR$/.idea/AdaptiveArtemisNewsRecommendation.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/AdaptiveArtemisNewsRecommendation.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AdaptiveArtemisNewsRecommendation/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/AdaptiveArtemisNewsRecommendation/settings.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/frontend/src/pages/HomePage.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/pages/HomePage.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/frontend/src/pages/LoginPage.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/pages/LoginPage.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/pages/RegistrationPage.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/pages/RegistrationPage.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/pages/UserProfilePage.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/pages/UserProfilePage.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/logs/celery.log" beforeDir="false" afterPath="$PROJECT_DIR$/logs/celery.log" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/users/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/users/views.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -89,7 +82,6 @@
   <component name="RunManager" selected="Python.utils">
     <configuration name="settings" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="AdaptiveArtemisNewsRecommendation" />
-      <option name="ENV_FILES" value="" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
       <envs>
@@ -112,7 +104,6 @@
     </configuration>
     <configuration name="utils" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="AdaptiveArtemisNewsRecommendation" />
-      <option name="ENV_FILES" value="" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
       <envs>
@@ -135,7 +126,6 @@
     </configuration>
     <configuration name="AdaptiveArtemisNewsRecommendation" type="Python.DjangoServer" factoryName="Django server">
       <module name="AdaptiveArtemisNewsRecommendation" />
-      <option name="ENV_FILES" value="" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
       <envs>
@@ -395,7 +385,7 @@
     <option name="LAST_COMMIT_MESSAGE" value="change update frontend logic" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
-    <SUITE FILE_PATH="coverage/AdaptiveArtemisNewsRecommendation$utils.coverage" NAME="utils Coverage Results" MODIFIED="1713118228209" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/userModeling" />
+    <SUITE FILE_PATH="coverage/AdaptiveArtemisNewsRecommendation$utils.coverage" NAME="utils Coverage Results" MODIFIED="1713026388822" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/userModeling" />
     <SUITE FILE_PATH="coverage/AdaptiveArtemisNewsRecommendation$settings.coverage" NAME="settings Coverage Results" MODIFIED="1712182198657" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/scraping/scrapyProject/scrapyProject" />
   </component>
 </project>
